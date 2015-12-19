@@ -78,9 +78,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 			$template = 3;
 		}
 
-		$faqArr = array('faq' =>$faq , 'setting' => $this->settings );
-
-		$this->view->assign('FAQ', $faqArr);
+		$this->view->assign('FAQ', $faq);
 		
 		$this->view->assign('template', $template);
 

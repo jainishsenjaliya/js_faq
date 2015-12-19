@@ -27,7 +27,7 @@
 				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="tx_jsfaq_domain_model_expert.url">
-				<source>Url</source>
+				<source>URL</source>
 			</trans-unit>
 
 			<trans-unit id="tx_jsfaq_domain_model_faq">
@@ -54,7 +54,7 @@
 			<trans-unit id="tx_jsfaq_domain_model_faq.answer">
 				<source>Answer</source>
 			</trans-unit>
-
+			
 			<trans-unit id="tx_jsfaq_domain_model_content">
 				<source>Content</source>
 			</trans-unit>

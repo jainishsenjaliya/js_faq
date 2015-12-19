@@ -136,17 +136,4 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
 
-
-/* For include flexform */
-
-$extensionName = t3lib_div::underscoredToUpperCamelCase($_EXTKEY);
-
-#### FAQ #####
-
-$frontendpluginName = 'faq';
-$pluginSignature = strtolower($extensionName) . '_'.strtolower($frontendpluginName);
-
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-
-t3lib_extMgm::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/Flexform/FAQ_flexform.xml');
-?>
+require_once( \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Classes/Utility/Hook/hook.php');

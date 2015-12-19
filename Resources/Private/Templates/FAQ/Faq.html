@@ -5,47 +5,26 @@
 	<div class="formLoading"></div>	
 
 	<f:if condition="{template}==1">
-	  
 		<f:then>
-
 			<f:if condition="{detail}==0">
-	  
 				<f:then>
-
 					<f:if condition="{categoryGroupWise}==0">
-			  
 						<f:then>
-					  	
 							<f:render partial="Template/FAQ" arguments="{FAQ:FAQ}" />
-						
 						</f:then>
-					  
 						<f:else>
-
 							<f:render partial="Template/CategoryGroupWiseFAQ" arguments="{FAQ:FAQ}" />
-
 						</f:else>
-
 					</f:if>
-				
 				</f:then>
-			  
 				<f:else>
-
 					<f:render partial="Template/Detail" arguments="{FAQ:FAQ}" />
-
 				</f:else>
-
 			</f:if>
-		
 		</f:then>
-	  
 		<f:else>
-
 			<f:render partial="Error/Template" arguments="{template:template}" />
-
 		</f:else>
-
 	</f:if>
-	
+
 </f:section>

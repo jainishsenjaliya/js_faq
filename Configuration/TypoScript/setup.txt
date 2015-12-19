@@ -41,10 +41,10 @@ plugin.tx_jsfaq._CSS_DEFAULT_STYLE (
 
 
 plugin.tx_jsfaq{
-
 	settings{
-	
-		configuration			= {$plugin.tx_jsfaq.settings.configuration}
-		
+		configuration	= {$plugin.tx_jsfaq.settings.configuration}
 	}
 }
+
+config.tx_jsfaq.features.skipDefaultArguments = 1
+plugin.tx_jsfaq.features.skipDefaultArguments = 1

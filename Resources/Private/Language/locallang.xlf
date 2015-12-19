@@ -3,7 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-04T13:02:58Z" product-name="js_faq">
 		<header/>
 		<body>
-
 			<trans-unit id="tx_jsfaq_domain_model_category">
 				<source>Category</source>
 			</trans-unit>
@@ -14,7 +13,7 @@
 				<source>image</source>
 			</trans-unit>
 			<trans-unit id="tx_jsfaq_domain_model_category.shortcut_to_page">
-				<source>shortcutToPage</source>
+				<source>shortcut To Page</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_jsfaq_domain_model_expert">
@@ -27,7 +26,7 @@
 				<source>email</source>
 			</trans-unit>
 			<trans-unit id="tx_jsfaq_domain_model_expert.url">
-				<source>url</source>
+				<source>URL</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_jsfaq_domain_model_faq">

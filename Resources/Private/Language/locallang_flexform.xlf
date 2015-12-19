@@ -4,154 +4,127 @@
 		<header/>
 		<body>
 						
-			<trans-unit id="tx_jsfaq_domain_model_faq.generalSetting">
+			<trans-unit id="settings.generalSetting">
 				<source>General Settings</source>
 			</trans-unit>
 			
-			<trans-unit id="tx_jsfaq_domain_model_faq.category">
+			<trans-unit id="settings.category">
 				<source>Categories</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.listSetting">
+			<trans-unit id="settings.listSetting">
 				<source>Display settings - List page</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.detailSetting">
+			<trans-unit id="settings.detailSetting">
 				<source>Display settings - detail page</source>
 			</trans-unit>
 			
-			<trans-unit id="tx_jsfaq_domain_model_faq.otherSetting">
+			<trans-unit id="settings.otherSetting">
 				<source>Other Settings</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.recordPerPage">
+			<trans-unit id="settings.recordPerPage">
 				<source>Record Per page</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order">
+			<trans-unit id="settings.order">
 				<source>Order By</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.0">
+			<trans-unit id="settings.order.I.0">
 				<source>Sorting</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.1">
+			<trans-unit id="settings.order.I.1">
 				<source>Question</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.2">
+			<trans-unit id="settings.order.I.2">
 				<source>Created data</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.3">
+			<trans-unit id="settings.order.I.3">
 				<source>Modified data</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.4">
+			<trans-unit id="settings.order.I.4">
 				<source>Expert</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.5">
+			<trans-unit id="settings.order.I.5">
 				<source>Asked By</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.orderType">
+			<trans-unit id="settings.orderType">
 				<source>Order Type</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.orderType.I.O">
+			<trans-unit id="settings.orderType.I.O">
 				<source>Desecending</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.orderType.I.1">
+			<trans-unit id="settings.orderType.I.1">
 				<source>Asecending</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayFAQ">
+			<trans-unit id="settings.displayFAQ">
 				<source>Display FAQ List</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayFAQ.I.O">
+			<trans-unit id="settings.displayFAQ.I.O">
 				<source>By Default</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayFAQ.I.1">
+			<trans-unit id="settings.displayFAQ.I.1">
 				<source>Category group wise</source>
 			</trans-unit>
 			
-			<trans-unit id="tx_jsfaq_domain_model_faq.storagePID">
+			<trans-unit id="settings.storagePID">
 				<source>Starting Point</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.additionalInfo">
-				<source>Display additional Information in list page</source>
+			<trans-unit id="settings.display.additionalInfo">
+				<source>Display additional Information</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.additionalInfoDetail">
-				<source>Display additional Information in detail page</source>
-			</trans-unit>
-
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayExpertInList">
+			<trans-unit id="settings.display.expert">
 				<source>Display Expert</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayExpertInDetail">
-				<source>Display Expert</source>
-			</trans-unit>
-
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayAskedByInList">
+			<trans-unit id="settings.display.asked_by">
 				<source>Display Asked by</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayAskedByInDetail">
-				<source>Display Asked by</source>
-			</trans-unit>
-
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedLinkInList">
+			<trans-unit id="settings.display.related_link">
 				<source>Display Related Link</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedLinkInDetail">
-				<source>Display Related Link</source>
-			</trans-unit>
-
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayCategoryInList">
+			<trans-unit id="settings.display.category">
 				<source>Display Category</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayCategoryInDetail">
-				<source>Display Category</source>
-			</trans-unit>
-
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedFAQInList">
+			<trans-unit id="settings.display.related_faq">
 				<source>Display Related FAQ</source>
 			</trans-unit>
-
-			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedFAQInDetail">
-				<source>Display Related FAQ</source>
-			</trans-unit>
-
-
 			
-			
-			<trans-unit id="tx_jsfaq_domain_model_faq.jQueryLib">
+			<trans-unit id="settings.jQueryLib">
 				<source>Include jQuery Library</source>
 			</trans-unit>
 			
-			<trans-unit id="tx_jsfaq_domain_model_faq.fancyCSS">
+			<trans-unit id="settings.fancyCSS">
 				<source>Include Fancy CSS</source>
 			</trans-unit>
 			
-			<trans-unit id="tx_jsfaq_domain_model_faq.responsiveLayout">
+			<trans-unit id="settings.responsiveLayout">
 				<source>Mobile compatible Layout</source>
 			</trans-unit>
 
-			<trans-unit id="tx_jsfaq_domain_model_faq.includeJSinFooter">
+			<trans-unit id="settings.includeJSinFooter">
 				<source>Include Javascript in Footer</source>
 			</trans-unit>
 			
-			<trans-unit id="tx_jsfaq_domain_model_faq.includeCSSinFooter">
+			<trans-unit id="settings.includeCSSinFooter">
 				<source>Include Style in Footer</source>
 			</trans-unit>
 
