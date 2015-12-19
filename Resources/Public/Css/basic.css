@@ -1,0 +1,172 @@
+/*
+ *  (c) 2015 Jainish Senjaliya <jainish.online@gmail.com>
+ *  All rights reserved
+ *  Basic Layout 
+*/
+
+.tx-jsfaq {
+	font-family:Arial;
+	font-size: 14px;
+	width: 540px;
+	margin:0 10px;
+}
+.tx-jsfaq .toggale {
+	padding: 10px 0 20px;
+}
+.tx-jsfaq .tx-jsfaq-box {
+	width: 100%;
+	padding: 10px 0;
+}
+.tx-jsfaq .tx-jsfaq-box a, .tx-jsfaq .tx-jsfaq-detail a, .backLink a{
+	color: #4d90fe;
+	text-decoration:none;
+}
+.tx-jsfaq .tx-jsfaq-box a:hover{
+	text-decoration:underline;
+}
+.tx-jsfaq .tx-jsfaq-header {
+	clear: both;
+	width: 98%;
+	cursor: pointer;
+	background: none repeat scroll 0 0 #fff;
+	border: 1px solid #ddd;
+	line-height: normal;
+	padding: 10px 0px 10px 2%;
+/*	position: relative; */
+}
+
+/* 
+.tx-jsfaq .tx-jsfaq-header span{background: #FFF; width: 85%; position: absolute; left: 0; top: 0; padding: 10px 30px 10px 10px;}
+*/
+
+.tx-jsfaq .tx-jsfaq-header.tx-jsfaq-toggle-minus {
+	font-weight: bold;
+	background:url(../Images/up-arrow-black.png) no-repeat 97% center;
+}
+.tx-jsfaq .tx-jsfaq-header.tx-jsfaq-toggle-plus {
+	font-weight: normal;
+	background:url(../Images/down-arrow-black.png) no-repeat 97% center;
+}
+.tx-jsfaq .tx-jsfaq-toggle-show-all, .tx-jsfaq .tx-jsfaq-toggle-hide-all
+{
+	background: none repeat scroll 0 0 #fff;
+	border: 1px solid #ddd;
+	cursor:pointer;
+	line-height: normal;
+	padding: 10px;
+}
+
+.tx-jsfaq .tx-jsfaq-toggle-show-category-all, .tx-jsfaq .tx-jsfaq-toggle-hide-category-all {
+	background: none repeat scroll 0 0 #fff;
+	border: 1px solid #ddd;
+	cursor:pointer;
+	padding: 6px;
+	line-height: 11px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.tx-jsfaq .tx-jsfaq-toggle-show-all.disabled, .tx-jsfaq .tx-jsfaq-toggle-hide-all.disabled,
+.tx-jsfaq .tx-jsfaq-toggle-show-category-all.disabled, .tx-jsfaq .tx-jsfaq-toggle-hide-category-all.disabled 
+ {
+	font-weight:normal;
+	cursor:default;
+}
+
+.tx-jsfaq .tx-category{
+	overflow: hidden;
+}
+
+.tx-jsfaq .tx-category h3 {
+	font-size: 16px;
+	float: left;
+	width: 80%;
+	padding: 0 0 0 5px;
+	font-weight: bold;
+}
+
+.tx-jsfaq .tx-category .toggale {
+	float: right;
+	padding: 10px 0 10px;
+}
+
+
+
+.tx-jsfaq .tx-jsfaq-decription, .tx-jsfaq .tx-jsfaq-image {
+	padding: 0px 0px 20px 0px;
+	line-height: 20px;
+}
+.tx-jsfaq-additional-info {
+	padding: 10px 10px 20px 0px;
+	clear: both;
+	float: left;
+	width: 100%;
+}
+.tx-jsfaq .tx-jsfaq-expert, .tx-jsfaq .tx-jsfaq-asked-by, .tx-jsfaq .tx-jsfaq-category, .tx-jsfaq .tx-jsfaq-related-link-block, .tx-jsfaq .tx-jsfaq-related-faq-block {
+	padding: 10px 10px 10px 0px;
+	clear: both;
+	float: left;
+	width: 100%;
+}
+.tx-jsfaq .tx-jsfaq-expert label, .tx-jsfaq .tx-jsfaq-asked-by label, .tx-jsfaq .tx-jsfaq-category label, .tx-jsfaq .tx-jsfaq-related-link-block label, .tx-jsfaq .tx-jsfaq-related-faq-block label {
+	font-weight: bold;
+	cursor: default;
+	float: left;
+}
+.tx-jsfaq .tx-jsfaq-expert label span, .tx-jsfaq .tx-jsfaq-asked-by label span, .tx-jsfaq .tx-jsfaq-category label span, .tx-jsfaq .tx-jsfaq-related-link-block label span, .tx-jsfaq .tx-jsfaq-related-faq-block label span {
+	font-weight: normal;
+	padding-left: 10px;
+}
+.tx-jsfaq .tx-jsfaq-related-link-block ul, .tx-jsfaq .tx-jsfaq-related-faq-block ul {
+	clear: both;
+	list-style: outside none disc;
+	padding: 0;
+	margin: 0 0 0 20px;
+}
+.tx-jsfaq .tx-jsfaq-related-link-block ul li, .tx-jsfaq .tx-jsfaq-related-faq-block ul li {
+	line-height: 20px;
+	margin-left: 20px;
+}
+.tx-jsfaq .tx-jsfaq-expert span {
+	margin: 0px 0px 0px 30px;
+	clear: both;
+	float: left;
+	line-height: 20px;
+}
+.tx-jsfaq .tx-jsfaq-details {
+	clear: both;
+	width: 96%;
+	background: none repeat scroll 0 0 #fff;
+	border:1px solid #ddd;
+	border-top:none;
+	padding: 2%;
+	overflow: hidden;
+}
+.tx-jsfaq-detail .header {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px 30px 20px 0px;
+}
+.tx-jsfaq .f3-widget-paginator {
+	width:100%;
+	margin:0px;
+	list-style:none;
+	text-align:center;
+	margin:20px 0 10px 0;
+}
+.tx-jsfaq .f3-widget-paginator li {
+	display:inline-block;
+	margin:0px;
+	padding:6px 10px;
+	border:1px solid #ddd;
+	margin-right:5px;
+}
+.tx-jsfaq .f3-widget-paginator li a {
+	color:#000;
+	text-decoration: none;
+}
+
+.tx-jsfaq .f3-widget-paginator li span {
+	color:#999;
+	cursor: default;
+}

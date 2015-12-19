@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-04T13:02:58Z" product-name="js_faq">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_jsfaq_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.name">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.image">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.shortcut_to_page">
+				<source>shortcutToPage</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_expert">
+				<source>Expert</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert.name">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert.email">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert.url">
+				<source>url</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq">
+				<source>FAQ</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.question">
+				<source>question</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.asked_by">
+				<source>askedBy</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.related_link">
+				<source>relatedLink</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.expert">
+				<source>expert</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.related">
+				<source>related</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.category">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.answer">
+				<source>answer</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.options">
+				<source>options</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.image">
+				<source>image</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.error.missing_configuration">
+				<source>Please configure your basic configuration</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.error.include_template">
+				<source>Are you sure that you have included the "Main" static template?</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.error.no_records">
+				<source>No Records</source>
+			</trans-unit>
+
+			<trans-unit id="pagination_first">
+				<source>First</source>
+			</trans-unit>
+
+			<trans-unit id="pagination_last">
+				<source>Last</source>
+			</trans-unit>
+
+			<trans-unit id="pagination_previous">
+				<source>Previous</source>
+			</trans-unit>
+
+			<trans-unit id="pagination_next">
+				<source>Next</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.label.expert">
+				<source>Expert</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.label.question_asked_by">
+				<source>Question asked by</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.label.Category">
+				<source>Category</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.label.related_links">
+				<source>Related links</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.label.related_faq">
+				<source>Related FAQ</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.label.back_to_faq">
+				<source>Back to ALL FAQ</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

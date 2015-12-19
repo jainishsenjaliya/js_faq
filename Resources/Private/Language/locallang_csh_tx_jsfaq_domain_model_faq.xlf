@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-04T13:02:58Z" product-name="js_faq">
+		<header/>
+		<body>
+
+			<trans-unit id="question.description">
+				<source>question</source>
+			</trans-unit>
+			<trans-unit id="asked_by.description">
+				<source>askedBy</source>
+			</trans-unit>
+			<trans-unit id="related_link.description">
+				<source>relatedLink</source>
+			</trans-unit>
+			<trans-unit id="expert.description">
+				<source>expert</source>
+			</trans-unit>
+			<trans-unit id="related.description">
+				<source>related</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="answer.description">
+				<source>answer</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

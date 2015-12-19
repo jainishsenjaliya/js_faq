@@ -1,0 +1,105 @@
+/*
+ *  (c) 2015 Jainish Senjaliya <jainish.online@gmail.com>
+ *  All rights reserved 
+ *  Mobile compatible Layout
+*/
+
+
+@media only screen and (min-width: 0px) and (max-width: 360px) {
+	.tx-jsfaq {
+		width:96%;
+		margin:0 2%;
+	}
+	.tx-jsfaq .tx-jsfaq-header {
+		width:98%;
+	}
+	.tx-jsfaq .tx-jsfaq-details {
+		width:96%;
+	}
+	.tx-jsfaq .f3-widget-paginator {
+		padding:0px;
+	}
+	.tx-jsfaq .f3-widget-paginator li {
+		padding:6px;
+		margin: 0 0 0 0;
+		line-height: 20px;
+	}
+	.tx-jsfaq .tx-jsfaq-toggle-show-all, .tx-jsfaq .tx-jsfaq-toggle-hide-all {
+		width:auto;
+	}
+
+	.tx-jsfaq .tx-category h3{
+		width: 75%;
+	}
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+	.tx-jsfaq {
+		width:96%;
+		margin:0 2%;
+	}
+	.tx-jsfaq .tx-jsfaq-header {
+		width:98%;
+	}
+	.tx-jsfaq .tx-jsfaq-details {
+		width:96%;
+	}
+	.tx-jsfaq .f3-widget-paginator {
+		padding:0px;
+	}
+	.tx-jsfaq .f3-widget-paginator li {
+		padding:6px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 750px) {
+	.tx-jsfaq {
+		width:96%;
+		margin:0 2%;
+	}
+	.tx-jsfaq .tx-jsfaq-header {
+		width:98%;
+	}
+	.tx-jsfaq .tx-jsfaq-details {
+		width:96%;
+	}
+	.tx-jsfaq .f3-widget-paginator {
+		padding:0px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.tx-jsfaq {
+		width:96%;
+		margin:0 2%;
+	}
+	.tx-jsfaq .tx-jsfaq-header {
+		width:98%;
+	}
+	.tx-jsfaq .tx-jsfaq-details {
+		width:96%;
+	}
+	.tx-jsfaq .f3-widget-paginator {
+		padding:0px;
+	}
+	.tx-jsfaq .f3-widget-paginator li {
+		padding:6px 10px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+	.tx-jsfaq {
+		width:70%;
+		margin:0 2%;
+	}
+	.tx-jsfaq .tx-jsfaq-header {
+		width:98%;
+	}
+	.tx-jsfaq .tx-jsfaq-details {
+		width:96%;
+	}
+	.tx-jsfaq .f3-widget-paginator {
+		padding:0px;
+	}
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-10T16:15:06Z" product-name="competition">
+		<header/>
+		<body>
+						
+			<trans-unit id="tx_jsfaq_domain_model_faq.generalSetting">
+				<source>General Settings</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.category">
+				<source>Categories</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.listSetting">
+				<source>Display settings - List page</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.detailSetting">
+				<source>Display settings - detail page</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.otherSetting">
+				<source>Other Settings</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.recordPerPage">
+				<source>Record Per page</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order">
+				<source>Order By</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.0">
+				<source>Sorting</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.1">
+				<source>Question</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.2">
+				<source>Created data</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.3">
+				<source>Modified data</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.4">
+				<source>Expert</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.order.I.5">
+				<source>Asked By</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.orderType">
+				<source>Order Type</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.orderType.I.O">
+				<source>Desecending</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.orderType.I.1">
+				<source>Asecending</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayFAQ">
+				<source>Display FAQ List</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayFAQ.I.O">
+				<source>By Default</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayFAQ.I.1">
+				<source>Category group wise</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.storagePID">
+				<source>Starting Point</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.additionalInfo">
+				<source>Display additional Information in list page</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.additionalInfoDetail">
+				<source>Display additional Information in detail page</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayExpertInList">
+				<source>Display Expert</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayExpertInDetail">
+				<source>Display Expert</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayAskedByInList">
+				<source>Display Asked by</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayAskedByInDetail">
+				<source>Display Asked by</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedLinkInList">
+				<source>Display Related Link</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedLinkInDetail">
+				<source>Display Related Link</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayCategoryInList">
+				<source>Display Category</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayCategoryInDetail">
+				<source>Display Category</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedFAQInList">
+				<source>Display Related FAQ</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.displayRelatedFAQInDetail">
+				<source>Display Related FAQ</source>
+			</trans-unit>
+
+
+			
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.jQueryLib">
+				<source>Include jQuery Library</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.fancyCSS">
+				<source>Include Fancy CSS</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.responsiveLayout">
+				<source>Mobile compatible Layout</source>
+			</trans-unit>
+
+			<trans-unit id="tx_jsfaq_domain_model_faq.includeJSinFooter">
+				<source>Include Javascript in Footer</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jsfaq_domain_model_faq.includeCSSinFooter">
+				<source>Include Style in Footer</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,24 @@
+plugin.tx_jsfaq {
+	view {
+		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:js_faq/Resources/Private/Templates/
+		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:js_faq/Resources/Private/Partials/
+		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:js_faq/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_jsfaq//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+}
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+plugin.tx_jsfaq{
+
+	settings{
+	
+		configuration 		= 1
+	}
+}
