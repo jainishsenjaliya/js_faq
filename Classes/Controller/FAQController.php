@@ -54,6 +54,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 */
 	public function faqAction() {
 
+		$GLOBALS['TSFE']->set_no_cache();
 
 		$getData	= \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('tx_jsfaq_faq');
 

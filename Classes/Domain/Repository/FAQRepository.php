@@ -84,7 +84,10 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			}
 		}
 
-		$where 		= " f.deleted = 0 AND f.hidden = 0 ".$where;
+		$currentTime = time();
+
+		$where 		= " f.deleted = 0 AND f.hidden = 0 
+						AND ( f.starttime =0 OR ( f.starttime <= ".$currentTime." AND f.endtime >=".$currentTime." )) ".$where;
 
 		$conf	= $this->getDBHandle()->exec_SELECTgetRows($field,$table,$where,$groupBy,$orderBy);
 
