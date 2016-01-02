@@ -1,9 +1,9 @@
 <?php
-namespace JS\JsFaq\Tests;
+namespace JS\JsFaq\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *  			
  *  All rights reserved
  *
@@ -25,37 +25,23 @@ namespace JS\JsFaq\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Js_faq_Controller_ExpertController.
+ * Test case for class JS\JsFaq\Controller\ExpertController.
  *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage FAQ - Frequently Asked Questions
- *
- * @author Jainish Senjaliya <jainish.online@gmail.com>
+ * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ExpertControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
-
-	public function setUp() {
-		$this->fixture = new \JS\JsFaq\Domain\Model\Expert();
-	}
-
-	public function tearDown() {
-		unset($this->fixture);
-	}
+class ExpertControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
 	/**
-	 * @test
+	 * @var \JS\JsFaq\Controller\ExpertController
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('JS\\JsFaq\\Controller\\ExpertController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+	}
+
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 }
-?>

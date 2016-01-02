@@ -27,7 +27,13 @@
 						</f:then>
 						<f:else>
 							<div class="tx-jsfaq-image">
-								<f:image src="uploads/tx_jsfaq/{answers.image}" width="150" height="150" alt="" />
+								<f:if condition="{answers.image}>0">
+									<f:for each="{answers.media.image}" as="img" iteration="itemIteration">
+										<div>
+											<f:image src="{img.identifier}" width="200" height="200" alt="{faq.question}" title="{faq.question}" />
+										</div>
+									</f:for>
+								</f:if> 
 							</div>
 						</f:else>
 					</f:if>

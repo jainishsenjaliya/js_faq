@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_jsfaq_domain_model_category'] = array(
-	'ctrl' => $TCA['tx_jsfaq_domain_model_category']['ctrl'],
+$GLOBALS['TCA']['tx_jsfaq_domain_model_category'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_jsfaq_domain_model_category']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, image, shortcut_to_page',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, teaser, image, shortcut_to_page',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, image, shortcut_to_page,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, teaser, image, shortcut_to_page, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,6 +96,7 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 				),
 			),
 		),
+
 		'name' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_category.name',
@@ -102,33 +106,37 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 				'eval' => 'trim'
 			),
 		),
+		'teaser' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_category.teaser',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim'
+			)
+		),
 		'image' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_category.image',
-			'config' => array(
-				'type' => 'group',
-				'internal_type' => 'file',
-				'uploadfolder' => 'uploads/tx_jsfaq',
-				'show_thumbs' => 1,
-				'size' => 5,
-				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-				'disallowed' => '',
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'image',
+				array('maxitems' => 1),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
 		'shortcut_to_page' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_category.shortcut_to_page',
-			'config' => array(
-				'type' => 'group',
-				'internal_type' => 'file',
-				'uploadfolder' => 'uploads/tx_jsfaq',
-				'allowed' => '*',
-				'disallowed' => 'php',
-				'size' => 5,
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'shortcutToPage',
+				array('maxitems' => 1),
+				'*'
 			),
 		),
+		
 	),
 );
-
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-?>
+
+$GLOBALS['TCA']['tx_jsfaq_domain_model_category']['types']['1']['showitem'] = 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, teaser, image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime';

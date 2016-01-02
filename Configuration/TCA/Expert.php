@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_jsfaq_domain_model_expert'] = array(
-	'ctrl' => $TCA['tx_jsfaq_domain_model_expert']['ctrl'],
+$GLOBALS['TCA']['tx_jsfaq_domain_model_expert'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_jsfaq_domain_model_expert']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, email, url',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, email, url,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, email, url, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_jsfaq_domain_model_expert'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_jsfaq_domain_model_expert'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,6 +96,7 @@ $TCA['tx_jsfaq_domain_model_expert'] = array(
 				),
 			),
 		),
+
 		'name' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_expert.name',
@@ -120,8 +124,7 @@ $TCA['tx_jsfaq_domain_model_expert'] = array(
 				'eval' => 'trim'
 			),
 		),
+		
 	),
 );
-
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-?>

@@ -2,8 +2,8 @@
 namespace JS\JsFaq\Service;
 
 /*
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
- *  Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  Jainish Senjaliya <jainishsenjaliya@gmail.com>
 */
 
 class FAQService implements \TYPO3\CMS\Core\SingletonInterface {

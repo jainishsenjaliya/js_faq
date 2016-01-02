@@ -1,3 +1,4 @@
+
 plugin.tx_jsfaq {
 	view {
 		templateRootPath = {$plugin.tx_jsfaq.view.templateRootPath}
@@ -36,7 +37,17 @@ plugin.tx_jsfaq._CSS_DEFAULT_STYLE (
 	.tx-js-faq table td {
 		vertical-align:top;
 	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
 )
+
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
 
 

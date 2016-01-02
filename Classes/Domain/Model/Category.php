@@ -5,7 +5,7 @@ namespace JS\JsFaq\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -34,21 +34,28 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * name
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $name = '';
 
 	/**
+	 * teaser
+	 *
+	 * @var string
+	 */
+	protected $teaser = '';
+
+	/**
 	 * image
 	 *
-	 * @var \string
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 */
 	protected $image = NULL;
 
 	/**
 	 * shortcutToPage
 	 *
-	 * @var \string
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 */
 	protected $shortcutToPage = NULL;
 
@@ -109,5 +116,23 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->name = $name;
 	}
 
+	/**
+	 * Returns the teaser
+	 *
+	 * @return string $teaser
+	 */
+	public function getTeaser() {
+		return $this->teaser;
+	}
+
+	/**
+	 * Sets the teaser
+	 *
+	 * @param string $teaser
+	 * @return void
+	 */
+	public function setTeaser($teaser) {
+		$this->teaser = $teaser;
+	}
+
 }
-?>

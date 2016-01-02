@@ -5,7 +5,7 @@ namespace JS\JsFaq\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -34,21 +34,21 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * options
 	 *
-	 * @var \integer
+	 * @var integer
 	 */
 	protected $options = 0;
 
 	/**
 	 * description
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $description = '';
 
 	/**
 	 * image
 	 *
-	 * @var \string
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 */
 	protected $image = NULL;
 
@@ -110,4 +110,3 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

@@ -1,11 +1,12 @@
 <?php
 
-namespace JS\JsFaq\Tests;
+namespace JS\JsFaq\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
- *  			
+ *  (c) 2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,79 +29,116 @@ namespace JS\JsFaq\Tests;
 /**
  * Test case for class \JS\JsFaq\Domain\Model\Category.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage FAQ - Frequently Asked Questions
- *
- * @author Jainish Senjaliya <jainish.online@gmail.com>
+ * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class CategoryTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \JS\JsFaq\Domain\Model\Category
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \JS\JsFaq\Domain\Model\Category();
+	protected function setUp() {
+		$this->subject = new \JS\JsFaq\Domain\Model\Category();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setNameForStringSetsName() { 
-		$this->fixture->setName('Conceived at T3CON10');
-
+	public function getNameReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getName()
+			'',
+			$this->subject->getName()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getImageReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setImageForStringSetsImage() { 
-		$this->fixture->setImage('Conceived at T3CON10');
+	public function setNameForStringSetsName() {
+		$this->subject->setName('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getImage()
+			'name',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getShortcutToPageReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setShortcutToPageForStringSetsShortcutToPage() { 
-		$this->fixture->setShortcutToPage('Conceived at T3CON10');
-
+	public function getTeaserReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getShortcutToPage()
+			'',
+			$this->subject->getTeaser()
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function setTeaserForStringSetsTeaser() {
+		$this->subject->setTeaser('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'teaser',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getImageReturnsInitialValueForFileReference() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getImage()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setImageForFileReferenceSetsImage() {
+		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+		$this->subject->setImage($fileReferenceFixture);
+
+		$this->assertAttributeEquals(
+			$fileReferenceFixture,
+			'image',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getShortcutToPageReturnsInitialValueForFileReference() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getShortcutToPage()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setShortcutToPageForFileReferenceSetsShortcutToPage() {
+		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+		$this->subject->setShortcutToPage($fileReferenceFixture);
+
+		$this->assertAttributeEquals(
+			$fileReferenceFixture,
+			'shortcutToPage',
+			$this->subject
+		);
+	}
 }
-?>

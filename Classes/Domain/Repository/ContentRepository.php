@@ -5,7 +5,7 @@ namespace JS\JsFaq\Domain\Repository;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -31,5 +31,5 @@ namespace JS\JsFaq\Domain\Repository;
  */
 class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	
 }
-?>

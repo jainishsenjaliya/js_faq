@@ -1,11 +1,12 @@
 <?php
 
-namespace JS\JsFaq\Tests;
+namespace JS\JsFaq\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
- *  			
+ *  (c) 2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,84 +29,92 @@ namespace JS\JsFaq\Tests;
 /**
  * Test case for class \JS\JsFaq\Domain\Model\Content.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage FAQ - Frequently Asked Questions
- *
- * @author Jainish Senjaliya <jainish.online@gmail.com>
+ * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ContentTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class ContentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \JS\JsFaq\Domain\Model\Content
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \JS\JsFaq\Domain\Model\Content();
+	protected function setUp() {
+		$this->subject = new \JS\JsFaq\Domain\Model\Content();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getOptionsReturnsInitialValueForInteger() { 
+	public function getOptionsReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
-			$this->fixture->getOptions()
+			$this->subject->getOptions()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setOptionsForIntegerSetsOptions() { 
-		$this->fixture->setOptions(12);
+	public function setOptionsForIntegerSetsOptions() {
+		$this->subject->setOptions(12);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			12,
-			$this->fixture->getOptions()
+			'options',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getDescriptionReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setDescriptionForStringSetsDescription() { 
-		$this->fixture->setDescription('Conceived at T3CON10');
-
+	public function getDescriptionReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getDescription()
+			'',
+			$this->subject->getDescription()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getImageReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setImageForStringSetsImage() { 
-		$this->fixture->setImage('Conceived at T3CON10');
+	public function setDescriptionForStringSetsDescription() {
+		$this->subject->setDescription('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getImage()
+			'description',
+			$this->subject
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function getImageReturnsInitialValueForFileReference() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getImage()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setImageForFileReferenceSetsImage() {
+		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+		$this->subject->setImage($fileReferenceFixture);
+
+		$this->assertAttributeEquals(
+			$fileReferenceFixture,
+			'image',
+			$this->subject
+		);
+	}
 }
-?>

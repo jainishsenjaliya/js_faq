@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-04T13:02:58Z" product-name="js_faq">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-01-02T18:58:00Z" product-name="js_faq">
 		<header/>
 		<body>
-
 			<trans-unit id="name.description">
 				<source>name</source>
+			</trans-unit>
+			<trans-unit id="teaser.description">
+				<source>teaser</source>
 			</trans-unit>
 			<trans-unit id="image.description">
 				<source>image</source>

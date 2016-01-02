@@ -5,7 +5,7 @@ namespace JS\JsFaq\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -34,21 +34,21 @@ class FAQ extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * question
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $question = '';
 
 	/**
 	 * askedBy
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $askedBy = '';
 
 	/**
 	 * relatedLink
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $relatedLink = '';
 
@@ -169,20 +169,16 @@ class FAQ extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Initializes all ObjectStorage properties.
+	 * Initializes all ObjectStorage properties
+	 * Do not modify this method!
+	 * It will be rewritten on each save in the extension builder
+	 * You may modify the constructor of this class instead
 	 *
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		/**
-		 * Do not modify this method!
-		 * It will be rewritten on each save in the extension builder
-		 * You may modify the constructor of this class instead
-		 */
 		$this->related = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
 		$this->category = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
 		$this->answer = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
@@ -304,4 +300,3 @@ class FAQ extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

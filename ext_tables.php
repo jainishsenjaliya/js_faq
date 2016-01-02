@@ -1,6 +1,6 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+	die('Access denied.');
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
@@ -19,7 +19,7 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jsfaq_domain_model_category', 'EXT:js_faq/Resources/Private/Language/locallang_csh_tx_jsfaq_domain_model_category.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jsfaq_domain_model_category');
-$TCA['tx_jsfaq_domain_model_category'] = array(
+$GLOBALS['TCA']['tx_jsfaq_domain_model_category'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_category',
 		'label' => 'name',
@@ -30,7 +30,7 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -40,7 +40,7 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'name,image,shortcut_to_page,',
+		'searchFields' => 'name,teaser,image,shortcut_to_page,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Category.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_jsfaq_domain_model_category.gif'
 	),
@@ -48,7 +48,7 @@ $TCA['tx_jsfaq_domain_model_category'] = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jsfaq_domain_model_expert', 'EXT:js_faq/Resources/Private/Language/locallang_csh_tx_jsfaq_domain_model_expert.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jsfaq_domain_model_expert');
-$TCA['tx_jsfaq_domain_model_expert'] = array(
+$GLOBALS['TCA']['tx_jsfaq_domain_model_expert'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_expert',
 		'label' => 'name',
@@ -59,7 +59,7 @@ $TCA['tx_jsfaq_domain_model_expert'] = array(
 
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -77,7 +77,7 @@ $TCA['tx_jsfaq_domain_model_expert'] = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jsfaq_domain_model_faq', 'EXT:js_faq/Resources/Private/Language/locallang_csh_tx_jsfaq_domain_model_faq.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jsfaq_domain_model_faq');
-$TCA['tx_jsfaq_domain_model_faq'] = array(
+$GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_faq',
 		'label' => 'question',
@@ -88,7 +88,7 @@ $TCA['tx_jsfaq_domain_model_faq'] = array(
 		'sortby' => 'sorting',
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -106,7 +106,7 @@ $TCA['tx_jsfaq_domain_model_faq'] = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jsfaq_domain_model_content', 'EXT:js_faq/Resources/Private/Language/locallang_csh_tx_jsfaq_domain_model_content.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jsfaq_domain_model_content');
-$TCA['tx_jsfaq_domain_model_content'] = array(
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content',
 		'label' => 'options',
@@ -117,7 +117,7 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 		'sortby' => 'sorting',
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -127,13 +127,18 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'requestUpdate' => 'options',
 		'searchFields' => 'options,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Content.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_jsfaq_domain_model_content.gif'
 	),
 );
-
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
 
 require_once( \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Classes/Utility/Hook/hook.php');
+
+// New icons for the BE
+if (TYPO3_MODE == 'BE') {
+	$icon = "faq";
+	\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-' . $icon, \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/faq.png');
+	$TCA['pages']['columns']['module']['config']['items'][] = array(ucfirst($icon), $icon, \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/faq.png');
+}

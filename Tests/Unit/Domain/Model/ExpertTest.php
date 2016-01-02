@@ -1,11 +1,12 @@
 <?php
 
-namespace JS\JsFaq\Tests;
+namespace JS\JsFaq\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
- *  			
+ *  (c) 2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,79 +29,91 @@ namespace JS\JsFaq\Tests;
 /**
  * Test case for class \JS\JsFaq\Domain\Model\Expert.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage FAQ - Frequently Asked Questions
- *
- * @author Jainish Senjaliya <jainish.online@gmail.com>
+ * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ExpertTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \JS\JsFaq\Domain\Model\Expert
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \JS\JsFaq\Domain\Model\Expert();
+	protected function setUp() {
+		$this->subject = new \JS\JsFaq\Domain\Model\Expert();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setNameForStringSetsName() { 
-		$this->fixture->setName('Conceived at T3CON10');
-
+	public function getNameReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getName()
+			'',
+			$this->subject->getName()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getEmailReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setEmailForStringSetsEmail() { 
-		$this->fixture->setEmail('Conceived at T3CON10');
+	public function setNameForStringSetsName() {
+		$this->subject->setName('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getEmail()
+			'name',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getUrlReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setUrlForStringSetsUrl() { 
-		$this->fixture->setUrl('Conceived at T3CON10');
-
+	public function getEmailReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getUrl()
+			'',
+			$this->subject->getEmail()
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function setEmailForStringSetsEmail() {
+		$this->subject->setEmail('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'email',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getUrlReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUrlForStringSetsUrl() {
+		$this->subject->setUrl('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'url',
+			$this->subject
+		);
+	}
 }
-?>

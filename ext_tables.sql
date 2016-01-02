@@ -7,8 +7,9 @@ CREATE TABLE tx_jsfaq_domain_model_category (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	name varchar(255) DEFAULT '' NOT NULL,
-	image text NOT NULL,
-	shortcut_to_page text NOT NULL,
+	teaser text NOT NULL,
+	image int(11) unsigned NOT NULL default '0',
+	shortcut_to_page int(11) unsigned NOT NULL default '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -28,7 +29,6 @@ CREATE TABLE tx_jsfaq_domain_model_category (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -36,7 +36,7 @@ CREATE TABLE tx_jsfaq_domain_model_category (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -70,7 +70,6 @@ CREATE TABLE tx_jsfaq_domain_model_expert (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -78,7 +77,7 @@ CREATE TABLE tx_jsfaq_domain_model_expert (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -116,7 +115,7 @@ CREATE TABLE tx_jsfaq_domain_model_faq (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 	sorting int(11) DEFAULT '0' NOT NULL,
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
+
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -124,7 +123,7 @@ CREATE TABLE tx_jsfaq_domain_model_faq (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -140,7 +139,7 @@ CREATE TABLE tx_jsfaq_domain_model_content (
 
 	options int(11) DEFAULT '0' NOT NULL,
 	description text NOT NULL,
-	image text NOT NULL,
+	image int(11) unsigned NOT NULL default '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -160,7 +159,7 @@ CREATE TABLE tx_jsfaq_domain_model_content (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 	sorting int(11) DEFAULT '0' NOT NULL,
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
+
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -168,7 +167,7 @@ CREATE TABLE tx_jsfaq_domain_model_content (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -206,4 +205,5 @@ CREATE TABLE tx_jsfaq_faq_category_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

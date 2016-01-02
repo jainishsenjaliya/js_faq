@@ -1,3 +1,9 @@
+2016-01-15  Jainish Senjaliya,,,  <jainishsenjaliya@gmail.com>
+
+	* FAL image support
+	* After upgrade plugin you must need to update all images in "Answer" area.
+	* Released version 2.0.0
+
 2016-01-01  Jainish Senjaliya,,,  <jainishsenjaliya@gmail.com>
 
 	* Added functionality to show FAQ between specific start-date and end-date

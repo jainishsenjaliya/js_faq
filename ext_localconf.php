@@ -1,6 +1,6 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+	die('Access denied.');
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -13,6 +13,7 @@ if (!defined('TYPO3_MODE')) {
 	// non-cacheable actions
 	array(
 		'FAQ' => 'faq',
+		
 	)
 );
 
@@ -25,8 +26,8 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'Category' => '',
+		'Category' => 'category',
+		
 	)
 );
-
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

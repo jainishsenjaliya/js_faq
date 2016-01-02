@@ -1,11 +1,12 @@
 <?php
 namespace JS\JsFaq\Controller;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -37,7 +38,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @var \JS\JsFaq\Domain\Repository\FAQRepository
 	 * @inject
 	 */
-	protected $fAQRepository;
+	protected $fAQRepository = NULL;
 
 	/**
 	 * fAQService
@@ -45,7 +46,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @var \JS\JsFaq\Service\FAQService
 	 * @inject
 	 */
-	protected $fAQService;
+	protected $fAQService = NULL;
 
 	/**
 	 * action faq
@@ -56,40 +57,38 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 		$GLOBALS['TSFE']->set_no_cache();
 
-		$getData	= \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('tx_jsfaq_faq');
+		$detail = 0;
 
-		$detail 	= 0;
+		if ($this->request->hasArgument('faq')) {
 
-		if(isset($getData['faq']) && $getData['faq']>0){
-			$detail = $getData['faq'];
+			$data = $this->request->getArguments('faq');
+
+			if(intVal($data['faq'])){
+				$detail = $data['faq'];
+			}
 		}
 
 		$template = $this->fAQService->missingConfiguration($this->settings);
-
-		$faq = $this->fAQRepository->getFAQData($this->settings,$detail);
+		
+		$faq = $this->fAQRepository->getFAQData($this->settings, $detail);
 
 		$categoryGroupWise = 0;
 
-		if($this->settings['displayFAQ']=="categoryGroupWise"){
+		if ($this->settings['displayFAQ'] == 'categoryGroupWise' && $detail==0) {
 			$categoryGroupWise = 1;
 			$faq = $this->fAQRepository->getFAQCategoryData($faq);
 		}
 
-		if(count($faq)==0){
+		if (count($faq) == 0) {
 			$template = 3;
 		}
 
 		$this->view->assign('FAQ', $faq);
-		
 		$this->view->assign('template', $template);
-
 		$this->view->assign('detail', $detail);
-
 		$this->view->assign('categoryGroupWise', $categoryGroupWise);
 		
 		// Include Additional Data
 		$this->fAQService->includeAdditionalData($this->settings);
 	}
-
 }
-?>

@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_jsfaq_domain_model_content'] = array(
-	'ctrl' => $TCA['tx_jsfaq_domain_model_content']['ctrl'],
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_jsfaq_domain_model_content']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, options, description, image',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, options, description, image,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, options, description;;;richtext:rte_transform[mode=ts_links], image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,15 +96,14 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 				),
 			),
 		),
+
 		'options' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.0', 0),
-					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.1', 1),
-					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.2', 2),
+					array('-- Label --', 0),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -127,23 +129,17 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 					)
 				)
 			),
-			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
-			'displayCond' => 'FIELD:options:=:1',
 		),
 		'image' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.image',
-			'config' => array(
-				'type' => 'group',
-				'internal_type' => 'file',
-				'uploadfolder' => 'uploads/tx_jsfaq',
-				'show_thumbs' => 1,
-				'size' => 2,
-				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-				'disallowed' => '',
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'image',
+				array('maxitems' => 1),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
-			'displayCond' => 'FIELD:options:=:2',
 		),
+		
 		'faq' => array(
 			'config' => array(
 				'type' => 'passthrough',
@@ -151,6 +147,20 @@ $TCA['tx_jsfaq_domain_model_content'] = array(
 		),
 	),
 );
-
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-?>
+
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['options']['config']['items'] =  array(
+					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.0', 0),
+					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.1', 1),
+					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.2', 2),
+				);
+
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['description']['config']['defaultExtras'] = 'richtext:rte_transform[flag=rte_enabled|mode=ts]';
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['description']['displayCond'] = 'FIELD:options:=:1';
+
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['image']['config'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'image',
+				array('maxitems' => 99),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			);
+$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['image']['displayCond'] = 'FIELD:options:=:2';

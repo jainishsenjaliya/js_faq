@@ -1,3 +1,4 @@
+
 plugin.tx_jsfaq {
 	view {
 		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template root (FE)
@@ -9,9 +10,10 @@ plugin.tx_jsfaq {
 	}
 	persistence {
 		# cat=plugin.tx_jsfaq//a; type=string; label=Default storage PID
-		storagePid = 
+		storagePid =
 	}
 }
+
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
 
 

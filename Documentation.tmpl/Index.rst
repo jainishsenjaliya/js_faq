@@ -29,13 +29,13 @@ FAQ - Frequently Asked Questions
 		comma,separated,list,of,keywords
 
 	:Copyright:
-		2014
+		2016
 
 	:Author:
 		Jainish Senjaliya
 
 	:Email:
-		jainish.online@gmail.com
+		jainishsenjaliya@gmail.com
 
 	:License:
 		This document is published under the Open Content License

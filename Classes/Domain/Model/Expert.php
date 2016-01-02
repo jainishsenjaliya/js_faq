@@ -5,7 +5,7 @@ namespace JS\JsFaq\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -34,21 +34,21 @@ class Expert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * name
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $name = '';
 
 	/**
 	 * email
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $email = '';
 
 	/**
 	 * url
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $url = '';
 
@@ -110,4 +110,3 @@ class Expert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

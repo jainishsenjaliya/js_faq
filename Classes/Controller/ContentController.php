@@ -5,7 +5,7 @@ namespace JS\JsFaq\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
+ *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -45,8 +45,7 @@ class ContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	 * @return void
 	 */
 	public function contentAction() {
-
+		
 	}
 
 }
-?>

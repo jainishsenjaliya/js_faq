@@ -1,11 +1,12 @@
 <?php
 
-namespace JS\JsFaq\Tests;
+namespace JS\JsFaq\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainish.online@gmail.com>
- *  			
+ *  (c) 2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,129 +29,155 @@ namespace JS\JsFaq\Tests;
 /**
  * Test case for class \JS\JsFaq\Domain\Model\FAQ.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage FAQ - Frequently Asked Questions
- *
- * @author Jainish Senjaliya <jainish.online@gmail.com>
+ * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class FAQTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \JS\JsFaq\Domain\Model\FAQ
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \JS\JsFaq\Domain\Model\FAQ();
+	protected function setUp() {
+		$this->subject = new \JS\JsFaq\Domain\Model\FAQ();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getQuestionReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setQuestionForStringSetsQuestion() { 
-		$this->fixture->setQuestion('Conceived at T3CON10');
-
+	public function getQuestionReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getQuestion()
+			'',
+			$this->subject->getQuestion()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getAskedByReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setAskedByForStringSetsAskedBy() { 
-		$this->fixture->setAskedBy('Conceived at T3CON10');
+	public function setQuestionForStringSetsQuestion() {
+		$this->subject->setQuestion('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getAskedBy()
+			'question',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getRelatedLinkReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setRelatedLinkForStringSetsRelatedLink() { 
-		$this->fixture->setRelatedLink('Conceived at T3CON10');
-
+	public function getAskedByReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getRelatedLink()
+			'',
+			$this->subject->getAskedBy()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getExpertReturnsInitialValueForExpert() { }
 
 	/**
 	 * @test
 	 */
-	public function setExpertForExpertSetsExpert() { }
-	
+	public function setAskedByForStringSetsAskedBy() {
+		$this->subject->setAskedBy('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'askedBy',
+			$this->subject
+		);
+	}
+
 	/**
 	 * @test
 	 */
-	public function getRelatedReturnsInitialValueForFAQ() { 
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+	public function getRelatedLinkReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getRelatedLink()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setRelatedLinkForStringSetsRelatedLink() {
+		$this->subject->setRelatedLink('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'relatedLink',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getExpertReturnsInitialValueForExpert() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getExpert()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setExpertForExpertSetsExpert() {
+		$expertFixture = new \JS\JsFaq\Domain\Model\Expert();
+		$this->subject->setExpert($expertFixture);
+
+		$this->assertAttributeEquals(
+			$expertFixture,
+			'expert',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getRelatedReturnsInitialValueForFAQ() {
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getRelated()
+			$this->subject->getRelated()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setRelatedForObjectStorageContainingFAQSetsRelated() { 
+	public function setRelatedForObjectStorageContainingFAQSetsRelated() {
 		$related = new \JS\JsFaq\Domain\Model\FAQ();
-		$objectStorageHoldingExactlyOneRelated = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneRelated = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneRelated->attach($related);
-		$this->fixture->setRelated($objectStorageHoldingExactlyOneRelated);
+		$this->subject->setRelated($objectStorageHoldingExactlyOneRelated);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneRelated,
-			$this->fixture->getRelated()
+			'related',
+			$this->subject
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function addRelatedToObjectStorageHoldingRelated() {
 		$related = new \JS\JsFaq\Domain\Model\FAQ();
-		$objectStorageHoldingExactlyOneRelated = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneRelated->attach($related);
-		$this->fixture->addRelated($related);
+		$relatedObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$relatedObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($related));
+		$this->inject($this->subject, 'related', $relatedObjectStorageMock);
 
-		$this->assertEquals(
-			$objectStorageHoldingExactlyOneRelated,
-			$this->fixture->getRelated()
-		);
+		$this->subject->addRelated($related);
 	}
 
 	/**
@@ -158,57 +185,51 @@ class FAQTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 */
 	public function removeRelatedFromObjectStorageHoldingRelated() {
 		$related = new \JS\JsFaq\Domain\Model\FAQ();
-		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($related);
-		$localObjectStorage->detach($related);
-		$this->fixture->addRelated($related);
-		$this->fixture->removeRelated($related);
+		$relatedObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$relatedObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($related));
+		$this->inject($this->subject, 'related', $relatedObjectStorageMock);
 
-		$this->assertEquals(
-			$localObjectStorage,
-			$this->fixture->getRelated()
-		);
+		$this->subject->removeRelated($related);
+
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getCategoryReturnsInitialValueForCategory() { 
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+	public function getCategoryReturnsInitialValueForCategory() {
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getCategory()
+			$this->subject->getCategory()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setCategoryForObjectStorageContainingCategorySetsCategory() { 
+	public function setCategoryForObjectStorageContainingCategorySetsCategory() {
 		$category = new \JS\JsFaq\Domain\Model\Category();
-		$objectStorageHoldingExactlyOneCategory = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneCategory->attach($category);
-		$this->fixture->setCategory($objectStorageHoldingExactlyOneCategory);
+		$this->subject->setCategory($objectStorageHoldingExactlyOneCategory);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneCategory,
-			$this->fixture->getCategory()
+			'category',
+			$this->subject
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function addCategoryToObjectStorageHoldingCategory() {
 		$category = new \JS\JsFaq\Domain\Model\Category();
-		$objectStorageHoldingExactlyOneCategory = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneCategory->attach($category);
-		$this->fixture->addCategory($category);
+		$categoryObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$categoryObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($category));
+		$this->inject($this->subject, 'category', $categoryObjectStorageMock);
 
-		$this->assertEquals(
-			$objectStorageHoldingExactlyOneCategory,
-			$this->fixture->getCategory()
-		);
+		$this->subject->addCategory($category);
 	}
 
 	/**
@@ -216,57 +237,51 @@ class FAQTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 */
 	public function removeCategoryFromObjectStorageHoldingCategory() {
 		$category = new \JS\JsFaq\Domain\Model\Category();
-		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($category);
-		$localObjectStorage->detach($category);
-		$this->fixture->addCategory($category);
-		$this->fixture->removeCategory($category);
+		$categoryObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$categoryObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($category));
+		$this->inject($this->subject, 'category', $categoryObjectStorageMock);
 
-		$this->assertEquals(
-			$localObjectStorage,
-			$this->fixture->getCategory()
-		);
+		$this->subject->removeCategory($category);
+
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getAnswerReturnsInitialValueForContent() { 
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+	public function getAnswerReturnsInitialValueForContent() {
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getAnswer()
+			$this->subject->getAnswer()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setAnswerForObjectStorageContainingContentSetsAnswer() { 
+	public function setAnswerForObjectStorageContainingContentSetsAnswer() {
 		$answer = new \JS\JsFaq\Domain\Model\Content();
-		$objectStorageHoldingExactlyOneAnswer = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneAnswer = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneAnswer->attach($answer);
-		$this->fixture->setAnswer($objectStorageHoldingExactlyOneAnswer);
+		$this->subject->setAnswer($objectStorageHoldingExactlyOneAnswer);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneAnswer,
-			$this->fixture->getAnswer()
+			'answer',
+			$this->subject
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function addAnswerToObjectStorageHoldingAnswer() {
 		$answer = new \JS\JsFaq\Domain\Model\Content();
-		$objectStorageHoldingExactlyOneAnswer = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneAnswer->attach($answer);
-		$this->fixture->addAnswer($answer);
+		$answerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$answerObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($answer));
+		$this->inject($this->subject, 'answer', $answerObjectStorageMock);
 
-		$this->assertEquals(
-			$objectStorageHoldingExactlyOneAnswer,
-			$this->fixture->getAnswer()
-		);
+		$this->subject->addAnswer($answer);
 	}
 
 	/**
@@ -274,17 +289,11 @@ class FAQTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 */
 	public function removeAnswerFromObjectStorageHoldingAnswer() {
 		$answer = new \JS\JsFaq\Domain\Model\Content();
-		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($answer);
-		$localObjectStorage->detach($answer);
-		$this->fixture->addAnswer($answer);
-		$this->fixture->removeAnswer($answer);
+		$answerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$answerObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($answer));
+		$this->inject($this->subject, 'answer', $answerObjectStorageMock);
 
-		$this->assertEquals(
-			$localObjectStorage,
-			$this->fixture->getAnswer()
-		);
+		$this->subject->removeAnswer($answer);
+
 	}
-	
 }
-?>
