@@ -7,7 +7,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -47,10 +47,14 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$limit = '';
 
-		if ($settings['order'] == 'expert') {
-			$orderBy = ' e.name ' . $settings['orderType'];
-		} else {
-			$orderBy = ' f.' . $settings['order'] . ' ' . $settings['orderType'];
+		if(isset($settings['main']['order'])){
+			if ($settings['main']['order'] == 'expert') {
+				$orderBy = ' e.name ' . $settings['main']['orderType'];
+			} else {
+				$orderBy = ' f.' . $settings['main']['order'] . ' ' . $settings['main']['orderType'];
+			}
+		}else{
+			$orderBy = ' f.sorting desc';
 		}
 
 		$field = 'f.uid, f.question, f.asked_by, f.expert, f.answer, f.related, f.related_link, e.name, e.email, e.url, m.uid_foreign , group_concat( cast( c.name AS char ) ) AS categoryName, group_concat( cast( c.uid AS char ) ) AS categoryID';
@@ -64,22 +68,20 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		
 		$where = '';
 		
-		$faq = intval($faq);
-		
 		if ($faq > 0) {
 			$where = ' AND f.uid =  \'' . $faq . '\'';
 		} else {
-			if (isset($settings['storagePID']) && $settings['storagePID'] != '') {
-				$where .= ' AND f.pid in (' . $settings['storagePID'] . ') ';
+			if (isset($settings['main']['startingPoint']) && $settings['main']['startingPoint'] != '') {
+				$where .= ' AND f.pid in (' . $settings['main']['startingPoint'] . ') ';
 			}
-			if (isset($settings['category']) && $settings['category'] != '') {
-				$where .= ' AND m.uid_foreign IN (' . $settings['category'] . ')  ';
+			if (isset($settings['main']['categories']) && $settings['main']['categories'] != '') {
+				$where .= ' AND m.uid_foreign IN (' . $settings['main']['categories'] . ')  ';
 			}
 		}
 
 		$currentTime = time();
 		
-		$where = ' f.deleted = 0 AND f.hidden = 0 
+		$where = ' f.deleted = 0 AND f.hidden = 0 AND c.deleted = 0 AND c.hidden = 0  AND e.deleted = 0 AND e.hidden = 0 
 						AND ( f.starttime =0 OR ( f.starttime <= ' . $currentTime . ' AND f.endtime >=' . $currentTime . ' )) ' . $where;
 		
 		$conf = $this->getDBHandle()->exec_SELECTgetRows($field, $table, $where, $groupBy, $orderBy);
@@ -88,31 +90,24 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		
 		foreach ($conf as $key => $value) {
 
-			$field1 = 'uid, options, description, image';
-			$orderBy1 = ' sorting';
-			$table1 = 'tx_jsfaq_domain_model_content';
-			$where1 = ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'';
+			$field1		= 'uid, options, description, image';
+			$orderBy1	= ' sorting';
+			$table1		= 'tx_jsfaq_domain_model_content';
+			$where1		= ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'';
 
-			$answers = $this->falImages($this->getDBHandle()->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
+			$answers 	= $this->falImages($this->getDBHandle()->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
 
-			$field2 = 'f.uid, f.question';
-			$orderBy2 = 'sorting_foreign';
-			$table2 = 'tx_jsfaq_faq_faq_mm as m LEFT JOIN tx_jsfaq_domain_model_faq as f ON m.uid_foreign = f.uid';
-			$where2 = ' uid_local = ' . $value['uid'];
+			$field2		= 'f.uid, f.question';
+			$orderBy2	= 'sorting_foreign';
+			$table2		= 'tx_jsfaq_faq_faq_mm as m LEFT JOIN tx_jsfaq_domain_model_faq as f ON m.uid_foreign = f.uid';
+			$where2		= ' uid_local = ' . $value['uid'];
 			
 			$related_faq = $this->getDBHandle()->exec_SELECTgetRows($field2, $table2, $where2, '', $orderBy2);
 
-			$relatedFaq = array();
+			$relatedFaq	= array();
 
 			foreach ($related_faq as $key => $val) {
-
 				$relatedFaq[$val['uid']] = $val;
-				$link = array();
-				$link['additionalParams'] = '&tx_jsfaq_faq[action]=faq&tx_jsfaq_faq[faq]=' . $val['uid'];
-				$link['returnLast'] = 'url';
-				$link['parameter'] = $GLOBALS['TSFE']->id;
-				$detailLink = $this->fullURL . $this->cObject->typolink(NULL, $link);
-				$relatedFaq[$val['uid']]['detailLink'] = $detailLink;
 			}
 
 			$related_link = GeneralUtility::trimExplode(chr(10), $value['related_link'], true);
@@ -137,21 +132,13 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		$categoryArr = array();
 
 		foreach ($faq as $key => $value) {
+
 			if ($value['categoryID'] > 0) {
 				$categoryArr[$value['categoryID']]['category'] = $value['categoryName'];
 				$categoryArr[$value['categoryID']]['faq'][] = $value;
 			}
 		}
 		return $categoryArr;
-	}
-
-	/**
-	 * getDBHandle
-	 *
-	 * @return
-	 */
-	public function getDBHandle() {
-		return $GLOBALS['TYPO3_DB'];
 	}
 
 	/**
@@ -204,5 +191,14 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			$result[$key]['media'] = $arr;
 		}
 		return $result;
+	}
+
+	/**
+	 * getDBHandle
+	 *
+	 * @return
+	 */
+	public function getDBHandle() {
+		return $GLOBALS['TYPO3_DB'];
 	}	
 }

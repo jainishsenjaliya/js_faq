@@ -2,7 +2,7 @@
 namespace JS\JsFaq\Service;
 
 /*
- *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *  Jainish Senjaliya <jainishsenjaliya@gmail.com>
 */
 
@@ -27,7 +27,7 @@ class FAQService implements \TYPO3\CMS\Core\SingletonInterface {
 	{
 		if($settings['configuration']!=1){
 			return 2;
-		}else if($settings['storagePID']=="" ){
+		}else if($settings['main']['startingPoint']=="" ){
 			return 0;
 		}
 		return 1;
@@ -42,36 +42,47 @@ class FAQService implements \TYPO3\CMS\Core\SingletonInterface {
 	
 	function includeAdditionalData($settings)
 	{
-		$additionalDataJS = $additionalDataCSS = "";
-		
-		if($settings['jQueryLib']==1){
-			$additionalDataJS .= '<script src="typo3conf/ext/js_faq/Resources/Public/Script/jquery.min.js" type="text/javascript"></script>';
+		// Inlcude JS
+
+		$javascript = $settings['additional']['javascript'];
+
+		if($javascript['jQueryLib']['include']==1){
+
+			$jQueryLib = '<script src="typo3conf/ext/js_faq/Resources/Public/Script/jquery.min.js" type="text/javascript"></script>'.$additionalDataJS;
+
+			if($javascript['jQueryLib']['includeInFooter']==1){
+				$GLOBALS['TSFE']->additionalFooterData['JsFaq.jQueryLib'] = $jQueryLib;
+			}else{
+				$GLOBALS['TSFE']->additionalHeaderData['JsFaq.jQueryLib'] = $jQueryLib;	
+			}
 		}
-		
-		$additionalDataJS .= '<script src="typo3conf/ext/js_faq/Resources/Public/Script/JqueryToggle.js" type="text/javascript"></script>';
-		
-		$css = $settings['fancyCSS']==1?'fancy':'basic';
-		
-		$additionalDataCSS .= '<link rel="stylesheet" href="typo3conf/ext/js_faq/Resources/Public/Css/'.$css.'.css" type="text/css" media="all" />';
-		
-		if($settings['responsiveLayout']==1){
-			$additionalDataCSS .= '<link rel="stylesheet" href="typo3conf/ext/js_faq/Resources/Public/Css/responsiveLayout.css" type="text/css" media="all" />';
-		}
-		
-		if($settings['includeJSinFooter']==1){
-			$GLOBALS['TSFE']->additionalFooterData['9149'] = $additionalDataJS;
+
+		$toggleJS = '<script src="typo3conf/ext/js_faq/Resources/Public/Script/JsFaqToggle.js" type="text/javascript"></script>';
+
+		if($javascript['toggle']['includeInFooter']==0){
+			$GLOBALS['TSFE']->additionalHeaderData['JsFaq.Toggle'] = $toggleJS;
 		}else{
-			$GLOBALS['TSFE']->additionalHeaderData['9149'] = $additionalDataJS;	
+			$GLOBALS['TSFE']->additionalFooterData['JsFaq.Toggle'] = $toggleJS;
 		}
+
+		// Inlcude CSS
+
+		$css = $settings['additional']['css'];
+
+		$style = $css['fancy']['include']==1?'Fancy':'Basic';
+
+		$additionalDataCSS = '<link rel="stylesheet" href="typo3conf/ext/js_faq/Resources/Public/Css/'.$style.'.css" type="text/css" media="all" />';
 		
-		if($settings['includeCSSinFooter']==1){
-			$GLOBALS['TSFE']->additionalFooterData['852'] = $additionalDataCSS;
+		if($css['responsive']['include']==1){
+			$additionalDataCSS .= '<link rel="stylesheet" href="typo3conf/ext/js_faq/Resources/Public/Css/Responsive.css" type="text/css" media="all" />';
+		}
+
+		if($css['includeInFooter']==1){
+			$GLOBALS['TSFE']->additionalFooterData['JsFaq.CSS'] = $additionalDataCSS;
 		}else{
-			$GLOBALS['TSFE']->additionalHeaderData['852'] = $additionalDataCSS;	
+			$GLOBALS['TSFE']->additionalHeaderData['JsFaq.CSS'] = $additionalDataCSS;	
 		}
-		
 	}
-	
 }
 
 ?>

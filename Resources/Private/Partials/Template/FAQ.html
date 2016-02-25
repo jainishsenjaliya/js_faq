@@ -1,123 +1,108 @@
-{namespace pg=JS\JsFaq\ViewHelpers}
-
-<div class="toggale">
-	<input type="button" value="Show all" class="tx-jsfaq-toggle-show-all">
-		/
-	<input type="button" value="Hide all" class="tx-jsfaq-toggle-hide-all">
-</div>
-
-<pg:Paginate objects="{FAQ}" as="paginatedObjekt" configuration="{itemsPerPage: 10, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 4, maximumVisiblePages: 3}">
-
-	<f:for each="{paginatedObjekt}" as="faq">
-	
-		<div class="tx-jsfaq-box">
+<div class="tx-jsfaq-box">
 			
-			<div class="tx-jsfaq-header tx-jsfaq-toggle-plus">
-				{faq.question}
-			</div>
+	<div class="tx-jsfaq-header tx-jsfaq-toggle-plus">
+		{faq.question}
+	</div>
 
-			<div class="tx-jsfaq-details">
+	<div class="tx-jsfaq-details">
 
-				<f:for each="{faq.answers}" as="answers">
-					<f:if condition="{answers.options}==1">
-						<f:then>
-							<div class="tx-jsfaq-decription">
-								<f:format.raw>{answers.description}</f:format.raw>
-							</div>
-						</f:then>
-						<f:else>
-							<div class="tx-jsfaq-image">
-								<f:if condition="{answers.image}>0">
-									<f:for each="{answers.media.image}" as="img" iteration="itemIteration">
-										<div>
-											<f:image src="{img.identifier}" width="200" height="200" alt="{faq.question}" title="{faq.question}" />
-										</div>
-									</f:for>
-								</f:if> 
-							</div>
-						</f:else>
-					</f:if>
-				</f:for>
-
-				<f:if condition="{settings.display.additionalInfo.list}=='1'">
-
-					<div class="tx-jsfaq-additional-info">
-
-						<f:if condition="{settings.display.expert.list}=='1'">
-						 	<f:if condition="{faq.expert}>0">
-								<div class="tx-jsfaq-expert">
-									<label>
-										<f:translate key='tx_jsfaq_domain_model_faq.label.expert' /> : 
-									</label>
-									<span>{faq.name} </span>
-									<span><f:link.email email="{faq.email}" /></span>
-									<span><f:link.external uri="{faq.url}" target="_blank">{faq.url}</f:link.external></span>
-								</div>
-							</f:if>
-						</f:if>
-
-						<f:if condition="{settings.display.asked_by.list}=='1'">
-							<f:if condition="{faq.asked_by}!=''">
-								<div class="tx-jsfaq-asked-by">
-									<label>
-										<f:translate key='tx_jsfaq_domain_model_faq.label.question_asked_by' /> : 
-										<span>{faq.asked_by}</span>
-									</label>
-								</div>
-							</f:if>
-						</f:if>
-
-						<f:if condition="{settings.display.category.list}=='1'">
-							<f:if condition="{faq.categoryName}!=''">
-								<div class="tx-jsfaq-category">
-									<label>
-										<f:translate key='tx_jsfaq_domain_model_faq.label.Category' /> :
-										<span>{faq.categoryName}</span>
-									</label>
-								</div>
-							</f:if>
-						</f:if>
-
-						<f:if condition="{settings.display.related_link.list}=='1'">
-							<f:if condition="{faq.related_link}">
-								<div class="tx-jsfaq-related-link-block">
-									<label>
-										<f:translate key='tx_jsfaq_domain_model_faq.label.related_links' />
-									</label>
-									<ul class="tx-jsfaq-related-links">
-										<f:for each="{faq.related_link}" as="links">
-											<li>
-												<f:link.external uri="{links}" target="_blank">{links}</f:link.external>
-											</li>
-										</f:for>
-									</ul>
-								</div>
-							</f:if>
-						</f:if>
-
-						<f:if condition="{settings.display.related_faq.list}=='1'">
-							<f:if condition="{faq.related_faq}">
-								<div class="tx-jsfaq-related-faq-block">
-									<label>
-										<f:translate key='tx_jsfaq_domain_model_faq.label.related_faq' />
-									</label>
-									<ul class="tx-jsfaq-related-faq">
-										<f:for each="{faq.related_faq}" as="relatedFAQ">
-											<li>
-												<f:link.action action="faq" controller="FAQ" arguments="{faq: relatedFAQ.uid}">
-													{relatedFAQ.question}
-												</f:link.action>
-											</li>
-										</f:for>
-									</ul>
-								</div>
-							</f:if>
-						</f:if>
-
+		<f:for each="{faq.answers}" as="answers">
+			<f:if condition="{answers.options}==1">
+				<f:then>
+					<div class="tx-jsfaq-decription">
+						<f:format.raw>{answers.description}</f:format.raw>
 					</div>
-				</f:if>
-			</div>
-		</div>
-	</f:for>
+				</f:then>
+				<f:else>
+					<div class="tx-jsfaq-image">
+						<f:if condition="{answers.image}>0">
+							<f:for each="{answers.media.image}" as="img" iteration="itemIteration">
+								<div>
+									<f:image src="{img.identifier}" width="{settings.list.image.width}" height="{settings.list.image.height}" alt="{faq.question}" title="{faq.question}" />
+								</div>
+							</f:for>
+						</f:if> 
+					</div>
+				</f:else>
+			</f:if>
+		</f:for>
 
-</pg:Paginate>
+		<f:if condition="{settings.list.display.additionalInfo}=='1'">
+
+			<div class="tx-jsfaq-additional-info">
+
+				<f:if condition="{settings.list.display.expert}=='1'">
+				 	<f:if condition="{faq.expert}>0">
+						<div class="tx-jsfaq-expert">
+							<label>
+								<f:translate key='tx_jsfaq_domain_model_faq.label.expert' /> : 
+							</label>
+							<span>{faq.name} </span>
+							<span><f:link.email email="{faq.email}" /></span>
+							<span><f:link.external uri="{faq.url}" target="_blank">{faq.url}</f:link.external></span>
+						</div>
+					</f:if>
+				</f:if>
+
+				<f:if condition="{settings.list.display.asked_by}=='1'">
+					<f:if condition="{faq.asked_by}!=''">
+						<div class="tx-jsfaq-asked-by">
+							<label>
+								<f:translate key='tx_jsfaq_domain_model_faq.label.question_asked_by' /> : 
+								<span>{faq.asked_by}</span>
+							</label>
+						</div>
+					</f:if>
+				</f:if>
+
+				<f:if condition="{settings.list.display.category}=='1'">
+					<f:if condition="{faq.categoryName}!=''">
+						<div class="tx-jsfaq-category">
+							<label>
+								<f:translate key='tx_jsfaq_domain_model_faq.label.Category' /> :
+								<span>{faq.categoryName}</span>
+							</label>
+						</div>
+					</f:if>
+				</f:if>
+
+				<f:if condition="{settings.list.display.related_link}=='1'">
+					<f:if condition="{faq.related_link}">
+						<div class="tx-jsfaq-related-link-block">
+							<label>
+								<f:translate key='tx_jsfaq_domain_model_faq.label.related_links' />
+							</label>
+							<ul class="tx-jsfaq-related-links">
+								<f:for each="{faq.related_link}" as="links">
+									<li>
+										<f:link.external uri="{links}" target="_blank">{links}</f:link.external>
+									</li>
+								</f:for>
+							</ul>
+						</div>
+					</f:if>
+				</f:if>
+
+				<f:if condition="{settings.list.display.related_faq}=='1'">
+					<f:if condition="{faq.related_faq}">
+						<div class="tx-jsfaq-related-faq-block">
+							<label>
+								<f:translate key='tx_jsfaq_domain_model_faq.label.related_faq' />
+							</label>
+							<ul class="tx-jsfaq-related-faq">
+								<f:for each="{faq.related_faq}" as="relatedFaq">
+									<li>
+										<f:link.action action="faq" controller="FAQ" arguments="{faq: relatedFaq.uid}">
+											{relatedFaq.question}
+										</f:link.action>
+									</li>
+								</f:for>
+							</ul>
+						</div>
+					</f:if>
+				</f:if>
+
+			</div>
+		</f:if>
+	</div>
+</div>

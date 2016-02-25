@@ -6,7 +6,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *
@@ -55,8 +55,6 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 */
 	public function faqAction() {
 
-		$GLOBALS['TSFE']->set_no_cache();
-
 		$detail = 0;
 
 		if ($this->request->hasArgument('faq')) {
@@ -69,24 +67,24 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		}
 
 		$template = $this->fAQService->missingConfiguration($this->settings);
+
+		if($template==1){
+			
+			$faq = $this->fAQRepository->getFAQData($this->settings, $detail);
+
+			if ($this->settings['main']['displayFAQ'] == 'CategoryGroupWise' && $detail==0) {
+				$faq = $this->fAQRepository->getFAQCategoryData($faq);
+			}
+
+			if (count($faq) == 0) {
+				$template = 3;
+			}
+			
+			$this->view->assign('FAQ', $faq);
+			$this->view->assign('detail', $detail);
+		}
 		
-		$faq = $this->fAQRepository->getFAQData($this->settings, $detail);
-
-		$categoryGroupWise = 0;
-
-		if ($this->settings['displayFAQ'] == 'categoryGroupWise' && $detail==0) {
-			$categoryGroupWise = 1;
-			$faq = $this->fAQRepository->getFAQCategoryData($faq);
-		}
-
-		if (count($faq) == 0) {
-			$template = 3;
-		}
-
-		$this->view->assign('FAQ', $faq);
 		$this->view->assign('template', $template);
-		$this->view->assign('detail', $detail);
-		$this->view->assign('categoryGroupWise', $categoryGroupWise);
 		
 		// Include Additional Data
 		$this->fAQService->includeAdditionalData($this->settings);

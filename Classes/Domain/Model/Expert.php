@@ -5,7 +5,7 @@ namespace JS\JsFaq\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2014 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *
  *  All rights reserved
  *

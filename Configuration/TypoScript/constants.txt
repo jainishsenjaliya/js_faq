@@ -15,12 +15,3 @@ plugin.tx_jsfaq {
 }
 
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-
-
-plugin.tx_jsfaq{
-
-	settings{
-	
-		configuration 		= 1
-	}
-}

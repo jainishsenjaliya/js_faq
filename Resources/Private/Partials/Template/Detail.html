@@ -16,7 +16,7 @@
 							<f:if condition="{answers.image}>0">
 								<f:for each="{answers.media.image}" as="img" iteration="itemIteration">
 									<div>
-										<f:image src="{img.identifier}" width="200" height="200" alt="{faq.question}" title="{faq.question}" />
+										<f:image src="{img.identifier}" width="{settings.detail.image.width}" height="{settings.detail.image.height}" alt="{faq.question}" title="{faq.question}" />
 									</div>
 								</f:for>
 							</f:if>
@@ -25,11 +25,11 @@
 				</f:if>
 			</f:for>
 
-			<f:if condition="{settings.display.additionalInfo.detail}=='1'">
+			<f:if condition="{settings.detail.display.additionalInfo}=='1'">
 
 				<div class="tx-jsfaq-additional-info">
 
-				 	<f:if condition="{settings.display.expert.detail}=='1'">
+				 	<f:if condition="{settings.detail.display.expert}=='1'">
 					 	<f:if condition="{faq.expert}>0">
 							<div class="tx-jsfaq-expert">
 								<label>
@@ -42,7 +42,7 @@
 						</f:if>
 					</f:if>
 
-					<f:if condition="{settings.display.asked_by.detail}=='1'">
+					<f:if condition="{settings.detail.display.asked_by}=='1'">
 						<f:if condition="{faq.asked_by}!=''">
 							<div class="tx-jsfaq-asked-by">
 								<label>
@@ -53,7 +53,7 @@
 						</f:if>
 					</f:if>
 
-					<f:if condition="{settings.display.category.detail}=='1'">
+					<f:if condition="{settings.detail.display.category}=='1'">
 						<f:if condition="{faq.categoryName}!=''">
 							<div class="tx-jsfaq-category">
 								<label>
@@ -64,7 +64,7 @@
 						</f:if>
 					</f:if>
 
-					<f:if condition="{settings.display.related_link.detail}=='1'">
+					<f:if condition="{settings.detail.display.related_link}=='1'">
 						<f:if condition="{faq.related_link}">
 							<div class="tx-jsfaq-related-link-block">
 								<label>
@@ -81,7 +81,7 @@
 						</f:if>
 					</f:if>
 
-					<f:if condition="{settings.display.related_faq.detail}=='1'">
+					<f:if condition="{settings.detail.display.related_faq}=='1'">
 						<f:if condition="{faq.related_faq}">
 							<div class="tx-jsfaq-related-faq-block">
 								<label>

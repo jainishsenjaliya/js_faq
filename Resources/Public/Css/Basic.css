@@ -1,5 +1,5 @@
 /*
- *  (c) 2015 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *  All rights reserved
  *  Basic Layout 
 */
@@ -32,21 +32,77 @@
 	border: 1px solid #ddd;
 	line-height: normal;
 	padding: 10px 0px 10px 2%;
-/*	position: relative; */
+	position: relative; 
 }
 
 /* 
 .tx-jsfaq .tx-jsfaq-header span{background: #FFF; width: 85%; position: absolute; left: 0; top: 0; padding: 10px 30px 10px 10px;}
-*/
 
 .tx-jsfaq .tx-jsfaq-header.tx-jsfaq-toggle-minus {
 	font-weight: bold;
 	background:url(../Images/up-arrow-black.png) no-repeat 97% center;
 }
+
 .tx-jsfaq .tx-jsfaq-header.tx-jsfaq-toggle-plus {
 	font-weight: normal;
 	background:url(../Images/down-arrow-black.png) no-repeat 97% center;
 }
+*/
+
+.tx-jsfaq-header.tx-jsfaq-toggle-minus::before {
+	background: #000 none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 24px;
+	top: 15px;
+	transform: skewX(-30deg);
+	-webkit-transform: skewX(-30deg);
+	-o-transform: skewX(-30deg);
+	-ms-transform: skewX(-30deg);
+	width: 4px;
+}
+.tx-jsfaq-header.tx-jsfaq-toggle-minus::after {
+	background: #000 none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 19px;
+	top: 15px;
+	transform: skewX(30deg);
+	-webkit-transform: skewX(30deg);
+	-o-transform: skewX(30deg);
+	-ms-transform: skewX(30deg);
+	width: 4px;
+}
+
+.tx-jsfaq-header.tx-jsfaq-toggle-plus::before {
+	background: #000 none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 18px;
+	top: 15px;
+	transform: skewX(-30deg);
+	-webkit-transform: skewX(-30deg);
+	-o-transform: skewX(-30deg);
+	-ms-transform: skewX(-30deg);
+	width: 4px;
+}
+.tx-jsfaq-header.tx-jsfaq-toggle-plus::after {
+	background: #000 none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 23px;
+	top: 15px;
+	transform: skewX(30deg);
+	-webkit-transform: skewX(30deg);
+	-o-transform: skewX(30deg);
+	-ms-transform: skewX(30deg);
+	width: 4px;
+}
+
 .tx-jsfaq .tx-jsfaq-toggle-show-all, .tx-jsfaq .tx-jsfaq-toggle-hide-all
 {
 	background: none repeat scroll 0 0 #fff;
@@ -135,12 +191,13 @@
 }
 .tx-jsfaq .tx-jsfaq-details {
 	clear: both;
-	width: 96%;
 	background: none repeat scroll 0 0 #fff;
 	border:1px solid #ddd;
 	border-top:none;
+	display: none;
 	padding: 2%;
 	overflow: hidden;
+	width: 96%;
 }
 .tx-jsfaq-detail .header {
 	font-size: 16px;

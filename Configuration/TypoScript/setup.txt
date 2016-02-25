@@ -50,12 +50,8 @@ plugin.tx_jsfaq._CSS_DEFAULT_STYLE (
 
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
 
-
 plugin.tx_jsfaq{
 	settings{
-		configuration	= {$plugin.tx_jsfaq.settings.configuration}
+		configuration	= 1
 	}
 }
-
-config.tx_jsfaq.features.skipDefaultArguments = 1
-plugin.tx_jsfaq.features.skipDefaultArguments = 1

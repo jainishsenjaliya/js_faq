@@ -8,12 +8,12 @@
 		<f:then>
 			<f:if condition="{detail}==0">
 				<f:then>
-					<f:if condition="{categoryGroupWise}==0">
+					<f:if condition="{settings.main.displayFAQ}">
 						<f:then>
-							<f:render partial="Template/FAQ" arguments="{FAQ:FAQ}" />
+							<f:render partial="Template/{settings.main.displayFAQ}" arguments="{FAQ:FAQ}" />
 						</f:then>
 						<f:else>
-							<f:render partial="Template/CategoryGroupWiseFAQ" arguments="{FAQ:FAQ}" />
+							<f:render partial="Template/Default" arguments="{FAQ:FAQ}" />
 						</f:else>
 					</f:if>
 				</f:then>

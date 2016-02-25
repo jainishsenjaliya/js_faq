@@ -3,41 +3,41 @@
 		<langDisable>1</langDisable>
 	</meta>
 	<sheets>
-		<generalSetting>
+		<main>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.generalSetting</sheetTitle>
+					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.order>
+					<settings.main.order>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order</label>
 							<config>
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order.I.0</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order.sorting</numIndex>
 										<numIndex index="1">sorting</numIndex>
 									</numIndex>
 									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order.I.1</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order.question</numIndex>
 										<numIndex index="1">question</numIndex>
 									</numIndex>
 									<numIndex index="2" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order.I.2</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order.crdate</numIndex>
 										<numIndex index="1">crdate</numIndex>
 									</numIndex>
 									<numIndex index="3" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order.I.3</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order.tstamp</numIndex>
 										<numIndex index="1">tstamp</numIndex>
 									</numIndex>
 									<numIndex index="4" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order.I.4</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order.expert</numIndex>
 										<numIndex index="1">expert</numIndex>
 									</numIndex>
 									<numIndex index="5" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.order.I.5</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.order.asked_by</numIndex>
 										<numIndex index="1">asked_by</numIndex>
 									</numIndex>
 								</items>
@@ -46,19 +46,19 @@
 								<default>sorting</default>
 							</config>
 						</TCEforms>
-					</settings.order>
-					<settings.orderType>
+					</settings.main.order>
+					<settings.main.orderType>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.orderType</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.orderType</label>
 							<config>
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.orderType.I.O</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.orderType.desecending</numIndex>
 										<numIndex index="1">desc</numIndex>
 									</numIndex>
 									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.orderType.I.1</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.orderType.asecending</numIndex>
 										<numIndex index="1">asc</numIndex>
 									</numIndex>
 								</items>
@@ -67,36 +67,55 @@
 								<default>desc</default>
 							</config>
 						</TCEforms>
-					</settings.orderType>
-					<settings.displayFAQ>
+					</settings.main.orderType>
+					<settings.main.displayFAQ>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.displayFAQ</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.displayFAQ</label>
 							<config>
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.displayFAQ.I.O</numIndex>
-										<numIndex index="1"></numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.displayFAQ.default</numIndex>
+										<numIndex index="1">Default</numIndex>
 									</numIndex>
 									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.displayFAQ.I.1</numIndex>
-										<numIndex index="1">categoryGroupWise</numIndex>
+										<numIndex index="0">LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.displayFAQ.categoryGroupWise</numIndex>
+										<numIndex index="1">CategoryGroupWise</numIndex>
 									</numIndex>
 								</items>
 								<maxitems>1</maxitems>
 								<size>1</size>
-								<default></default>
+								<default>Default</default>
 							</config>
 						</TCEforms>
-					</settings.displayFAQ>
-					<settings.storagePID>
+					</settings.main.displayFAQ>
+					<settings.main.categories>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.storagePID</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.categories</label>
+							<config>
+								<type>select</type>
+								<foreign_table>tx_jsfaq_domain_model_category</foreign_table>
+								<foreign_table_where> AND tx_jsfaq_domain_model_category.hidden = 0 ORDER BY tx_jsfaq_domain_model_category.name</foreign_table_where>
+								<size>5</size>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<autoSizeMax>30</autoSizeMax>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.main.categories>
+					<settings.main.startingPoint>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.startingPoint</label>
 							<config>
 								<type>group</type>
 								<internal_type>db</internal_type>
 								<allowed>pages</allowed>
-								<size>3</size>
+								<size>2</size>
 								<autoSizeMax>30</autoSizeMax>
 								<maxitems>99</maxitems>
 								<minitems>0</minitems>
@@ -109,231 +128,252 @@
 								</wizards>
 							</config>
 						</TCEforms>
-					</settings.storagePID>
+					</settings.main.startingPoint>
 				</el>
 			</ROOT>
-		</generalSetting>
-		<categorySetting>
+		</main>
+		<list>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.category</sheetTitle>
+					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.category>
+					<settings.list.image.width>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.category</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.image.width</label>
 							<config>
-								<type>select</type>
-								<foreign_table>tx_jsfaq_domain_model_category</foreign_table>
+								<type>input</type>
 								<size>5</size>
-								<maxitems>99</maxitems>
-								<minitems>0</minitems>
-								<autoSizeMax>30</autoSizeMax>
-								<wizards>
-									<suggest>
-										<type>suggest</type>
-									</suggest>
-								</wizards>
+								<max>5</max>
+								<default>300c</default>
+								<eval>trim</eval>
 							</config>
 						</TCEforms>
-					</settings.category>
-				</el>
-			</ROOT>
-		</categorySetting>
-		<listSetting>
-			<ROOT>
-				<TCEforms>
-					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.listSetting</sheetTitle>
-				</TCEforms>
-				<type>array</type>
-				<el>
-					<settings.display.additionalInfo.list>
+					</settings.list.image.width>
+					<settings.list.image.height>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.additionalInfo</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.image.height</label>
+							<config>
+								<type>input</type>
+								<size>5</size>
+								<max>5</max>
+								<default></default>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.list.image.height>
+					<settings.list.display.additionalInfo>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.display.additionalInfo</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
 						</TCEforms>
-					</settings.display.additionalInfo.list>
-					<settings.display.expert.list>
+					</settings.list.display.additionalInfo>
+					<settings.list.display.expert>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.expert</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.display.expert</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.list:=:1</displayCond>
+							<displayCond>FIELD:settings.list.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.expert.list>
-					<settings.display.asked_by.list>
+					</settings.list.display.expert>
+					<settings.list.display.asked_by>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.asked_by</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.display.asked_by</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.list:=:1</displayCond>
+							<displayCond>FIELD:settings.list.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.asked_by.list>
-					<settings.display.related_link.list>
+					</settings.list.display.asked_by>
+					<settings.list.display.category>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.related_link</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.display.category</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.list:=:1</displayCond>
+							<displayCond>FIELD:settings.list.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.related_link.list>
-					<settings.display.category.list>
+					</settings.list.display.category>
+					<settings.list.display.related_link>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.category</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.display.related_link</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.list:=:1</displayCond>
+							<displayCond>FIELD:settings.list.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.category.list>
-					<settings.display.related_faq.list>
+					</settings.list.display.related_link>
+					<settings.list.display.related_faq>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.related_faq</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:list.display.related_faq</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.list:=:1</displayCond>
+							<displayCond>FIELD:settings.list.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.related_faq.list>
+					</settings.list.display.related_faq>
 				</el>
 			</ROOT>
-		</listSetting>
-		<detailSetting>
+		</list>
+		<detail>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.detailSetting</sheetTitle>
+					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.display.additionalInfo.detail>
+					<settings.detail.image.width>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.additionalInfo</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.image.width</label>
+							<config>
+								<type>input</type>
+								<size>5</size>
+								<max>5</max>
+								<default>500c</default>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.detail.image.width>
+					<settings.detail.image.height>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.image.height</label>
+							<config>
+								<type>input</type>
+								<size>5</size>
+								<max>5</max>
+								<default></default>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.detail.image.height>
+					<settings.detail.display.additionalInfo>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.display.additionalInfo</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>check</type>
 							</config>
 						</TCEforms>
-					</settings.display.additionalInfo.detail>
-					<settings.display.expert.detail>
+					</settings.detail.display.additionalInfo>
+					<settings.detail.display.expert>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.expert</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.display.expert</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.detail:=:1</displayCond>
+							<displayCond>FIELD:settings.detail.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.expert.detail>
-					<settings.display.asked_by.detail>
+					</settings.detail.display.expert>
+					<settings.detail.display.asked_by>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.asked_by</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.display.asked_by</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.detail:=:1</displayCond>
+							<displayCond>FIELD:settings.detail.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.asked_by.detail>
-					<settings.display.related_link.detail>
+					</settings.detail.display.asked_by>
+					<settings.detail.display.category>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.related_link</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.display.category</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.detail:=:1</displayCond>
+							<displayCond>FIELD:settings.detail.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.related_link.detail>
-					<settings.display.category.detail>
+					</settings.detail.display.category>
+					<settings.detail.display.related_link>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.category</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.display.related_link</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.detail:=:1</displayCond>
+							<displayCond>FIELD:settings.detail.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.category.detail>
-					<settings.display.related_faq.detail>
+					</settings.detail.display.related_link>
+					<settings.detail.display.related_faq>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.display.related_faq</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:detail.display.related_faq</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
-							<displayCond>FIELD:settings.display.additionalInfo.detail:=:1</displayCond>
+							<displayCond>FIELD:settings.detail.display.additionalInfo:=:1</displayCond>
 						</TCEforms>
-					</settings.display.related_faq.detail>
+					</settings.detail.display.related_faq>
 				</el>
 			</ROOT>
-		</detailSetting>
-		 <otherSetting>
+		</detail>
+		<additional>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.otherSetting</sheetTitle>
+					<sheetTitle>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:additional</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.jQueryLib>
+					<settings.additional.javascript.jQueryLib.include>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.jQueryLib</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:additional.javascript.jQueryLib.include</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.additional.javascript.jQueryLib.include>
+					<settings.additional.javascript.jQueryLib.includeInFooter>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:additional.javascript.jQueryLib.includeInFooter</label>
+							<config>
+								<type>check</type>
+								<default>1</default>
+							</config>
+							<displayCond>FIELD:settings.additional.javascript.jQueryLib.include:=:1</displayCond>
+						</TCEforms>
+					</settings.additional.javascript.jQueryLib.includeInFooter>
+					<settings.additional.css.fancy.include>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:additional.css.fancy.include</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
 							</config>
 						</TCEforms>
-					</settings.jQueryLib>
-					<settings.includeJSinFooter>
+					</settings.additional.css.fancy.include>
+					<settings.additional.css.responsive.include>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.includeJSinFooter</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:additional.css.responsive.include</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
 						</TCEforms>
-					</settings.includeJSinFooter>
-					<settings.fancyCSS>
+					</settings.additional.css.responsive.include>
+					<settings.additional.css.includeInFooter>
 						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.fancyCSS</label>
-							<config>
-								<type>check</type>
-								<default>0</default>
-							</config>
-						</TCEforms>
-					</settings.fancyCSS>
-					<settings.responsiveLayout>
-						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.responsiveLayout</label>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:additional.css.includeInFooter</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
 						</TCEforms>
-					</settings.responsiveLayout>
-					<settings.includeCSSinFooter>
-						<TCEforms>
-							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:settings.includeCSSinFooter</label>
-							<config>
-								<type>check</type>
-								<default>1</default>
-							</config>
-						</TCEforms>
-					</settings.includeCSSinFooter>
+					</settings.additional.css.includeInFooter>
 				</el>
 			</ROOT>
-		</otherSetting>
+		</additional>
 	</sheets>
 </T3DataStructure>

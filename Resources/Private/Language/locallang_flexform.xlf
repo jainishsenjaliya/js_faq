@@ -1,133 +1,143 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-08T11:00:08Z" product-name="js_faq">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-25T18:27:35Z" product-name="js_faq">
 		<header/>
 		<body>
 						
-			<trans-unit id="settings.generalSetting">
+			<trans-unit id="main">
 				<source>General Settings</source>
 			</trans-unit>
-			
-			<trans-unit id="settings.category">
-				<source>Categories</source>
-			</trans-unit>
 
-			<trans-unit id="settings.listSetting">
-				<source>Display settings - List page</source>
-			</trans-unit>
-
-			<trans-unit id="settings.detailSetting">
-				<source>Display settings - detail page</source>
-			</trans-unit>
-			
-			<trans-unit id="settings.otherSetting">
-				<source>Other Settings</source>
-			</trans-unit>
-
-			<trans-unit id="settings.recordPerPage">
-				<source>Record Per page</source>
-			</trans-unit>
-
-			<trans-unit id="settings.order">
+			<trans-unit id="main.order">
 				<source>Order By</source>
 			</trans-unit>
-
-			<trans-unit id="settings.order.I.0">
+			<trans-unit id="main.order.sorting">
 				<source>Sorting</source>
 			</trans-unit>
-
-			<trans-unit id="settings.order.I.1">
+			<trans-unit id="main.order.question">
 				<source>Question</source>
 			</trans-unit>
-
-			<trans-unit id="settings.order.I.2">
+			<trans-unit id="main.order.crdate">
 				<source>Created data</source>
 			</trans-unit>
-
-			<trans-unit id="settings.order.I.3">
+			<trans-unit id="main.order.tstamp">
 				<source>Modified data</source>
 			</trans-unit>
-
-			<trans-unit id="settings.order.I.4">
+			<trans-unit id="main.order.expert">
 				<source>Expert</source>
 			</trans-unit>
-
-			<trans-unit id="settings.order.I.5">
+			<trans-unit id="main.order.asked_by">
 				<source>Asked By</source>
 			</trans-unit>
 
-			<trans-unit id="settings.orderType">
+			<trans-unit id="main.orderType">
 				<source>Order Type</source>
 			</trans-unit>
-
-			<trans-unit id="settings.orderType.I.O">
+			<trans-unit id="main.orderType.desecending">
 				<source>Desecending</source>
 			</trans-unit>
-
-			<trans-unit id="settings.orderType.I.1">
+			<trans-unit id="main.orderType.asecending">
 				<source>Asecending</source>
 			</trans-unit>
 
-			<trans-unit id="settings.displayFAQ">
+			<trans-unit id="main.displayFAQ">
 				<source>Display FAQ List</source>
 			</trans-unit>
-
-			<trans-unit id="settings.displayFAQ.I.O">
+			<trans-unit id="main.displayFAQ.default">
 				<source>By Default</source>
 			</trans-unit>
-
-			<trans-unit id="settings.displayFAQ.I.1">
+			<trans-unit id="main.displayFAQ.categoryGroupWise">
 				<source>Category group wise</source>
 			</trans-unit>
-			
-			<trans-unit id="settings.storagePID">
+
+			<trans-unit id="main.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="main.recordPerPage">
+				<source>Record Per page</source>
+			</trans-unit>
+			<trans-unit id="main.startingPoint">
 				<source>Starting Point</source>
 			</trans-unit>
 
-			<trans-unit id="settings.display.additionalInfo">
+
+			<trans-unit id="list">
+				<source>Display settings - List page</source>
+			</trans-unit>
+			<trans-unit id="list.image.width">
+				<source>Image Width</source>
+			</trans-unit>
+			<trans-unit id="list.image.height">
+				<source>Image Height</source>
+			</trans-unit>
+			<trans-unit id="list.display.additionalInfo">
 				<source>Display additional Information</source>
 			</trans-unit>
-
-			<trans-unit id="settings.display.expert">
+			<trans-unit id="list.display.expert">
 				<source>Display Expert</source>
 			</trans-unit>
-
-			<trans-unit id="settings.display.asked_by">
+			<trans-unit id="list.display.asked_by">
 				<source>Display Asked by</source>
 			</trans-unit>
-
-			<trans-unit id="settings.display.related_link">
+			<trans-unit id="list.display.related_link">
 				<source>Display Related Link</source>
 			</trans-unit>
-
-			<trans-unit id="settings.display.category">
+			<trans-unit id="list.display.category">
 				<source>Display Category</source>
 			</trans-unit>
-
-			<trans-unit id="settings.display.related_faq">
+			<trans-unit id="list.display.related_faq">
 				<source>Display Related FAQ</source>
 			</trans-unit>
+
+
+			<trans-unit id="detail">
+				<source>Display settings - detail page</source>
+			</trans-unit>
+			<trans-unit id="detail.image.width">
+				<source>Image Width</source>
+			</trans-unit>
+			<trans-unit id="detail.image.height">
+				<source>Image Height</source>
+			</trans-unit>
+			<trans-unit id="detail.display.additionalInfo">
+				<source>Display additional Information</source>
+			</trans-unit>
+			<trans-unit id="detail.display.expert">
+				<source>Display Expert</source>
+			</trans-unit>
+			<trans-unit id="detail.display.asked_by">
+				<source>Display Asked by</source>
+			</trans-unit>
+			<trans-unit id="detail.display.related_link">
+				<source>Display Related Link</source>
+			</trans-unit>
+			<trans-unit id="detail.display.category">
+				<source>Display Category</source>
+			</trans-unit>
+			<trans-unit id="detail.display.related_faq">
+				<source>Display Related FAQ</source>
+			</trans-unit>
+
 			
-			<trans-unit id="settings.jQueryLib">
+			<trans-unit id="additional">
+				<source>Other Settings</source>
+			</trans-unit>
+			<trans-unit id="additional.javascript.jQueryLib.include">
 				<source>Include jQuery Library</source>
 			</trans-unit>
-			
-			<trans-unit id="settings.fancyCSS">
+			<trans-unit id="additional.javascript.jQueryLib.includeInFooter">
+				<source>Include jQuery Library in Footer</source>
+			</trans-unit>
+			<trans-unit id="additional.css.fancy.include">
 				<source>Include Fancy CSS</source>
 			</trans-unit>
-			
-			<trans-unit id="settings.responsiveLayout">
+			<trans-unit id="additional.css.responsive.include">
 				<source>Mobile compatible Layout</source>
 			</trans-unit>
-
-			<trans-unit id="settings.includeJSinFooter">
-				<source>Include Javascript in Footer</source>
-			</trans-unit>
-			
-			<trans-unit id="settings.includeCSSinFooter">
+			<trans-unit id="additional.css.includeInFooter">
 				<source>Include Style in Footer</source>
 			</trans-unit>
-
+			
 		</body>
 	</file>
 </xliff>

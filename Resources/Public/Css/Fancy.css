@@ -37,16 +37,72 @@
 	border: 1px solid #ddd;
 	line-height: normal;
 	padding: 10px 0px 10px 2%;
+	position: relative;
 }
 .tx-jsfaq .tx-jsfaq-header.tx-jsfaq-toggle-minus {
 	font-weight: bold;
-	background:url(../Images/up-arrow-white.png) no-repeat 97% center #4d90fe;
+	background:#4d90fe;
 	color: #fff;
 }
 .tx-jsfaq .tx-jsfaq-header.tx-jsfaq-toggle-plus {
 	font-weight: normal;
-	background:url(../Images/down-arrow-blue.png) no-repeat 97% center;
 }
+
+.tx-jsfaq-header.tx-jsfaq-toggle-minus::before {
+	background: #fff none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 24px;
+	top: 15px;
+	transform: skewX(-30deg);
+	-webkit-transform: skewX(-30deg);
+	-o-transform: skewX(-30deg);
+	-ms-transform: skewX(-30deg);
+	width: 4px;
+}
+.tx-jsfaq-header.tx-jsfaq-toggle-minus::after {
+	background: #fff none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 19px;
+	top: 15px;
+	transform: skewX(30deg);
+	-webkit-transform: skewX(30deg);
+	-o-transform: skewX(30deg);
+	-ms-transform: skewX(30deg);
+	width: 4px;
+}
+
+.tx-jsfaq-header.tx-jsfaq-toggle-plus::before {
+	background: #4d90fe none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 18px;
+	top: 15px;
+	transform: skewX(-30deg);
+	-webkit-transform: skewX(-30deg);
+	-o-transform: skewX(-30deg);
+	-ms-transform: skewX(-30deg);
+	width: 4px;
+}
+.tx-jsfaq-header.tx-jsfaq-toggle-plus::after {
+	background: #4d90fe none repeat scroll 0 0;
+	content: "";
+	height: 9px;
+	position: absolute;
+	right: 23px;
+	top: 15px;
+	transform: skewX(30deg);
+	-webkit-transform: skewX(30deg);
+	-o-transform: skewX(30deg);
+	-ms-transform: skewX(30deg);
+	width: 4px;
+}
+
+
 .tx-jsfaq .tx-jsfaq-toggle-show-all, .tx-jsfaq .tx-jsfaq-toggle-hide-all,
 .tx-jsfaq .tx-jsfaq-toggle-show-category-all, .tx-jsfaq .tx-jsfaq-toggle-hide-category-all {
 	
@@ -151,12 +207,13 @@
 }
 .tx-jsfaq .tx-jsfaq-details {
 	clear: both;
-	width: 96%;
 	background: none repeat scroll 0 0 #fff;
 	border:1px solid #ddd;
 	border-top:none;
+	display: none;
 	padding: 2%;
 	overflow: hidden;
+	width: 96%;
 }
 .tx-jsfaq-detail .header {
 	font-size: 18px;

@@ -1,0 +1,15 @@
+{namespace pg=JS\JsFaq\ViewHelpers}
+
+<div class="toggale">
+	<input type="button" value="Show all" class="tx-jsfaq-toggle-show-all">
+		/
+	<input type="button" value="Hide all" class="tx-jsfaq-toggle-hide-all">
+</div>
+
+<pg:Paginate objects="{FAQ}" as="paginatedObjekt" configuration="{itemsPerPage: 10, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 4, maximumVisiblePages: 3}">
+
+	<f:for each="{paginatedObjekt}" as="faq">
+		<f:render partial="Template/FAQ" arguments="{faq:faq}" />
+	</f:for>
+
+</pg:Paginate>
