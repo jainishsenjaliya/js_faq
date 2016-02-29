@@ -50,9 +50,8 @@ FAQ - Frequently Asked Questions
 	**Table of Contents**
 
 .. toctree::
-	:maxdepth: 5
+	:maxdepth: 3
 	:titlesonly:
-	:glob:
 
 	Introduction/Index
 	User/Index
@@ -62,4 +61,4 @@ FAQ - Frequently Asked Questions
 	KnownProblems/Index
 	ToDoList/Index
 	ChangeLog/Index
-	Targets
+	Links

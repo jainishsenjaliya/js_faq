@@ -29,23 +29,25 @@ namespace JS\JsFaq\Controller;
 /**
  * ContentController
  */
-class ContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * contentRepository
-	 *
-	 * @var \JS\JsFaq\Domain\Repository\ContentRepository
-	 * @inject
-	 */
-	protected $contentRepository = NULL;
-
-	/**
-	 * action content
-	 *
-	 * @return void
-	 */
-	public function contentAction() {
-		
-	}
+    /**
+     * contentRepository
+     *
+     * @var \JS\JsFaq\Domain\Repository\ContentRepository
+     * @inject
+     */
+    protected $contentRepository = NULL;
+    
+    /**
+     * action content
+     *
+     * @return void
+     */
+    public function contentAction()
+    {
+        
+    }
 
 }

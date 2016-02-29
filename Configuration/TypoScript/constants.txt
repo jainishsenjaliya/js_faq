@@ -1,15 +1,15 @@
 
-plugin.tx_jsfaq {
+plugin.tx_jsfaq_faq {
 	view {
-		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template root (FE)
+		# cat=plugin.tx_jsfaq_faq/file; type=string; label=Path to template root (FE)
 		templateRootPath = EXT:js_faq/Resources/Private/Templates/
-		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template partials (FE)
+		# cat=plugin.tx_jsfaq_faq/file; type=string; label=Path to template partials (FE)
 		partialRootPath = EXT:js_faq/Resources/Private/Partials/
-		# cat=plugin.tx_jsfaq/file; type=string; label=Path to template layouts (FE)
+		# cat=plugin.tx_jsfaq_faq/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:js_faq/Resources/Private/Layouts/
 	}
 	persistence {
-		# cat=plugin.tx_jsfaq//a; type=string; label=Default storage PID
+		# cat=plugin.tx_jsfaq_faq//a; type=string; label=Default storage PID
 		storagePid =
 	}
 }

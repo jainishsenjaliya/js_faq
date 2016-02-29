@@ -29,18 +29,21 @@ namespace JS\JsFaq\Tests\Unit\Controller;
  *
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ExpertControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class ExpertControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 
 	/**
 	 * @var \JS\JsFaq\Controller\ExpertController
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = $this->getMock('JS\\JsFaq\\Controller\\ExpertController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 

@@ -29,7 +29,8 @@ namespace JS\JsFaq\Domain\Repository;
 /**
  * The repository for Experts
  */
-class ExpertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class ExpertRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	
+    
 }

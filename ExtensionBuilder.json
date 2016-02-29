@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    35,
-                    96
+                    253,
+                    38
                 ]
             },
             "name": "New Model Object",
@@ -87,8 +87,8 @@
         {
             "config": {
                 "position": [
-                    263,
-                    93
+                    509,
+                    39
                 ]
             },
             "name": "New Model Object",
@@ -161,8 +161,8 @@
         {
             "config": {
                 "position": [
-                    500,
-                    90
+                    811,
+                    41
                 ]
             },
             "name": "New Model Object",
@@ -274,8 +274,8 @@
         {
             "config": {
                 "position": [
-                    35,
-                    239
+                    259,
+                    345
                 ]
             },
             "name": "New Model Object",
@@ -354,17 +354,19 @@
         "emConf": {
             "category": "fe",
             "custom_category": "",
-            "dependsOn": "typo3 => 6.0.0 - 6.2.99",
+            "dependsOn": "typo3 => 6.2.0 - 7.6.4",
             "disableLocalization": false,
             "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
             "sourceLanguage": "en",
             "state": "stable",
-            "targetVersion": "6.2",
-            "version": "3.0.0"
+            "targetVersion": "7.6.0-7.6.99",
+            "version": "4.0.0"
         },
         "extensionKey": "js_faq",
         "name": " FAQ - Frequently Asked Questions",
         "originalExtensionKey": "js_faq",
+        "originalVendorName": "JS",
         "persons": [
             {
                 "company": "",
@@ -382,15 +384,6 @@
                 },
                 "key": "faq",
                 "name": " FAQ - Frequently Asked Questions"
-            },
-            {
-                "actions": {
-                    "controllerActionCombinations": "Category=>category\n",
-                    "noncacheableActions": "Category=>category",
-                    "switchableActions": ""
-                },
-                "key": "category",
-                "name": " FAQ - Category"
             }
         ],
         "vendorName": "JS"
@@ -446,8 +439,8 @@
         }
     ],
     "log": {
-        "last_modified": "2016-02-25 06:27",
-        "extension_builder_version": "6.2.0",
+        "last_modified": "2016-02-29 04:47",
+        "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }
 }

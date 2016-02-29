@@ -1,16 +1,12 @@
 
-plugin.tx_jsfaq {
+plugin.tx_jsfaq_faq {
 	view {
-		templateRootPath = {$plugin.tx_jsfaq.view.templateRootPath}
-		partialRootPath = {$plugin.tx_jsfaq.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_jsfaq.view.layoutRootPath}
+		templateRootPaths.0 = {$plugin.tx_jsfaq_faq.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_jsfaq_faq.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_jsfaq_faq.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_jsfaq.persistence.storagePid}
-	}
-	features {
-		# uncomment the following line to enable the new Property Mapper.
-		# rewrittenPropertyMapper = 1
+		storagePid = {$plugin.tx_jsfaq_faq.persistence.storagePid}
 	}
 }
 

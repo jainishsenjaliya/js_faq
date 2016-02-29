@@ -29,110 +29,119 @@ namespace JS\JsFaq\Domain\Model;
 /**
  * Category
  */
-class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * name
-	 *
-	 * @var string
-	 */
-	protected $name = '';
-
-	/**
-	 * teaser
-	 *
-	 * @var string
-	 */
-	protected $teaser = '';
-
-	/**
-	 * image
-	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-	 */
-	protected $image = NULL;
-
-	/**
-	 * shortcutToPage
-	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-	 */
-	protected $shortcutToPage = NULL;
-
-	/**
-	 * Returns the image
-	 *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-	 */
-	public function getImage() {
-		return $this->image;
-	}
-
-	/**
-	 * Sets the image
-	 *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-	 * @return void
-	 */
-	public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image) {
-		$this->image = $image;
-	}
-
-	/**
-	 * Returns the shortcutToPage
-	 *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $shortcutToPage
-	 */
-	public function getShortcutToPage() {
-		return $this->shortcutToPage;
-	}
-
-	/**
-	 * Sets the shortcutToPage
-	 *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $shortcutToPage
-	 * @return void
-	 */
-	public function setShortcutToPage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $shortcutToPage) {
-		$this->shortcutToPage = $shortcutToPage;
-	}
-
-	/**
-	 * Returns the name
-	 *
-	 * @return string name
-	 */
-	public function getName() {
-		return $this->name;
-	}
-
-	/**
-	 * Sets the name
-	 *
-	 * @param string $name
-	 * @return string name
-	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
-
-	/**
-	 * Returns the teaser
-	 *
-	 * @return string $teaser
-	 */
-	public function getTeaser() {
-		return $this->teaser;
-	}
-
-	/**
-	 * Sets the teaser
-	 *
-	 * @param string $teaser
-	 * @return void
-	 */
-	public function setTeaser($teaser) {
-		$this->teaser = $teaser;
-	}
+    /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = '';
+    
+    /**
+     * teaser
+     *
+     * @var string
+     */
+    protected $teaser = '';
+    
+    /**
+     * image
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $image = NULL;
+    
+    /**
+     * shortcutToPage
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $shortcutToPage = NULL;
+    
+    /**
+     * Returns the image
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
+    /**
+     * Sets the image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->image = $image;
+    }
+    
+    /**
+     * Returns the shortcutToPage
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $shortcutToPage
+     */
+    public function getShortcutToPage()
+    {
+        return $this->shortcutToPage;
+    }
+    
+    /**
+     * Sets the shortcutToPage
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $shortcutToPage
+     * @return void
+     */
+    public function setShortcutToPage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $shortcutToPage)
+    {
+        $this->shortcutToPage = $shortcutToPage;
+    }
+    
+    /**
+     * Returns the name
+     *
+     * @return string name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    /**
+     * Sets the name
+     *
+     * @param string $name
+     * @return string name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    
+    /**
+     * Returns the teaser
+     *
+     * @return string $teaser
+     */
+    public function getTeaser()
+    {
+        return $this->teaser;
+    }
+    
+    /**
+     * Sets the teaser
+     *
+     * @param string $teaser
+     * @return void
+     */
+    public function setTeaser($teaser)
+    {
+        $this->teaser = $teaser;
+    }
 
 }

@@ -29,7 +29,14 @@ namespace JS\JsFaq\Domain\Repository;
 /**
  * The repository for Contents
  */
-class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	
+    /**
+     * @var array
+     */
+    protected $defaultOrderings = array(
+        'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+    );
+
 }

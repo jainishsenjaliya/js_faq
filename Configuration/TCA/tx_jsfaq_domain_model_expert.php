@@ -1,10 +1,27 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+return array(
+	'ctrl' => array(
+		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_expert',
+		'label' => 'name',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
 
-$GLOBALS['TCA']['tx_jsfaq_domain_model_expert'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_jsfaq_domain_model_expert']['ctrl'],
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'name,email,url,',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('js_faq') . 'Resources/Public/Icons/tx_jsfaq_domain_model_expert.gif'
+	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, email, url',
 	),
@@ -21,6 +38,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_expert'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
@@ -35,6 +53,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_expert'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array('', 0),
 				),
@@ -126,5 +145,4 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_expert'] = array(
 		),
 		
 	),
-);
-## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+);## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

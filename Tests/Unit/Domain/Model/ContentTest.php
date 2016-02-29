@@ -34,47 +34,40 @@ namespace JS\JsFaq\Tests\Unit\Domain\Model;
  *
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ContentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class ContentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \JS\JsFaq\Domain\Model\Content
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \JS\JsFaq\Domain\Model\Content();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getOptionsReturnsInitialValueForInteger() {
-		$this->assertSame(
-			0,
-			$this->subject->getOptions()
-		);
-	}
+	public function getOptionsReturnsInitialValueForInt()
+	{	}
 
 	/**
 	 * @test
 	 */
-	public function setOptionsForIntegerSetsOptions() {
-		$this->subject->setOptions(12);
-
-		$this->assertAttributeEquals(
-			12,
-			'options',
-			$this->subject
-		);
-	}
+	public function setOptionsForIntSetsOptions()
+	{	}
 
 	/**
 	 * @test
 	 */
-	public function getDescriptionReturnsInitialValueForString() {
+	public function getDescriptionReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getDescription()
@@ -84,7 +77,8 @@ class ContentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setDescriptionForStringSetsDescription() {
+	public function setDescriptionForStringSetsDescription()
+	{
 		$this->subject->setDescription('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -97,7 +91,8 @@ class ContentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getImageReturnsInitialValueForFileReference() {
+	public function getImageReturnsInitialValueForFileReference()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getImage()
@@ -107,7 +102,8 @@ class ContentTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setImageForFileReferenceSetsImage() {
+	public function setImageForFileReferenceSetsImage()
+	{
 		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
 		$this->subject->setImage($fileReferenceFixture);
 

@@ -34,24 +34,28 @@ namespace JS\JsFaq\Tests\Unit\Domain\Model;
  *
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \JS\JsFaq\Domain\Model\Category
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \JS\JsFaq\Domain\Model\Category();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() {
+	public function getNameReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getName()
@@ -61,7 +65,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setNameForStringSetsName() {
+	public function setNameForStringSetsName()
+	{
 		$this->subject->setName('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -74,7 +79,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getTeaserReturnsInitialValueForString() {
+	public function getTeaserReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getTeaser()
@@ -84,7 +90,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setTeaserForStringSetsTeaser() {
+	public function setTeaserForStringSetsTeaser()
+	{
 		$this->subject->setTeaser('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -97,7 +104,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getImageReturnsInitialValueForFileReference() {
+	public function getImageReturnsInitialValueForFileReference()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getImage()
@@ -107,7 +115,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setImageForFileReferenceSetsImage() {
+	public function setImageForFileReferenceSetsImage()
+	{
 		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
 		$this->subject->setImage($fileReferenceFixture);
 
@@ -121,7 +130,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getShortcutToPageReturnsInitialValueForFileReference() {
+	public function getShortcutToPageReturnsInitialValueForFileReference()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getShortcutToPage()
@@ -131,7 +141,8 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setShortcutToPageForFileReferenceSetsShortcutToPage() {
+	public function setShortcutToPageForFileReferenceSetsShortcutToPage()
+	{
 		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
 		$this->subject->setShortcutToPage($fileReferenceFixture);
 

@@ -29,18 +29,21 @@ namespace JS\JsFaq\Tests\Unit\Controller;
  *
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ContentControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class ContentControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 
 	/**
 	 * @var \JS\JsFaq\Controller\ContentController
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = $this->getMock('JS\\JsFaq\\Controller\\ContentController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 

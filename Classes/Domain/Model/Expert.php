@@ -29,84 +29,91 @@ namespace JS\JsFaq\Domain\Model;
 /**
  * Expert
  */
-class Expert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Expert extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * name
-	 *
-	 * @var string
-	 */
-	protected $name = '';
-
-	/**
-	 * email
-	 *
-	 * @var string
-	 */
-	protected $email = '';
-
-	/**
-	 * url
-	 *
-	 * @var string
-	 */
-	protected $url = '';
-
-	/**
-	 * Returns the name
-	 *
-	 * @return string $name
-	 */
-	public function getName() {
-		return $this->name;
-	}
-
-	/**
-	 * Sets the name
-	 *
-	 * @param string $name
-	 * @return void
-	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
-
-	/**
-	 * Returns the email
-	 *
-	 * @return string $email
-	 */
-	public function getEmail() {
-		return $this->email;
-	}
-
-	/**
-	 * Sets the email
-	 *
-	 * @param string $email
-	 * @return void
-	 */
-	public function setEmail($email) {
-		$this->email = $email;
-	}
-
-	/**
-	 * Returns the url
-	 *
-	 * @return string $url
-	 */
-	public function getUrl() {
-		return $this->url;
-	}
-
-	/**
-	 * Sets the url
-	 *
-	 * @param string $url
-	 * @return void
-	 */
-	public function setUrl($url) {
-		$this->url = $url;
-	}
+    /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = '';
+    
+    /**
+     * email
+     *
+     * @var string
+     */
+    protected $email = '';
+    
+    /**
+     * url
+     *
+     * @var string
+     */
+    protected $url = '';
+    
+    /**
+     * Returns the name
+     *
+     * @return string $name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    /**
+     * Sets the name
+     *
+     * @param string $name
+     * @return void
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    
+    /**
+     * Returns the email
+     *
+     * @return string $email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    
+    /**
+     * Sets the email
+     *
+     * @param string $email
+     * @return void
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+    
+    /**
+     * Returns the url
+     *
+     * @return string $url
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+    
+    /**
+     * Sets the url
+     *
+     * @param string $url
+     * @return void
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 
 }

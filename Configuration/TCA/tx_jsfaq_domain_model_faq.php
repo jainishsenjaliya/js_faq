@@ -1,10 +1,28 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+return array(
+	'ctrl' => array(
+		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_faq',
+		'label' => 'question',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+		'sortby' => 'sorting',
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
 
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['ctrl'],
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'question,asked_by,related_link,expert,related,category,answer,',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('js_faq') . 'Resources/Public/Icons/tx_jsfaq_domain_model_faq.gif'
+	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, question, asked_by, related_link, expert, related, category, answer',
 	),
@@ -21,6 +39,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
@@ -35,6 +54,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array('', 0),
 				),
@@ -130,6 +150,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_faq.expert',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'foreign_table' => 'tx_jsfaq_domain_model_expert',
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -140,6 +161,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_faq.related',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectMultipleSideBySide',
 				'foreign_table' => 'tx_jsfaq_domain_model_faq',
 				'MM' => 'tx_jsfaq_faq_faq_mm',
 				'size' => 10,
@@ -150,14 +172,19 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
 					'edit' => array(
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 						),
 					'add' => Array(
+						'module' => array(
+							'name' => 'wizard_add',
+						),
 						'type' => 'script',
 						'title' => 'Create new',
 						'icon' => 'add.gif',
@@ -165,8 +192,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 							'table' => 'tx_jsfaq_domain_model_faq',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
-							),
-						'script' => 'wizard_add.php',
+						),
 					),
 				),
 			),
@@ -176,6 +202,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_faq.category',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectMultipleSideBySide',
 				'foreign_table' => 'tx_jsfaq_domain_model_category',
 				'MM' => 'tx_jsfaq_faq_category_mm',
 				'size' => 10,
@@ -186,14 +213,19 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
 					'edit' => array(
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 						),
 					'add' => Array(
+						'module' => array(
+							'name' => 'wizard_add',
+						),
 						'type' => 'script',
 						'title' => 'Create new',
 						'icon' => 'add.gif',
@@ -201,8 +233,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 							'table' => 'tx_jsfaq_domain_model_category',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
-							),
-						'script' => 'wizard_add.php',
+						),
 					),
 				),
 			),
@@ -214,7 +245,8 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_jsfaq_domain_model_content',
 				'foreign_field' => 'faq',
-				'maxitems'      => 9999,
+				'foreign_sortby' => 'sorting',
+				'maxitems' => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',
@@ -228,32 +260,4 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq'] = array(
 		),
 		
 	),
-);
-## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['types']['1']['showitem'] = 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, question, answer,--div--; Details, asked_by, expert, related, related_link, category,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime';
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['expert']['config']['items'] = array (
-					array('',0),
-				);
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['expert']['config']['foreign_table_where'] = 
-	' AND tx_jsfaq_domain_model_expert.hidden = 0 ORDER BY tx_jsfaq_domain_model_expert.name';
-
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['related_link']['config']['cols'] = 40;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['related_link']['config']['rows'] = 5;
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['size'] = 1;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['autoSizeMax'] = 1;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['maxitems'] = 1;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['items'] = array (
-					array('',0),
-				);
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['foreign_table_where'] = 
-	' AND tx_jsfaq_domain_model_category.hidden = 0 ORDER BY tx_jsfaq_domain_model_category.name';
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['related']['config']['foreign_table_where'] = 
-	' AND tx_jsfaq_domain_model_faq.hidden = 0 ORDER BY tx_jsfaq_domain_model_faq.question';
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['related']['config']['wizards']['suggest']['type'] = 'suggest';
+);## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

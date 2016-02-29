@@ -34,24 +34,28 @@ namespace JS\JsFaq\Tests\Unit\Domain\Model;
  *
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \JS\JsFaq\Domain\Model\Expert
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \JS\JsFaq\Domain\Model\Expert();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() {
+	public function getNameReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getName()
@@ -61,7 +65,8 @@ class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setNameForStringSetsName() {
+	public function setNameForStringSetsName()
+	{
 		$this->subject->setName('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -74,7 +79,8 @@ class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getEmailReturnsInitialValueForString() {
+	public function getEmailReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getEmail()
@@ -84,7 +90,8 @@ class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setEmailForStringSetsEmail() {
+	public function setEmailForStringSetsEmail()
+	{
 		$this->subject->setEmail('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -97,7 +104,8 @@ class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getUrlReturnsInitialValueForString() {
+	public function getUrlReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getUrl()
@@ -107,7 +115,8 @@ class ExpertTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setUrlForStringSetsUrl() {
+	public function setUrlForStringSetsUrl()
+	{
 		$this->subject->setUrl('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(

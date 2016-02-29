@@ -1,10 +1,28 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+return array(
+	'ctrl' => array(
+		'title'	=> 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content',
+		'label' => 'options',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+		'sortby' => 'sorting',
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
 
-$GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_jsfaq_domain_model_content']['ctrl'],
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'options,description,image,',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('js_faq') . 'Resources/Public/Icons/tx_jsfaq_domain_model_content.gif'
+	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, options, description, image',
 	),
@@ -21,6 +39,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
@@ -35,6 +54,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array('', 0),
 				),
@@ -102,6 +122,7 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array('-- Label --', 0),
 				),
@@ -123,7 +144,13 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 						'icon' => 'wizard_rte2.gif',
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
-						'script' => 'wizard_rte.php',
+						'module' => array(
+							'name' => 'wizard_rich_text_editor',
+							'urlParameters' => array(
+								'mode' => 'wizard',
+								'act' => 'wizard_rte.php'
+							)
+						),
 						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
 						'type' => 'script'
 					)
@@ -135,7 +162,44 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 			'label' => 'LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.image',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'image',
-				array('maxitems' => 1),
+				array(
+					'appearance' => array(
+						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+					),
+					'foreign_types' => array(
+						'0' => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						)
+					),
+					'maxitems' => 1
+				),
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
@@ -146,21 +210,4 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_content'] = array(
 			),
 		),
 	),
-);
-## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['options']['config']['items'] =  array(
-					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.0', 0),
-					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.1', 1),
-					array('LLL:EXT:js_faq/Resources/Private/Language/locallang_db.xlf:tx_jsfaq_domain_model_content.options.I.2', 2),
-				);
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['description']['config']['defaultExtras'] = 'richtext:rte_transform[flag=rte_enabled|mode=ts]';
-$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['description']['displayCond'] = 'FIELD:options:=:1';
-
-$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['image']['config'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-				'image',
-				array('maxitems' => 99),
-				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-			);
-$GLOBALS['TCA']['tx_jsfaq_domain_model_content']['columns']['image']['displayCond'] = 'FIELD:options:=:2';
+);## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

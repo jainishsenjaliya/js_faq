@@ -34,24 +34,28 @@ namespace JS\JsFaq\Tests\Unit\Domain\Model;
  *
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \JS\JsFaq\Domain\Model\FAQ
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \JS\JsFaq\Domain\Model\FAQ();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getQuestionReturnsInitialValueForString() {
+	public function getQuestionReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getQuestion()
@@ -61,7 +65,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setQuestionForStringSetsQuestion() {
+	public function setQuestionForStringSetsQuestion()
+	{
 		$this->subject->setQuestion('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -74,7 +79,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getAskedByReturnsInitialValueForString() {
+	public function getAskedByReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getAskedBy()
@@ -84,7 +90,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setAskedByForStringSetsAskedBy() {
+	public function setAskedByForStringSetsAskedBy()
+	{
 		$this->subject->setAskedBy('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -97,7 +104,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getRelatedLinkReturnsInitialValueForString() {
+	public function getRelatedLinkReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getRelatedLink()
@@ -107,7 +115,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setRelatedLinkForStringSetsRelatedLink() {
+	public function setRelatedLinkForStringSetsRelatedLink()
+	{
 		$this->subject->setRelatedLink('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -120,7 +129,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getExpertReturnsInitialValueForExpert() {
+	public function getExpertReturnsInitialValueForExpert()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getExpert()
@@ -130,7 +140,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setExpertForExpertSetsExpert() {
+	public function setExpertForExpertSetsExpert()
+	{
 		$expertFixture = new \JS\JsFaq\Domain\Model\Expert();
 		$this->subject->setExpert($expertFixture);
 
@@ -144,7 +155,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getRelatedReturnsInitialValueForFAQ() {
+	public function getRelatedReturnsInitialValueForFAQ()
+	{
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -155,7 +167,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setRelatedForObjectStorageContainingFAQSetsRelated() {
+	public function setRelatedForObjectStorageContainingFAQSetsRelated()
+	{
 		$related = new \JS\JsFaq\Domain\Model\FAQ();
 		$objectStorageHoldingExactlyOneRelated = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneRelated->attach($related);
@@ -171,7 +184,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addRelatedToObjectStorageHoldingRelated() {
+	public function addRelatedToObjectStorageHoldingRelated()
+	{
 		$related = new \JS\JsFaq\Domain\Model\FAQ();
 		$relatedObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$relatedObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($related));
@@ -183,7 +197,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function removeRelatedFromObjectStorageHoldingRelated() {
+	public function removeRelatedFromObjectStorageHoldingRelated()
+	{
 		$related = new \JS\JsFaq\Domain\Model\FAQ();
 		$relatedObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$relatedObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($related));
@@ -196,7 +211,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getCategoryReturnsInitialValueForCategory() {
+	public function getCategoryReturnsInitialValueForCategory()
+	{
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -207,7 +223,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setCategoryForObjectStorageContainingCategorySetsCategory() {
+	public function setCategoryForObjectStorageContainingCategorySetsCategory()
+	{
 		$category = new \JS\JsFaq\Domain\Model\Category();
 		$objectStorageHoldingExactlyOneCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneCategory->attach($category);
@@ -223,7 +240,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addCategoryToObjectStorageHoldingCategory() {
+	public function addCategoryToObjectStorageHoldingCategory()
+	{
 		$category = new \JS\JsFaq\Domain\Model\Category();
 		$categoryObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$categoryObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($category));
@@ -235,7 +253,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function removeCategoryFromObjectStorageHoldingCategory() {
+	public function removeCategoryFromObjectStorageHoldingCategory()
+	{
 		$category = new \JS\JsFaq\Domain\Model\Category();
 		$categoryObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$categoryObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($category));
@@ -248,7 +267,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getAnswerReturnsInitialValueForContent() {
+	public function getAnswerReturnsInitialValueForContent()
+	{
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -259,7 +279,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setAnswerForObjectStorageContainingContentSetsAnswer() {
+	public function setAnswerForObjectStorageContainingContentSetsAnswer()
+	{
 		$answer = new \JS\JsFaq\Domain\Model\Content();
 		$objectStorageHoldingExactlyOneAnswer = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneAnswer->attach($answer);
@@ -275,7 +296,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addAnswerToObjectStorageHoldingAnswer() {
+	public function addAnswerToObjectStorageHoldingAnswer()
+	{
 		$answer = new \JS\JsFaq\Domain\Model\Content();
 		$answerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$answerObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($answer));
@@ -287,7 +309,8 @@ class FAQTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function removeAnswerFromObjectStorageHoldingAnswer() {
+	public function removeAnswerFromObjectStorageHoldingAnswer()
+	{
 		$answer = new \JS\JsFaq\Domain\Model\Content();
 		$answerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$answerObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($answer));

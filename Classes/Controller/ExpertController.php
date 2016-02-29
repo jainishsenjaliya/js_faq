@@ -29,23 +29,25 @@ namespace JS\JsFaq\Controller;
 /**
  * ExpertController
  */
-class ExpertController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ExpertController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * expertRepository
-	 *
-	 * @var \JS\JsFaq\Domain\Repository\ExpertRepository
-	 * @inject
-	 */
-	protected $expertRepository = NULL;
-
-	/**
-	 * action expert
-	 *
-	 * @return void
-	 */
-	public function expertAction() {
-		
-	}
+    /**
+     * expertRepository
+     *
+     * @var \JS\JsFaq\Domain\Repository\ExpertRepository
+     * @inject
+     */
+    protected $expertRepository = NULL;
+    
+    /**
+     * action expert
+     *
+     * @return void
+     */
+    public function expertAction()
+    {
+        
+    }
 
 }

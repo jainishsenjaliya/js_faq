@@ -29,84 +29,91 @@ namespace JS\JsFaq\Domain\Model;
 /**
  * Content
  */
-class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * options
-	 *
-	 * @var integer
-	 */
-	protected $options = 0;
-
-	/**
-	 * description
-	 *
-	 * @var string
-	 */
-	protected $description = '';
-
-	/**
-	 * image
-	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-	 */
-	protected $image = NULL;
-
-	/**
-	 * Returns the options
-	 *
-	 * @return integer $options
-	 */
-	public function getOptions() {
-		return $this->options;
-	}
-
-	/**
-	 * Sets the options
-	 *
-	 * @param integer $options
-	 * @return void
-	 */
-	public function setOptions($options) {
-		$this->options = $options;
-	}
-
-	/**
-	 * Returns the description
-	 *
-	 * @return string $description
-	 */
-	public function getDescription() {
-		return $this->description;
-	}
-
-	/**
-	 * Sets the description
-	 *
-	 * @param string $description
-	 * @return void
-	 */
-	public function setDescription($description) {
-		$this->description = $description;
-	}
-
-	/**
-	 * Returns the image
-	 *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-	 */
-	public function getImage() {
-		return $this->image;
-	}
-
-	/**
-	 * Sets the image
-	 *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-	 * @return void
-	 */
-	public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image) {
-		$this->image = $image;
-	}
+    /**
+     * options
+     *
+     * @var int
+     */
+    protected $options = 0;
+    
+    /**
+     * description
+     *
+     * @var string
+     */
+    protected $description = '';
+    
+    /**
+     * image
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $image = NULL;
+    
+    /**
+     * Returns the options
+     *
+     * @return integer $options
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+    
+    /**
+     * Sets the options
+     *
+     * @param integer $options
+     * @return void
+     */
+    public function setOptions($options)
+    {
+        $this->options = $options;
+    }
+    
+    /**
+     * Returns the description
+     *
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+    
+    /**
+     * Sets the description
+     *
+     * @param string $description
+     * @return void
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+    
+    /**
+     * Returns the image
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
+    /**
+     * Sets the image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->image = $image;
+    }
 
 }

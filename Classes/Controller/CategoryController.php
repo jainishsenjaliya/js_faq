@@ -29,23 +29,25 @@ namespace JS\JsFaq\Controller;
 /**
  * CategoryController
  */
-class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * categoryRepository
-	 *
-	 * @var \JS\JsFaq\Domain\Repository\CategoryRepository
-	 * @inject
-	 */
-	protected $categoryRepository = NULL;
-
-	/**
-	 * action category
-	 *
-	 * @return void
-	 */
-	public function categoryAction() {
-		
-	}
+    /**
+     * categoryRepository
+     *
+     * @var \JS\JsFaq\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository = NULL;
+    
+    /**
+     * action category
+     *
+     * @return void
+     */
+    public function categoryAction()
+    {
+        
+    }
 
 }

@@ -30,7 +30,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * FAQController
  */
-class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
 	/**
 	 * fAQRepository
@@ -39,7 +40,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @inject
 	 */
 	protected $fAQRepository = NULL;
-
+	
 	/**
 	 * fAQService
 	 *
@@ -47,7 +48,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @inject
 	 */
 	protected $fAQService = NULL;
-
+	
 	/**
 	 * action faq
 	 *
@@ -73,7 +74,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 			$faq = $this->fAQRepository->getFAQData($this->settings, $detail);
 
 			if ($this->settings['main']['displayFAQ'] == 'CategoryGroupWise' && $detail==0) {
-				$faq = $this->fAQRepository->getFAQCategoryData($faq);
+				$faq = $this->fAQRepository->getFAQCategoryData($faq,$this->settings['main']['categories']);
 			}
 
 			if (count($faq) == 0) {

@@ -59,7 +59,7 @@ class FAQService implements \TYPO3\CMS\Core\SingletonInterface {
 
 		$toggleJS = '<script src="typo3conf/ext/js_faq/Resources/Public/Script/JsFaqToggle.js" type="text/javascript"></script>';
 
-		if($javascript['toggle']['includeInFooter']==0){
+		if(isset($javascript['toggle']['includeInFooter']) && $javascript['toggle']['includeInFooter'] ==0){
 			$GLOBALS['TSFE']->additionalHeaderData['JsFaq.Toggle'] = $toggleJS;
 		}else{
 			$GLOBALS['TSFE']->additionalFooterData['JsFaq.Toggle'] = $toggleJS;
