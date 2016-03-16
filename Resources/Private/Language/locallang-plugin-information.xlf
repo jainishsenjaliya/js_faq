@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-29T11:12:56Z" product-name="js_faq">
+		<header/>
+		<body>
+			<trans-unit id="plugin-title">
+				<source>FAQ - Frequently Asked Questions</source>
+			</trans-unit>
+
+			<trans-unit id="plugin-settings">
+				<source>Settings</source>
+			</trans-unit>
+			
+			<trans-unit id="plugin-value">
+				<source>Values</source>
+			</trans-unit>
+
+			<trans-unit id="main.order">
+				<source>Order By</source>
+			</trans-unit>
+			<trans-unit id="main.order.sorting">
+				<source>Sorting</source>
+			</trans-unit>
+			<trans-unit id="main.order.question">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="main.order.crdate">
+				<source>Created data</source>
+			</trans-unit>
+			<trans-unit id="main.order.tstamp">
+				<source>Modified data</source>
+			</trans-unit>
+			<trans-unit id="main.order.expert">
+				<source>Expert</source>
+			</trans-unit>
+			<trans-unit id="main.order.asked_by">
+				<source>Asked By</source>
+			</trans-unit>
+
+			<trans-unit id="main.orderType">
+				<source>Order Type</source>
+			</trans-unit>
+			<trans-unit id="main.orderType.desc">
+				<source>Desecending</source>
+			</trans-unit>
+			<trans-unit id="main.orderType.asc">
+				<source>Asecending</source>
+			</trans-unit>
+
+
+			<trans-unit id="main.displayFAQ">
+				<source>Display FAQ List</source>
+			</trans-unit>
+			<trans-unit id="main.displayFAQ.Default">
+				<source>By Default</source>
+			</trans-unit>
+			<trans-unit id="main.displayFAQ.CategoryGroupWise">
+				<source>Category group wise</source>
+			</trans-unit>
+
+			<trans-unit id="main.startingPoint">
+				<source>Starting Point</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
