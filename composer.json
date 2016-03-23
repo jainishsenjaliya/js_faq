@@ -3,11 +3,11 @@
   "description": "FAQ - Frequently Asked Questions",
   "keywords": ["TYPO3 CMS", "FAQ", "Frequently Asked Questions", "FAQ - Frequently Asked Questions"],
   "homepage": "https://github.com/jainishsenjaliya/js_faq",
-  "version": "3.0.0",
+  "version": "5.0.0",
   "support": {
     "issues": "https://github.com/jainishsenjaliya/js_faq/issues"
   },
   "require": {
-      "typo3/cms": "6.0.0 - 6.2.99"
+      "typo3/cms": "6.0.0 - 8.0.99"
   }
 }
