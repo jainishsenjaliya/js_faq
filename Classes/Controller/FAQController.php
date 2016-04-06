@@ -67,6 +67,11 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			}
 		}
 
+
+		$this->contentObj = $this->configurationManager->getContentObject();
+
+		$this->settings['contentID'] = md5($this->contentObj->data['uid']);
+
 		$template = $this->fAQService->missingConfiguration($this->settings);
 
 		if($template==1){
@@ -86,7 +91,8 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		}
 		
 		$this->view->assign('template', $template);
-		
+		$this->view->assign('settings', $this->settings);
+
 		// Include Additional Data
 		$this->fAQService->includeAdditionalData($this->settings);
 	}

@@ -1,5 +1,5 @@
 /*
- *  (c) 2015 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
  *  All rights reserved 
  *  Togglae FAQ
 */
@@ -20,7 +20,6 @@ jQuery(document).ready(function(jQuery){
 
 	var header		= '.tx-jsfaq-header';
 	var catBox		= '.category-box-';
-
 
 	var content		= '.tx-jsfaq-details';
 
@@ -48,30 +47,36 @@ jQuery(document).ready(function(jQuery){
 
 	jQuery('.tx-jsfaq-toggle-show-all').click(function() {
 
-		jQuery(showAll).attr("disabled","disabled");
-		jQuery(hideAll).removeAttr("disabled","disabled");
+		var id = jQuery(this).parent().parent().attr("id");
 
-		jQuery(showAll).addClass("disabled");
-		jQuery(hideAll).removeClass("disabled");
+		jQuery("#"+id+" "+showAll).attr("disabled","disabled");
+		jQuery("#"+id+" "+hideAll).removeAttr("disabled","disabled");
 
-		jQuery(header).addClass(minus).removeClass(plus);
-		jQuery(content).show(effectDuration);
+		jQuery("#"+id+" "+showAll).addClass("disabled");
+		jQuery("#"+id+" "+hideAll).removeClass("disabled");
+
+		jQuery("#"+id+" "+header).addClass(minus).removeClass(plus);
+		jQuery("#"+id+" "+content).show(effectDuration);
 		return false;
 	});
 	jQuery('.tx-jsfaq-toggle-hide-all').click(function() {
+
+		var id = jQuery(this).parent().parent().attr("id");
 		
-		jQuery(hideAll).attr("disabled","disabled");
-		jQuery(showAll).removeAttr("disabled","disabled");
+		jQuery("#"+id+" "+hideAll).attr("disabled","disabled");
+		jQuery("#"+id+" "+showAll).removeAttr("disabled","disabled");
 
-		jQuery(hideAll).addClass("disabled");
-		jQuery(showAll).removeClass("disabled");
+		jQuery("#"+id+" "+hideAll).addClass("disabled");
+		jQuery("#"+id+" "+showAll).removeClass("disabled");
 
-		jQuery(header).addClass(plus).removeClass(minus);
-		jQuery(content).hide(effectDuration);
+		jQuery("#"+id+" "+header).addClass(plus).removeClass(minus);
+		jQuery("#"+id+" "+content).hide(effectDuration);
 		return false;
 	});
 
 	jQuery('.tx-jsfaq-toggle-show-category-all').click(function() {
+
+		var id = jQuery(this).parent().parent().parent().attr("id");
 
 		jQuery(this).attr("disabled","disabled");
 		jQuery(this).next().removeAttr("disabled","disabled");
@@ -81,12 +86,14 @@ jQuery(document).ready(function(jQuery){
 
 		var cat = jQuery(this).attr("category");
 
-		jQuery(catBox+cat+" "+".tx-jsfaq-box "+ header).addClass(minus).removeClass(plus);
-		jQuery(catBox+cat+" "+".tx-jsfaq-box "+ content).show(effectDuration);
+		jQuery("#"+id+" "+catBox+cat+" "+".tx-jsfaq-box "+ header).addClass(minus).removeClass(plus);
+		jQuery("#"+id+" "+catBox+cat+" "+".tx-jsfaq-box "+ content).show(effectDuration);
 		return false;
 	});
 
 	jQuery('.tx-jsfaq-toggle-hide-category-all').click(function() {
+
+		var id = jQuery(this).parent().parent().parent().attr("id");
 		
 		jQuery(this).attr("disabled","disabled");
 		jQuery(this).prev().removeAttr("disabled","disabled");
@@ -96,8 +103,8 @@ jQuery(document).ready(function(jQuery){
 
 		var cat = jQuery(this).attr("category");
 
-		jQuery(catBox+cat+" "+".tx-jsfaq-box "+ header).addClass(plus).removeClass(minus);
-		jQuery(catBox+cat+" "+".tx-jsfaq-box "+ content).hide(effectDuration);
+		jQuery("#"+id+" "+catBox+cat+" "+".tx-jsfaq-box "+ header).addClass(plus).removeClass(minus);
+		jQuery("#"+id+" "+catBox+cat+" "+".tx-jsfaq-box "+ content).hide(effectDuration);
 		return false;
 	});
 

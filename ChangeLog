@@ -1,3 +1,9 @@
+2016-04-06  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Modify javascript for toggle. 
+	* More than one plugin will work smoothly in same page.
+	* Released version 5.1.1
+
 2016-03-27  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Added plugin information.
@@ -8,7 +14,7 @@
 	* Compatibility with TYPO3 8.0 
 	* Released version 5.0.0
 
-2016-02-29  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+2016-04-06  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Compatibility with TYPO3 7.6 
 	* Released version 4.0.0

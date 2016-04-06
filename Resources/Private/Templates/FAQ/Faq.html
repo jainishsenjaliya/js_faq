@@ -10,10 +10,10 @@
 				<f:then>
 					<f:if condition="{settings.main.displayFAQ}">
 						<f:then>
-							<f:render partial="Template/{settings.main.displayFAQ}" arguments="{FAQ:FAQ}" />
+							<f:render partial="Template/{settings.main.displayFAQ}" arguments="{FAQ:FAQ, settings:settings}" />
 						</f:then>
 						<f:else>
-							<f:render partial="Template/Default" arguments="{FAQ:FAQ}" />
+							<f:render partial="Template/Default" arguments="{FAQ:FAQ, settings:settings}" />
 						</f:else>
 					</f:if>
 				</f:then>
