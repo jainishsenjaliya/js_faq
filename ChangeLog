@@ -1,6 +1,6 @@
 2016-05-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Added recursive funcationality for starting point . 
+	* Added recursive functionality for starting point . 
 	* Will display data from parent folder as well as child folders
 	* Minor changes
 	* Released version 5.2.0
