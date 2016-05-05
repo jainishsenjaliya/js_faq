@@ -1,7 +1,9 @@
 <?php
 namespace JS\JsFaq\Controller;
 
+use JS\JsFaq\Service\Configuration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
  *
  *  Copyright notice
@@ -42,14 +44,6 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	protected $fAQRepository = NULL;
 	
 	/**
-	 * fAQService
-	 *
-	 * @var \JS\JsFaq\Service\FAQService
-	 * @inject
-	 */
-	protected $fAQService = NULL;
-	
-	/**
 	 * action faq
 	 *
 	 * @return void
@@ -67,12 +61,11 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			}
 		}
 
-
 		$this->contentObj = $this->configurationManager->getContentObject();
 
 		$this->settings['contentID'] = md5($this->contentObj->data['uid']);
 
-		$template = $this->fAQService->missingConfiguration($this->settings);
+		$template = Configuration::template();
 
 		if($template==1){
 			
@@ -94,6 +87,6 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$this->view->assign('settings', $this->settings);
 
 		// Include Additional Data
-		$this->fAQService->includeAdditionalData($this->settings);
+		Configuration::additionalData();
 	}
 }

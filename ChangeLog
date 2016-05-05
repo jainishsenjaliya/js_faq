@@ -1,3 +1,10 @@
+2016-05-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Added recursive funcationality for starting point . 
+	* Will display data from parent folder as well as child folders
+	* Minor changes
+	* Released version 5.2.0
+
 2016-04-06  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Modify javascript for toggle. 

@@ -1,7 +1,11 @@
 <?php
 namespace JS\JsFaq\Domain\Repository;
 
+use JS\JsFaq\Service\Configuration;
+use JS\JsFaq\Service\PageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+
 /***************************************************************
  *
  *  Copyright notice
@@ -82,7 +86,10 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$where = ' AND f.uid =  \'' . $faq . '\'';
 		} else {
 			if (isset($settings['main']['startingPoint']) && $settings['main']['startingPoint'] != '') {
-				$where .= ' AND f.pid in (' . $settings['main']['startingPoint'] . ') ';
+
+				$storagePids = PageService::extendPidListByChildrens($settings['main']['startingPoint'],$settings['main']['recursive']);
+
+				$where .= ' AND f.pid in (' . $storagePids. ') ';
 			}
 			if (isset($settings['main']['categories']) && $settings['main']['categories'] != '') {
 				$where .= ' AND m.uid_foreign IN (' . $settings['main']['categories'] . ')  ';
@@ -100,17 +107,17 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		
 		foreach ($conf as $key => $value) {
 
-			$field1	 = 'uid, options, description, image';
-			$orderBy1   = ' sorting';
-			$table1	 = 'tx_jsfaq_domain_model_content';
-			$where1	 = ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'';
+			$field1		= 'uid, options, description, image';
+			$orderBy1	= ' sorting';
+			$table1		= 'tx_jsfaq_domain_model_content';
+			$where1		= ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'';
 
-			$answers	= $this->falImages($this->getDBHandle()->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
+			$answers	= Configuration::falImages($this->getDBHandle()->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
 
-			$field2	 = 'f.uid, f.question';
-			$orderBy2   = 'sorting_foreign';
-			$table2	 = 'tx_jsfaq_faq_faq_mm as m LEFT JOIN tx_jsfaq_domain_model_faq as f ON m.uid_foreign = f.uid';
-			$where2	 = ' uid_local = ' . $value['uid'];
+			$field2		= 'f.uid, f.question';
+			$orderBy2	= 'sorting_foreign';
+			$table2		= 'tx_jsfaq_faq_faq_mm as m LEFT JOIN tx_jsfaq_domain_model_faq as f ON m.uid_foreign = f.uid';
+			$where2		= ' uid_local = ' . $value['uid'];
 			
 			$related_faq = $this->getDBHandle()->exec_SELECTgetRows($field2, $table2, $where2, '', $orderBy2);
 
@@ -127,9 +134,9 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$data[$value['uid']]['related_link'] = $related_link;
 			$data[$value['uid']]['related_faq'] = $relatedFaq;
 		}
-		
+
 		return $data;
-	
+
 	}
 	
 	/**
@@ -163,51 +170,7 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
 		return '';
 	}
-	
-	public function falImages($result, $tablename = NULL, $fieldname = NULL) {
-		
-		$where = '';
 
-		if ($tablename != '') {
-			$where = ' AND tablenames = "' . $tablename . '"';
-		}
-		if ($fieldname != '') {
-			$where .= ' AND fieldname IN ("' . $fieldname . '")';
-		}
-
-		foreach ($result as $key => $value) {
-
-			$whr = ' deleted= 0 and hidden = 0 ' . $where . ' AND uid_foreign = ' . $value['uid'];
-			$sysImages = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*', 'sys_file_reference', $whr);
-			$arr = '';
-
-			foreach ($sysImages as $key1 => $value1) {
-
-				$whr1  = 'uid = ' . $value1['uid_local'];
-
-				$sysImageDetail = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*', 'sys_file', $whr1);
-
-				$arr1 = GeneralUtility::trimExplode('/', $sysImageDetail[0]['mime_type'], true);
-
-				$arr[$value1['fieldname']][$value1['uid']] = array(
-
-						'identifier'=> 'fileadmin' . $sysImageDetail[0]['identifier'],
-						'title'	 => $value1['title'],
-						'caption'   => $value1['description'],
-						'extension' => $sysImageDetail[0]['extension'],
-						'mime_type' => $sysImageDetail[0]['mime_type'],
-						'name'	  => $sysImageDetail[0]['name'],
-						'uid'	   => $sysImageDetail[0]['uid'],
-						'mime'	  => $arr1[0],
-						'type'	  => $arr1[1],
-						'imageName' => basename($sysImageDetail[0]['identifier']),
-					);
-			}
-			$result[$key]['media'] = $arr;
-		}
-		return $result;
-	}
-	
 	/**
 	 * getDBHandle
 	 *

@@ -1,16 +1,23 @@
 <?php
-namespace JS\JsFaq\Tests\Unit\Controller;
+
+namespace JS\JsFaq\Service;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+
+
 /***************************************************************
+ *
  *  Copyright notice
  *
- *  (c) 2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
- *  			
+ *  (c) 2014-2016 Jainish Senjaliya <jainishsenjaliya@gmail.com>
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
  *  free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation; either version 3 of the License, or
  *  (at your option) any later version.
  *
  *  The GNU General Public License can be found at
@@ -25,26 +32,34 @@ namespace JS\JsFaq\Tests\Unit\Controller;
  ***************************************************************/
 
 /**
- * Test case for class JS\JsFaq\Controller\CategoryController.
+ * Settings Service class
  *
+ * @package JS
+ * @subpackage js_faq
  * @author Jainish Senjaliya <jainishsenjaliya@gmail.com>
  */
-class CategoryControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
-{
+class SettingsService {
 
 	/**
-	 * @var \JS\JsFaq\Controller\CategoryController
+	 * @var mixed
 	 */
-	protected $subject = NULL;
+	protected $settings = NULL;
 
-	public function setUp()
-	{
-		$this->subject = $this->getMock('JS\\JsFaq\\Controller\\CategoryController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+   /**
+	 * Returns all settings.
+	 *
+	 * @return array
+	 */
+	public function getSettings() {
+
+		$objectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+		
+		$configurationManager = $objectManager->get('TYPO3\\CMS\\Extbase\\Configuration\\ConfigurationManagerInterface'); 
+
+		$settings = $configurationManager->getConfiguration(
+							ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
+						);
+
+		return $settings;
 	}
-
-	public function tearDown()
-	{
-		unset($this->subject);
-	}
-
 }
