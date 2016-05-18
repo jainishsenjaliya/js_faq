@@ -63,6 +63,24 @@
 			<trans-unit id="main.recursive">
 				<source>Recursive</source>
 			</trans-unit>
+			<trans-unit id="main.recursive.I.0">
+				<source>0 levels (only selected page)</source>
+			</trans-unit>
+			<trans-unit id="main.recursive.I.1">
+				<source>1 levels</source>
+			</trans-unit>
+			<trans-unit id="main.recursive.I.2">
+				<source>2 levels</source>
+			</trans-unit>
+			<trans-unit id="main.recursive.I.3">
+				<source>3 levels</source>
+			</trans-unit>
+			<trans-unit id="main.recursive.I.4">
+				<source>4 levels</source>
+			</trans-unit>
+			<trans-unit id="main.recursive.I.100">
+				<source>Infinite</source>
+			</trans-unit>
 
 
 			<trans-unit id="list">

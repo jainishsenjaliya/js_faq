@@ -73,9 +73,9 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 
 		$javascript = $settings['additional']['javascript'];
 
-		if($javascript['jQueryLib']['include']==1){
+		if(!empty($javascript['jQueryLib']['uri']) && $javascript['jQueryLib']['include']==1){
 
-			$jQueryLib = '<script src="typo3conf/ext/js_faq/Resources/Public/Script/jquery.min.js" type="text/javascript"></script>'.$additionalDataJS;
+			$jQueryLib = '<script src="'.$javascript['jQueryLib']['uri'].'" type="text/javascript"></script>';
 
 			if($javascript['jQueryLib']['includeInFooter']==1){
 				$GLOBALS['TSFE']->additionalFooterData['JsFaq.jQueryLib'] = $jQueryLib;
@@ -84,24 +84,35 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 			}
 		}
 
-		$toggleJS = '<script src="typo3conf/ext/js_faq/Resources/Public/Script/JsFaqToggle.js" type="text/javascript"></script>';
+		if(!empty($javascript['toggle']['uri'])){
 
-		if(isset($javascript['toggle']['includeInFooter']) && $javascript['toggle']['includeInFooter'] ==0){
-			$GLOBALS['TSFE']->additionalHeaderData['JsFaq.Toggle'] = $toggleJS;
-		}else{
-			$GLOBALS['TSFE']->additionalFooterData['JsFaq.Toggle'] = $toggleJS;
+			$toggle = '<script src="'.$javascript['toggle']['uri'].'" type="text/javascript"></script>';
+
+			if($javascript['toggle']['includeInFooter']==1){
+				$GLOBALS['TSFE']->additionalFooterData['JsFaq.toggle'] = $toggle;
+			}else{
+				$GLOBALS['TSFE']->additionalHeaderData['JsFaq.toggle'] = $toggle;	
+			}
 		}
 
 		// Inlcude CSS
 
 		$css = $settings['additional']['css'];
 
-		$style = $css['fancy']['include']==1?'Fancy':'Basic';
-
-		$additionalDataCSS = '<link rel="stylesheet" href="typo3conf/ext/js_faq/Resources/Public/Css/'.$style.'.css" type="text/css" media="all" />';
+		if(!empty($css['basic']['uri'])){
+			$basicCSS = '<link rel="stylesheet" href="'.$css['basic']['uri'].'" type="text/css" media="all" />';
+		}
+		if(!empty($css['fancy']['uri'])){
+			$fancyCSS = '<link rel="stylesheet" href="'.$css['fancy']['uri'].'" type="text/css" media="all" />';
+		}
+		if(!empty($css['responsive']['uri'])){
+			$responsiveCSS = '<link rel="stylesheet" href="'.$css['responsive']['uri'].'" type="text/css" media="all" />';
+		}
+		
+		$additionalDataCSS = $css['fancy']['include']==1?$fancyCSS:$basicCSS;
 		
 		if($css['responsive']['include']==1){
-			$additionalDataCSS .= '<link rel="stylesheet" href="typo3conf/ext/js_faq/Resources/Public/Css/Responsive.css" type="text/css" media="all" />';
+			$additionalDataCSS .= $responsiveCSS;
 		}
 
 		if($css['includeInFooter']==1){
@@ -110,6 +121,8 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 			$GLOBALS['TSFE']->additionalHeaderData['JsFaq.CSS'] = $additionalDataCSS;	
 		}
 	}
+
+
 
 	/**
 	 * falImages

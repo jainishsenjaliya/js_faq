@@ -1,3 +1,8 @@
+2016-05-20  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Manage additional headerdata via typoscript
+	* Released version 5.2.1
+
 2016-05-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Added recursive functionality for starting point . 

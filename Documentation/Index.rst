@@ -3,10 +3,12 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
+.. include:: Includes.txt
+
 .. _start:
 
 =============================================================
- FAQ - Frequently Asked Questions 
+Contact Form 
 =============================================================
 
 .. only:: html
@@ -20,11 +22,14 @@
 	:Language:
 		en
 
+	:Description:
+		FAQ - Frequently Asked Questions
+
 	:Keywords:
-		js_faq
+		FAQ, Frequently Asked Questions, Frequently, Asked, Questions
 
 	:Copyright:
-		2014-2016
+		2014 - 2016
 
 	:Author:
 		Jainish Senjaliya
@@ -41,3 +46,11 @@
 
 	The content of this document is related to TYPO3,
 	a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
+
+	**Table of Contents**
+
+.. toctree::
+	:maxdepth: 3
+	:titlesonly:
+
+	Links
