@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-05-05T11:12:56Z" product-name="js_faq">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-29T11:12:56Z" product-name="js_faq">
 		<header/>
 		<body>
 						
@@ -53,9 +53,19 @@
 			<trans-unit id="main.categories">
 				<source>Categories</source>
 			</trans-unit>
-			<trans-unit id="main.recordPerPage">
-				<source>Record Per page</source>
+
+			<trans-unit id="main.limit">
+				<source>Max records displayed</source>
 			</trans-unit>
+
+			<trans-unit id="main.paginate">
+				<source>Show the pagination</source>
+			</trans-unit>
+
+			<trans-unit id="main.recordPerPage">
+				<source>Show 'n' record per page</source>
+			</trans-unit>
+
 			<trans-unit id="main.startingPoint">
 				<source>Starting Point</source>
 			</trans-unit>

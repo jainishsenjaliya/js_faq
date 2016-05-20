@@ -69,7 +69,7 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
 		if($template==1){
 			
-			$faq = $this->fAQRepository->getFAQData($this->settings, $detail);
+			$faq = $this->fAQRepository->getFAQData($detail);
 
 			if ($this->settings['main']['displayFAQ'] == 'CategoryGroupWise' && $detail==0) {
 				$faq = $this->fAQRepository->getFAQCategoryData($faq,$this->settings['main']['categories']);

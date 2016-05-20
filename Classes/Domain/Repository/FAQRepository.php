@@ -3,6 +3,7 @@ namespace JS\JsFaq\Domain\Repository;
 
 use JS\JsFaq\Service\Configuration;
 use JS\JsFaq\Service\PageService;
+use JS\JsFaq\Service\SettingsService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 
@@ -47,11 +48,12 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	/**
 	 * getFAQData
 	 *
-	 * @param $settings
 	 * @param $faq
 	 * @return
 	 */
-	public function getFAQData($settings, $faq){
+	public function getFAQData($faq){
+
+		$settings = SettingsService::getSettings();
 
 		$this->fullURL = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
 
@@ -65,6 +67,12 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			}
 		}else{
 			$orderBy = ' f.sorting desc';
+		}
+
+		$limit		= "";
+				
+		if(isset($settings['main']['limit']) && $settings['main']['limit']>0){
+			$limit	= $settings['main']['limit'];
 		}
 
 		if ($settings['main']['displayFAQ'] == 'CategoryGroupWise' && $faq==0) {
@@ -101,7 +109,7 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		$where = ' f.deleted = 0 AND f.hidden = 0 
 						AND ( f.starttime =0 OR ( f.starttime <= ' . $currentTime . ' AND f.endtime >=' . $currentTime . ' )) ' . $where;
 		
-		$conf = $this->getDBHandle()->exec_SELECTgetRows($field, $table, $where, $groupBy, $orderBy);
+		$conf = $this->getDBHandle()->exec_SELECTgetRows($field, $table, $where, $groupBy, $orderBy, $limit);
 		
 		$data = array();
 		

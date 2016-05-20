@@ -108,6 +108,40 @@
 							</config>
 						</TCEforms>
 					</settings.main.categories>
+					<settings.main.limit>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.limit</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<max>3</max>
+                                <eval>num</eval>
+							</config>
+						</TCEforms>
+					</settings.main.limit>
+					<settings.main.paginate>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.paginate</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>check</type>
+                                <default>1</default>
+							</config>
+						</TCEforms>
+					</settings.main.paginate>
+					<settings.main.recordPerPage>
+						<TCEforms>
+							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.recordPerPage</label>
+							<displayCond>FIELD:settings.main.paginate:=:1</displayCond>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<max>2</max>
+								<default>10</default>
+                                <eval>num</eval>
+							</config>
+						</TCEforms>
+					</settings.main.recordPerPage>
 					<settings.main.startingPoint>
 						<TCEforms>
 							<label>LLL:EXT:js_faq/Resources/Private/Language/locallang_flexform.xlf:main.startingPoint</label>

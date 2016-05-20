@@ -1,4 +1,10 @@
-2016-05-20  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+2016-05-30  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Pagination Enable / Disable functionality will manage via plugin option
+	* Added option for display number of record per page
+	* Released version 5.2.2
+
+2016-05-18  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Manage additional headerdata via typoscript
 	* Released version 5.2.1
