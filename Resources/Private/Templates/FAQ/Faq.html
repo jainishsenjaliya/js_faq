@@ -18,7 +18,11 @@
 					</f:if>
 				</f:then>
 				<f:else>
-					<f:render partial="Template/Detail" arguments="{FAQ:FAQ}" />
+					<f:if condition="{FAQ}">
+						<f:for each="{FAQ}" as="faq">
+							<f:render partial="Template/Detail" arguments="{faq:faq}" />
+						</f:for>
+					</f:if>
 				</f:else>
 			</f:if>
 		</f:then>

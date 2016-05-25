@@ -2,11 +2,13 @@
 
 <div class="tx-jsfaq-list" id="{settings.contentID}" >
 
-	<div class="toggale">
-		<input type="button" value="Show all" class="tx-jsfaq-toggle-show-all {settings.contentID}">
-			/
-		<input type="button" value="Hide all" class="tx-jsfaq-toggle-hide-all {settings.contentID}">
-	</div>
+	<f:if condition="{settings.showAllButton}">
+		<div class="toggale">
+			<input type="button" value="Show all" class="tx-jsfaq-toggle-show-all {settings.contentID}">
+				/
+			<input type="button" value="Hide all" class="tx-jsfaq-toggle-hide-all {settings.contentID}">
+		</div>
+	</f:if>
 
 	<f:if condition="{settings.main.paginate}">
 		<f:then>

@@ -2,6 +2,9 @@ plugin.tx_jsfaq{
 
 	settings{
 
+		# cat=jsfaq_general/enable/001; type=boolean; label= Show All / Hide all button : If disable then it will not display in list page
+		showAllButton = 1
+
 		list{
 			image{
 				# cat=jsfaq_list/0010; type=string; label= Image Width : Image width overwrites flexform settings 

@@ -9,7 +9,4 @@ This is a template manual aiming to pave the way to developers when it comes abo
 
 Any idea or suggestion for improving this template `can be drop`_ to our team_. And remember: documentation is like gift wrapping, it looks like superfluous, but your friend tends to be rather disappointed when their presents arrive in supermarket carrier bags. (Documentation-Driven Design quote)
 
-.. _can be drop: http://forge.typo3.org/projects/typo3v4-official_extension_template/issues
-.. _team: http://forge.typo3.org/projects/typo3v4-official_extension_template
-.. _make links: RestructuredtextHelp.html#cross-linking
-.. _can write TypoScript: RestructuredtextHelp.html#typoscript-reference
+.. _can be drop: https://forge.typo3.org/projects/extension-js_faq/issues

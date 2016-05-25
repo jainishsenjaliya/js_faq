@@ -2,6 +2,8 @@ plugin.tx_jsfaq{
 
 	settings{
 
+		showAllButton	= {$plugin.tx_jsfaq.settings.showAllButton}
+
 		list{
 			image{
 				width = {$plugin.tx_jsfaq.settings.list.image.width}

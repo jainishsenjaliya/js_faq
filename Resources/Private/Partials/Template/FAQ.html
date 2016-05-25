@@ -10,7 +10,7 @@
 			<f:if condition="{answers.options}==1">
 				<f:then>
 					<div class="tx-jsfaq-decription">
-						<f:format.raw>{answers.description}</f:format.raw>
+						<f:format.html>{answers.description}</f:format.html>
 					</div>
 				</f:then>
 				<f:else>
@@ -33,14 +33,20 @@
 
 				<f:if condition="{settings.list.display.expert}=='1'">
 				 	<f:if condition="{faq.expert}>0">
-						<div class="tx-jsfaq-expert">
-							<label>
-								<f:translate key='tx_jsfaq_domain_model_faq.label.expert' /> : 
-							</label>
-							<span>{faq.name} </span>
-							<span><f:link.email email="{faq.email}" /></span>
-							<span><f:link.external uri="{faq.url}" target="_blank">{faq.url}</f:link.external></span>
-						</div>
+						<f:if condition="{faq.name}">
+							<div class="tx-jsfaq-expert">
+								<label>
+									<f:translate key='tx_jsfaq_domain_model_faq.label.expert' /> : 
+								</label>
+								<span>{faq.name}</span>
+								<f:if condition="{faq.email}">
+									<span><f:link.email email="{faq.email}" /></span>
+								</f:if>
+								<f:if condition="{faq.url}">
+									<span><f:link.external uri="{faq.url}" target="_blank">{faq.url}</f:link.external></span>
+								</f:if>
+							</div>
+						</f:if>
 					</f:if>
 				</f:if>
 

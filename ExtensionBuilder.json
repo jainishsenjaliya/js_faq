@@ -361,7 +361,7 @@
             "sourceLanguage": "en",
             "state": "stable",
             "targetVersion": "7.6.0-7.6.99",
-            "version": "4.2.2"
+            "version": "4.2.3"
         },
         "extensionKey": "js_faq",
         "name": " FAQ - Frequently Asked Questions",
