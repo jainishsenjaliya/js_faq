@@ -4,8 +4,6 @@
  *  Togglae FAQ
 */
 
-jQuery.noConflict();
-
 jQuery(document).ready(function(jQuery){
 
 	var plus		= 'tx-jsfaq-toggle-plus';
