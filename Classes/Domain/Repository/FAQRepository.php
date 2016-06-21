@@ -108,7 +108,10 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		
 		$where = ' f.deleted = 0 AND f.hidden = 0 
 						AND ( f.starttime =0 OR ( f.starttime <= ' . $currentTime . ' AND f.endtime >=' . $currentTime . ' )) ' . $where;
-		
+
+		// add language condition
+		$where .= ' AND f.sys_language_uid IN (-1, ' . (int)$GLOBALS['TSFE']->sys_language_uid . ')';
+
 		$conf = $this->getDBHandle()->exec_SELECTgetRows($field, $table, $where, $groupBy, $orderBy, $limit);
 		
 		$data = array();
