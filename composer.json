@@ -18,7 +18,7 @@
     "typo3/cms-core": ">=6.2.0,<9.0"
   },
   "replace": {
-    "js-faq": "self.version",
+    "js_faq": "self.version",
     "typo3-ter/js-faq": "self.version"
   }
 }
