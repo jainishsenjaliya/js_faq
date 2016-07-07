@@ -6,7 +6,7 @@
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
     $_EXTKEY,
     'constants',
-    trim('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'.$_EXTKEY.'/Configuration/TypoScript/Constants.ts">')
+    trim('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'.$_EXTKEY.'/Configuration/TypoScript/Overrides/Constants.ts">')
 );
 
 
@@ -16,5 +16,5 @@
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
     $_EXTKEY,
     'setup',
-    trim('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'.$_EXTKEY.'/Configuration/TypoScript/Setup.ts">')
+    trim('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'.$_EXTKEY.'/Configuration/TypoScript/Overrides/Setup.ts">')
 );

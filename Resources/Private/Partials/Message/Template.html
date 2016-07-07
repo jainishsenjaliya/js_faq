@@ -1,0 +1,10 @@
+<f:if condition="{messages}">
+	<f:if condition="{messages.info}">
+		<f:then>
+			<f:render partial="Message/Info/Template" arguments="{messages:messages.info}" />
+		</f:then>
+		<f:else>
+			<f:render partial="Message/Error/Template" arguments="{messages:messages.error}" />
+		</f:else>
+	</f:if>
+</f:if>

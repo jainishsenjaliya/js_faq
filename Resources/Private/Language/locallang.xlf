@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-29T16:47:28Z" product-name="js_faq">
-		<header/>
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
+		<header>
+			<type>database</type>
+			<description>Language file for EXT:js_faq</description>
+			<authorName>Jainish Senjaliya</authorName>
+			<authorEmail>jainishsenjaliya@gmail.com</authorEmail>
+		</header>
 		<body>
 			<trans-unit id="tx_jsfaq_domain_model_category">
 				<source>Category</source>
@@ -66,13 +71,13 @@
 			<trans-unit id="tx_jsfaq_domain_model_content.image">
 				<source>image</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.error.missing_configuration">
-				<source>Please configure your basic configuration</source>
+			<trans-unit id="message.error.missing_configuration">
+				<source>Please configure your basic configuration.</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.error.include_template">
+			<trans-unit id="message.error.include_template">
 				<source>Are you sure that you have included the "Main" static template?</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.error.no_records">
+			<trans-unit id="message.error.no_records">
 				<source>No Records</source>
 			</trans-unit>
 			<trans-unit id="pagination_first">
@@ -87,22 +92,28 @@
 			<trans-unit id="pagination_next">
 				<source>Next</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.label.expert">
+			<trans-unit id="label.showall">
+				<source>Show All</source>
+			</trans-unit>
+			<trans-unit id="label.hideall">
+				<source>Hide all</source>
+			</trans-unit>
+			<trans-unit id="label.expert">
 				<source>Expert</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.label.question_asked_by">
+			<trans-unit id="label.question_asked_by">
 				<source>Question asked by</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.label.Category">
+			<trans-unit id="label.Category">
 				<source>Category</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.label.related_links">
+			<trans-unit id="label.related_links">
 				<source>Related links</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.label.related_faq">
+			<trans-unit id="label.related_faq">
 				<source>Related FAQ</source>
 			</trans-unit>
-			<trans-unit id="tx_jsfaq_domain_model_faq.label.back_to_faq">
+			<trans-unit id="label.back_to_faq">
 				<source>Back to ALL FAQ</source>
 			</trans-unit>
 		</body>

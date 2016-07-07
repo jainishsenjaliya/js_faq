@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-29T16:47:28Z" product-name="js_faq">
-		<header/>
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
+		<header>
+			<type>database</type>
+			<description>Language file for EXT:js_faq</description>
+			<authorName>Jainish Senjaliya</authorName>
+			<authorEmail>jainishsenjaliya@gmail.com</authorEmail>
+		</header>
 		<body>
 			<trans-unit id="name.description">
-				<source>name</source>
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="email.description">
-				<source>email</source>
+				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="url.description">
-				<source>url</source>
+				<source>URL</source>
 			</trans-unit>
 		</body>
 	</file>

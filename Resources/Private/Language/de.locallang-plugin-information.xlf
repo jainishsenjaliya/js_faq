@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
+	<file target-language="de" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
 		<header>
 			<type>database</type>
 			<description>Language file for EXT:js_faq</description>
@@ -9,61 +9,61 @@
 		</header>
 		<body>
 			<trans-unit id="plugin-title">
-				<source>FAQ - Frequently Asked Questions</source>
+				<target>FAQ - häufige Fragen</target>
 			</trans-unit>
 
 			<trans-unit id="plugin-settings">
-				<source>Settings</source>
+				<target>Einstellungen</target>
 			</trans-unit>
 			
 			<trans-unit id="plugin-value">
-				<source>Values</source>
+				<target>Werte</target>
 			</trans-unit>
 
 			<trans-unit id="main.order">
-				<source>Order By</source>
+				<target>sortiert nach</target>
 			</trans-unit>
 			<trans-unit id="main.order.sorting">
-				<source>Sorting</source>
+				<target>Sortierung</target>
 			</trans-unit>
 			<trans-unit id="main.order.question">
-				<source>Question</source>
+				<target>Frage</target>
 			</trans-unit>
 			<trans-unit id="main.order.crdate">
-				<source>Created data</source>
+				<target>Erstellungsdatum</target>
 			</trans-unit>
 			<trans-unit id="main.order.tstamp">
-				<source>Modified data</source>
+				<target>Bearbeitungsdatum</target>
 			</trans-unit>
 			<trans-unit id="main.order.expert">
-				<source>Expert</source>
+				<target>Experte</target>
 			</trans-unit>
 			<trans-unit id="main.order.asked_by">
-				<source>Asked By</source>
+				<target>gefragt von</target>
 			</trans-unit>
 
 			<trans-unit id="main.orderType">
-				<source>Order Type</source>
+				<target>sortiert nach</target>
 			</trans-unit>
 			<trans-unit id="main.orderType.desc">
-				<source>Desecending</source>
+				<target>absteigend</target>
 			</trans-unit>
 			<trans-unit id="main.orderType.asc">
-				<source>Asecending</source>
+				<target>aufsteigend</target>
 			</trans-unit>
 
 			<trans-unit id="main.displayFAQ">
-				<source>Display FAQ List</source>
+				<target>Zeige FAQ-Liste</target>
 			</trans-unit>
 			<trans-unit id="main.displayFAQ.Default">
-				<source>By Default</source>
+				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="main.displayFAQ.CategoryGroupWise">
-				<source>Category group wise</source>
+				<target>nach Kategorien geordnet</target>
 			</trans-unit>
 
 			<trans-unit id="main.startingPoint">
-				<source>Starting Point</source>
+				<target>Startpunkt</target>
 			</trans-unit>
 
 		</body>

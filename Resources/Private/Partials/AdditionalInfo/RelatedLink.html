@@ -1,0 +1,14 @@
+<f:if condition="{faq.related_link}">
+	<div class="tx-jsfaq-related-link-block">
+		<label>
+			<f:translate key='label.related_links' />
+		</label>
+		<ul class="tx-jsfaq-related-links">
+			<f:for each="{faq.related_link}" as="links">
+				<li>
+					<f:link.external uri="{links}" target="_blank">{links}</f:link.external>
+				</li>
+			</f:for>
+		</ul>
+	</div>
+</f:if>

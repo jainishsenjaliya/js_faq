@@ -1,9 +1,7 @@
-{namespace pg=JS\JsFaq\ViewHelpers}
-
 <f:for each="{FAQ}" as="categoryGroup" key="number" >
-	
+
 	<div class="tx-jsfaq-category-faq" id="{settings.contentID}" >
-	
+
 		<div class="tx-category">
 			<h3>{categoryGroup.category}</h3>
 			<div class="toggale">
@@ -20,5 +18,5 @@
 		</div>
 
 	</div>
-	
+
 </f:for>

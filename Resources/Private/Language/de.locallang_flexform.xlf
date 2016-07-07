@@ -1,174 +1,174 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-29T11:12:56Z" product-name="js_faq">
+	<file target-language="de" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
 		<header>
 			<type>database</type>
 			<description>Language file for EXT:js_faq</description>
 			<authorName>Jainish Senjaliya</authorName>
 			<authorEmail>jainishsenjaliya@gmail.com</authorEmail>
 		</header>
-		<body>
+		<body>						
 			<trans-unit id="main">
-				<source>General Settings</source>
+				<target>Standardeinstellungen</target>
 			</trans-unit>
 
 			<trans-unit id="main.order">
-				<source>Order By</source>
+				<target>sortiert nach</target>
 			</trans-unit>
 			<trans-unit id="main.order.sorting">
-				<source>Sorting</source>
+				<target>Sortierung</target>
 			</trans-unit>
 			<trans-unit id="main.order.question">
-				<source>Question</source>
+				<target>Frage</target>
 			</trans-unit>
 			<trans-unit id="main.order.crdate">
-				<source>Created data</source>
+				<target>Erstellungsdatum</target>
 			</trans-unit>
 			<trans-unit id="main.order.tstamp">
-				<source>Modified data</source>
+				<target>Bearbeitungsdatum</target>
 			</trans-unit>
 			<trans-unit id="main.order.expert">
-				<source>Expert</source>
+				<target>Experte</target>
 			</trans-unit>
 			<trans-unit id="main.order.asked_by">
-				<source>Asked By</source>
+				<target>gefragt von</target>
 			</trans-unit>
 
 			<trans-unit id="main.orderType">
-				<source>Order Type</source>
+				<target>sortiert nach</target>
 			</trans-unit>
 			<trans-unit id="main.orderType.desecending">
-				<source>Desecending</source>
+				<target>absteigend</target>
 			</trans-unit>
 			<trans-unit id="main.orderType.asecending">
-				<source>Asecending</source>
+				<target>aufsteigend</target>
 			</trans-unit>
-
+			
 			<trans-unit id="main.displayFAQ">
-				<source>Display FAQ List</source>
+				<target>FAQ-Liste</target>
 			</trans-unit>
 			<trans-unit id="main.displayFAQ.default">
-				<source>By Default</source>
+				<target>Standardvorgabe</target>
 			</trans-unit>
 			<trans-unit id="main.displayFAQ.categoryGroupWise">
-				<source>Category group wise</source>
+				<target>Kategorien gruppenweise</target>
 			</trans-unit>
 
 			<trans-unit id="main.categories">
-				<source>Categories</source>
+				<target>Kategorien</target>
 			</trans-unit>
 
 			<trans-unit id="main.limit">
-				<source>Max records displayed</source>
+				<target>max. Datensätze</target>
 			</trans-unit>
 
 			<trans-unit id="main.paginate">
-				<source>Show the pagination</source>
+				<target>Seitennummerierung</target>
 			</trans-unit>
 
 			<trans-unit id="main.recordPerPage">
-				<source>Show 'n' record per page</source>
+				<target>Datensätze pro Seite</target>
 			</trans-unit>
 
 			<trans-unit id="main.startingPoint">
-				<source>Starting Point</source>
+				<target>Startpunkt</target>
 			</trans-unit>
 
 			<trans-unit id="main.recursive">
-				<source>Recursive</source>
+				<target>rekursiv</target>
 			</trans-unit>
 			<trans-unit id="main.recursive.I.0">
-				<source>0 levels (only selected page)</source>
+				<target>0 Ebenen (nur gewählte Dsatensätze)</target>
 			</trans-unit>
 			<trans-unit id="main.recursive.I.1">
-				<source>1 levels</source>
+				<target>1 Ebene</target>
 			</trans-unit>
 			<trans-unit id="main.recursive.I.2">
-				<source>2 levels</source>
+				<target>2 Ebenen</target>
 			</trans-unit>
 			<trans-unit id="main.recursive.I.3">
-				<source>3 levels</source>
+				<target>3 Ebenen</target>
 			</trans-unit>
 			<trans-unit id="main.recursive.I.4">
-				<source>4 levels</source>
+				<target>4 Ebenen</target>
 			</trans-unit>
 			<trans-unit id="main.recursive.I.100">
-				<source>Infinite</source>
+				<target>unbegrenzt</target>
 			</trans-unit>
 
 			<trans-unit id="list">
-				<source>Display settings - List page</source>
+				<target>Einstellungen - Listenansicht</target>
 			</trans-unit>
 			<trans-unit id="list.image.width">
-				<source>Image Width</source>
+				<target>Bildbreite</target>
 			</trans-unit>
 			<trans-unit id="list.image.height">
-				<source>Image Height</source>
+				<target>Bildhöhe</target>
 			</trans-unit>
 			<trans-unit id="list.display.additionalInfo">
-				<source>Display additional Information</source>
+				<target>Zeige ergänzende Informationen</target>
 			</trans-unit>
 			<trans-unit id="list.display.expert">
-				<source>Display Expert</source>
+				<target>Experte</target>
 			</trans-unit>
 			<trans-unit id="list.display.asked_by">
-				<source>Display Asked by</source>
+				<target>gefragt von</target>
 			</trans-unit>
 			<trans-unit id="list.display.related_link">
-				<source>Display Related Link</source>
+				<target>verknüpfter Link</target>
 			</trans-unit>
 			<trans-unit id="list.display.category">
-				<source>Display Category</source>
+				<target>Kategorie</target>
 			</trans-unit>
 			<trans-unit id="list.display.related_faq">
-				<source>Display Related FAQ</source>
+				<target>verknüpfte FAQ</target>
 			</trans-unit>
 
 			<trans-unit id="detail">
-				<source>Display settings - detail page</source>
+				<target>Einstellungen - Detailseite</target>
 			</trans-unit>
 			<trans-unit id="detail.image.width">
-				<source>Image Width</source>
+				<target>Bildbreite</target>
 			</trans-unit>
 			<trans-unit id="detail.image.height">
-				<source>Image Height</source>
+				<target>Bildhöhe</target>
 			</trans-unit>
 			<trans-unit id="detail.display.additionalInfo">
-				<source>Display additional Information</source>
+				<target>zeige ergänzende Informationen</target>
 			</trans-unit>
 			<trans-unit id="detail.display.expert">
-				<source>Display Expert</source>
+				<target>Experte</target>
 			</trans-unit>
 			<trans-unit id="detail.display.asked_by">
-				<source>Display Asked by</source>
+				<target>gefragt von</target>
 			</trans-unit>
 			<trans-unit id="detail.display.related_link">
-				<source>Display Related Link</source>
+				<target>verwandter Link</target>
 			</trans-unit>
 			<trans-unit id="detail.display.category">
-				<source>Display Category</source>
+				<target>Kategorie</target>
 			</trans-unit>
 			<trans-unit id="detail.display.related_faq">
-				<source>Display Related FAQ</source>
+				<target>verwandte FAQ</target>
 			</trans-unit>
-			
+
 			<trans-unit id="additional">
-				<source>Other Settings</source>
+				<target>weitere Einstellungen</target>
 			</trans-unit>
 			<trans-unit id="additional.javascript.jQueryLib.include">
-				<source>Include jQuery Library</source>
+				<target>jQuery einbinden</target>
 			</trans-unit>
 			<trans-unit id="additional.javascript.jQueryLib.includeInFooter">
-				<source>Include jQuery Library in Footer</source>
+				<target>jQuery in Footer einbinden</target>
 			</trans-unit>
 			<trans-unit id="additional.css.fancy.include">
-				<source>Include Fancy CSS</source>
+				<target>'Fancy CSS' einbinden</target>
 			</trans-unit>
 			<trans-unit id="additional.css.responsive.include">
-				<source>Mobile compatible Layout</source>
+				<target>mobil kompatibles Layout</target>
 			</trans-unit>
 			<trans-unit id="additional.css.includeInFooter">
-				<source>Include Style in Footer</source>
+				<target>Style in Footer einbinden</target>
 			</trans-unit>
 			
 		</body>

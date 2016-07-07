@@ -1,0 +1,13 @@
+<div class="{f:if(condition: messages.include_template, then: 'message-top')}">
+	<div class="alert alert-danger">
+		<f:for each='{messages}' as='message'>
+			<span>
+				<f:format.printf arguments="{
+					1: '<br>'
+					}">
+					<f:translate key='message.error.{message}' />
+				</f:format.printf>
+			</span>
+		</f:for>
+	</div>
+</div>

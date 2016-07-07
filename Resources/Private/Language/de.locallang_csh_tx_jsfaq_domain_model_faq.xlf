@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="de" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
+		<header>
+			<type>database</type>
+			<description>Language file for EXT:js_faq</description>
+			<authorName>Jainish Senjaliya</authorName>
+			<authorEmail>jainishsenjaliya@gmail.com</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="question.description">
+				<target>Frage</target>
+			</trans-unit>
+			<trans-unit id="asked_by.description">
+				<target>gefragt von</target>
+			</trans-unit>
+			<trans-unit id="related_link.description">
+				<target>verwandter Link</target>
+			</trans-unit>
+			<trans-unit id="expert.description">
+				<target>Experte</target>
+			</trans-unit>
+			<trans-unit id="related.description">
+				<target>verwandt</target>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="answer.description">
+				<target>Antwort</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

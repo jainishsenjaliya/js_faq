@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="de" datatype="plaintext" original="messages" date="2016-05-31T19:18:13Z" product-name="js_faq">
+		<header>
+			<type>database</type>
+			<description>Language file for EXT:js_faq</description>
+			<authorName>Jainish Senjaliya</authorName>
+			<authorEmail>jainishsenjaliya@gmail.com</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="tx_jsfaq_domain_model_category">
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.teaser">
+				<target>Abstract</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.image">
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_category.shortcut_to_page">
+				<target>Shortcut zur Seite</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert">
+				<target>Experte</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert.email">
+				<target>Email</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_expert.url">
+				<target>URL</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq">
+				<target>F A Q</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.question">
+				<target>Frage</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.asked_by">
+				<target>gefragt von</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.related_link">
+				<target>verwandte Links (einer pro Zeile)</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.expert">
+				<target>Experte</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.related">
+				<target>verwandte FAQ</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.category">
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_faq.answer">
+				<target>Antwort</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content">
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.options">
+				<target>Optionen</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.description">
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.image">
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.options.I.0">
+				<target>Bitte wählen!</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.options.I.1">
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_jsfaq_domain_model_content.options.I.2">
+				<target>Bilder</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

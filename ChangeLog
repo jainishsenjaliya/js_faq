@@ -1,24 +1,44 @@
+2016-06-25  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Change ordering based upon backend selection of images (media) and related FAQ.
+	* Change error notification messages.
+	* Change typoscript path to typo3conf/ext/js_faq/Configuration/TypoScript/Overrides/
+	* Modify CSS.
+	* Other Minor changes.
+	* Released version 5.4.0
+
+2016-06-24  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Added language files for German.
+	* Create separate file for additional information.
+	* Released version 5.3.0
+
+2016-06-17  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Minor chanages and small bug fixes.
+	* Released version 5.2.4
+
 2016-05-31  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Added option for enable or disble Show All / Hide all button
+	* Added option for enable or disable Show All / Hide all button.
 	* Released version 5.2.3
 
 2016-05-20  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Pagination Enable / Disable functionality will manage via plugin option
-	* Added option for display number of record per page
+	* Pagination Enable / Disable functionality will manage via plugin option.
+	* Added option for display number of record per page.
 	* Released version 5.2.2
 
 2016-05-18  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Manage additional headerdata via typoscript
+	* Manage additional headerdata via typoscript.
 	* Released version 5.2.1
 
 2016-05-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Added recursive functionality for starting point . 
-	* Will display data from parent folder as well as child folders
-	* Minor changes
+	* Will display data from parent folder as well as child folders.
+	* Minor changes.
 	* Released version 5.2.0
 
 2016-04-06  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
@@ -44,23 +64,23 @@
 
 2016-02-26  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Major Changes
-	* Image dimension manage via plugin and typoscript
-	* Bug fixes
+	* Major Changes.
+	* Image dimension manage via plugin and typoscript.
+	* Bug fixes.
 	* Changes in css.
-	* After upgrade plugin you must need to update plugin configuration
+	* After upgrade plugin you must need to update plugin configuration.
 	* Released version 3.0.0
 
 2016-02-08  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Major Changes
-	* FAL image support
+	* Major Changes.
+	* FAL image support.
 	* After upgrade plugin you must need to update all images in "Answer" area.
 	* Released version 2.0.0
 
 2016-01-01  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Added functionality to show FAQ between specific start-date and end-date
+	* Added functionality to show FAQ between specific start-date and end-date.
 	* Released version 1.6.4
 
 2015-12-19  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
@@ -138,7 +158,7 @@
 
 2015-04-08  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
-	* Added email and website URL options in Expert table
+	* Added email and website URL options in Expert table.
 	* Display both option in frontend module.
 	* Added "Display additional Information in list page" option in plugin.
 	* "Display Expert" option is checked in plugin then only display in frontend module.

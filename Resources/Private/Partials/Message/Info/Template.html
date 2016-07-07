@@ -1,0 +1,13 @@
+<div class="message-top">
+	<div class="alert alert-info">
+		<f:for each='{messages}' as='message'>
+			<span>
+				<f:format.printf arguments="{
+					1: '<br>'
+					}">
+					<f:translate key='message.info.{message}' />
+				</f:format.printf>
+			</span>
+		</f:for>
+	</div>
+</div>

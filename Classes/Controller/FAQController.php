@@ -1,7 +1,6 @@
 <?php
 namespace JS\JsFaq\Controller;
 
-use JS\JsFaq\Service\Configuration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
@@ -34,7 +33,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
 	/**
 	 * fAQRepository
 	 *
@@ -42,6 +40,14 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @inject
 	 */
 	protected $fAQRepository = NULL;
+
+	/**
+	 * configuration
+	 *
+	 * @var \JS\JsFaq\Service\Configuration
+	 * @inject
+	 */
+	protected $configuration = NULL;
 	
 	/**
 	 * action faq
@@ -50,24 +56,24 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 */
 	public function faqAction() {
 
-		$detail = 0;
-
-		if ($this->request->hasArgument('faq')) {
-
-			$data = $this->request->getArguments('faq');
-
-			if(intVal($data['faq'])){
-				$detail = $data['faq'];
-			}
-		}
-
 		$this->contentObj = $this->configurationManager->getContentObject();
 
 		$this->settings['contentID'] = md5($this->contentObj->data['uid']);
 
-		$template = Configuration::template();
+		$template = $this->configuration->template();
 
 		if($template==1){
+			
+			$detail = 0;
+
+			if ($this->request->hasArgument('faq')) {
+
+				$data = $this->request->getArguments('faq');
+
+				if(intVal($data['faq'])){
+					$detail = $data['faq'];
+				}
+			}
 			
 			$faq = $this->fAQRepository->getFAQData($detail);
 
@@ -76,17 +82,17 @@ class FAQController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			}
 
 			if (count($faq) == 0) {
-				$template = 3;
+				$template = array("error"=>array('no_records'));
 			}
 			
 			$this->view->assign('FAQ', $faq);
 			$this->view->assign('detail', $detail);
 		}
-		
+
 		$this->view->assign('template', $template);
 		$this->view->assign('settings', $this->settings);
 
 		// Include Additional Data
-		Configuration::additionalData();
+		$this->configuration->additionalData();
 	}
 }

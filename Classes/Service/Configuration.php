@@ -1,7 +1,6 @@
 <?php
 namespace JS\JsFaq\Service;
 
-use JS\JsFaq\Service\SettingsService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
@@ -42,6 +41,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
+	 * settingsService
+	 *
+	 * @var \JS\JsFaq\Service\SettingsService
+	 * @inject
+	 */
+	protected $settingsService = NULL;
+
+	/**
 	 * template
 	 *
 	 * @return
@@ -49,13 +56,17 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 	 
 	function template()
 	{
-		$settings = SettingsService::getSettings();
+		$settings = $this->settingsService->getSettings();
 
 		if($settings['configuration']!=1){
-			return 2;
-		}else if($settings['main']['startingPoint']=="" ){
-			return 0;
+			
+			return array("error"=>array('include_template'=>'include_template'));
+
+		}else if(empty($settings['main']['startingPoint'])){
+
+			return array("error"=>array('missing_configuration'));
 		}
+
 		return 1;
 	}
 
@@ -67,7 +78,7 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 	
 	function additionalData()
 	{
-		$settings = SettingsService::getSettings();
+		$settings = $this->settingsService->getSettings();
 
 		// Inlcude JS
 
@@ -122,8 +133,6 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 		}
 	}
 
-
-
 	/**
 	 * falImages
 	 *
@@ -146,8 +155,10 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 		foreach ($result as $key => $value) {
 
 			$whr = ' deleted= 0 and hidden = 0 ' . $where . ' AND uid_foreign = ' . $value['uid'];
-			$sysImages = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*', 'sys_file_reference', $whr);
-			$arr = '';
+
+			$sysImages = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*', 'sys_file_reference', $whr,'', 'sorting_foreign');
+
+			$arr = array();
 
 			foreach ($sysImages as $key1 => $value1) {
 
@@ -159,17 +170,17 @@ class Configuration implements \TYPO3\CMS\Core\SingletonInterface {
 
 				$arr[$value1['fieldname']][$value1['uid']] = array(
 
-						'identifier'	=> 'fileadmin' . $sysImageDetail[0]['identifier'],
-						'title'			=> $value1['title'],
-						'caption'		=> $value1['description'],
-						'extension'		=> $sysImageDetail[0]['extension'],
-						'mime_type'		=> $sysImageDetail[0]['mime_type'],
-						'name'			=> $sysImageDetail[0]['name'],
-						'uid'			=> $sysImageDetail[0]['uid'],
-						'mime'			=> $arr1[0],
-						'type'			=> $arr1[1],
-						'imageName'		=> basename($sysImageDetail[0]['identifier']),
-					);
+					'identifier'	=> 'fileadmin' . $sysImageDetail[0]['identifier'],
+					'title'			=> $value1['title'],
+					'caption'		=> $value1['description'],
+					'extension'		=> $sysImageDetail[0]['extension'],
+					'mime_type'		=> $sysImageDetail[0]['mime_type'],
+					'name'			=> $sysImageDetail[0]['name'],
+					'uid'			=> $sysImageDetail[0]['uid'],
+					'mime'			=> $arr1[0],
+					'type'			=> $arr1[1],
+					'imageName'		=> basename($sysImageDetail[0]['identifier']),
+				);
 			}
 
 			$result[$key]['media'] = $arr;

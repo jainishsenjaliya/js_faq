@@ -1,0 +1,16 @@
+<f:if condition="{faq.expert}>0">
+	<f:if condition="{faq.name}">
+		<div class="tx-jsfaq-expert">
+			<label>
+				<f:translate key='label.expert' /> : 
+			</label>
+			<span>{faq.name}</span>
+			<f:if condition="{faq.email}">
+				<span><f:link.email email="{faq.email}" /></span>
+			</f:if>
+			<f:if condition="{faq.url}">
+				<span><f:link.external uri="{faq.url}" target="_blank">{faq.url}</f:link.external></span>
+			</f:if>
+		</div>
+	</f:if>
+</f:if>

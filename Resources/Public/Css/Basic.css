@@ -123,13 +123,12 @@
 }
 
 .tx-jsfaq .tx-jsfaq-toggle-show-all.disabled, .tx-jsfaq .tx-jsfaq-toggle-hide-all.disabled,
-.tx-jsfaq .tx-jsfaq-toggle-show-category-all.disabled, .tx-jsfaq .tx-jsfaq-toggle-hide-category-all.disabled 
- {
+.tx-jsfaq .tx-jsfaq-toggle-show-category-all.disabled, .tx-jsfaq .tx-jsfaq-toggle-hide-category-all.disabled {
 	font-weight:normal;
 	cursor:default;
 }
 
-.tx-jsfaq .tx-category{
+.tx-jsfaq .tx-category {
 	overflow: hidden;
 }
 
@@ -146,12 +145,17 @@
 	padding: 10px 0 10px;
 }
 
-
-
 .tx-jsfaq .tx-jsfaq-decription, .tx-jsfaq .tx-jsfaq-image {
 	padding: 0px 0px 20px 0px;
 	line-height: 20px;
 }
+
+.tx-jsfaq-image img{
+	max-width: 100%;
+	padding: 0 0 10px 0;
+	vertical-align: top;
+}
+
 .tx-jsfaq-additional-info {
 	padding: 10px 10px 20px 0px;
 	clear: both;
@@ -226,4 +230,46 @@
 .tx-jsfaq .f3-widget-paginator li span {
 	color:#999;
 	cursor: default;
+}
+
+.tx-jsfaq .alert {
+	border-radius:4px;
+	border: 1px solid #cccccc;
+	clear: both;
+	display: inline-block;
+	margin-bottom:20px;
+	padding: 13px 40px 13px 18px;
+	width: auto;
+}
+
+.tx-jsfaq .alert span{
+	display:block !important;
+	font-size:14px;
+	line-height:18px;
+	margin-bottom: 10px;
+	width:100%;
+}
+
+.tx-jsfaq .alert span:last-child{
+	margin-bottom: 0px;
+}
+
+.tx-jsfaq .alert-danger, .tx-jsfaq .alert-success, .tx-jsfaq .alert-info  {
+	background-color: #fff;
+}
+
+.tx-jsfaq .alert-danger{
+	width: 100%
+}
+
+.tx-jsfaq .alert-danger span {
+	color: red;
+}
+
+.tx-jsfaq .alert-success span {
+	color: green;
+}
+
+.tx-jsfaq .alert-info span {
+	color: #3079ed;
 }

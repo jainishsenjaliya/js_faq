@@ -17,9 +17,7 @@
 					<div class="tx-jsfaq-image">
 						<f:if condition="{answers.image}>0">
 							<f:for each="{answers.media.image}" as="img" iteration="itemIteration">
-								<div>
-									<f:image src="{img.identifier}" width="{settings.list.image.width}" height="{settings.list.image.height}" alt="{faq.question}" title="{faq.question}" />
-								</div>
+								<f:image src="{img.identifier}" width="{settings.list.image.width}" height="{settings.list.image.height}" alt="{faq.question}" title="{faq.question}" />
 							</f:for>
 						</f:if> 
 					</div>
@@ -31,81 +29,24 @@
 
 			<div class="tx-jsfaq-additional-info">
 
-				<f:if condition="{settings.list.display.expert}=='1'">
-				 	<f:if condition="{faq.expert}>0">
-						<f:if condition="{faq.name}">
-							<div class="tx-jsfaq-expert">
-								<label>
-									<f:translate key='tx_jsfaq_domain_model_faq.label.expert' /> : 
-								</label>
-								<span>{faq.name}</span>
-								<f:if condition="{faq.email}">
-									<span><f:link.email email="{faq.email}" /></span>
-								</f:if>
-								<f:if condition="{faq.url}">
-									<span><f:link.external uri="{faq.url}" target="_blank">{faq.url}</f:link.external></span>
-								</f:if>
-							</div>
-						</f:if>
-					</f:if>
+				<f:if condition="{settings.list.display.expert}">
+					<f:render partial="AdditionalInfo/Expert" arguments="{_all}" />
 				</f:if>
 
-				<f:if condition="{settings.list.display.asked_by}=='1'">
-					<f:if condition="{faq.asked_by}!=''">
-						<div class="tx-jsfaq-asked-by">
-							<label>
-								<f:translate key='tx_jsfaq_domain_model_faq.label.question_asked_by' /> : 
-								<span>{faq.asked_by}</span>
-							</label>
-						</div>
-					</f:if>
+				<f:if condition="{settings.list.display.asked_by}">
+					<f:render partial="AdditionalInfo/AskedBy" arguments="{_all}" />
 				</f:if>
 
 				<f:if condition="{settings.list.display.category}=='1'">
-					<f:if condition="{faq.categoryName}!=''">
-						<div class="tx-jsfaq-category">
-							<label>
-								<f:translate key='tx_jsfaq_domain_model_faq.label.Category' /> :
-								<span>{faq.categoryName}</span>
-							</label>
-						</div>
-					</f:if>
+					<f:render partial="AdditionalInfo/Category" arguments="{_all}" />
 				</f:if>
 
-				<f:if condition="{settings.list.display.related_link}=='1'">
-					<f:if condition="{faq.related_link}">
-						<div class="tx-jsfaq-related-link-block">
-							<label>
-								<f:translate key='tx_jsfaq_domain_model_faq.label.related_links' />
-							</label>
-							<ul class="tx-jsfaq-related-links">
-								<f:for each="{faq.related_link}" as="links">
-									<li>
-										<f:link.external uri="{links}" target="_blank">{links}</f:link.external>
-									</li>
-								</f:for>
-							</ul>
-						</div>
-					</f:if>
+				<f:if condition="{settings.list.display.related_link}">
+					<f:render partial="AdditionalInfo/RelatedLink" arguments="{_all}" />
 				</f:if>
 
-				<f:if condition="{settings.list.display.related_faq}=='1'">
-					<f:if condition="{faq.related_faq}">
-						<div class="tx-jsfaq-related-faq-block">
-							<label>
-								<f:translate key='tx_jsfaq_domain_model_faq.label.related_faq' />
-							</label>
-							<ul class="tx-jsfaq-related-faq">
-								<f:for each="{faq.related_faq}" as="relatedFaq">
-									<li>
-										<f:link.action action="faq" controller="FAQ" arguments="{faq: relatedFaq.uid}">
-											{relatedFaq.question}
-										</f:link.action>
-									</li>
-								</f:for>
-							</ul>
-						</div>
-					</f:if>
+				<f:if condition="{settings.list.display.related_faq}">
+					<f:render partial="AdditionalInfo/RelatedFaq" arguments="{_all}" />
 				</f:if>
 
 			</div>

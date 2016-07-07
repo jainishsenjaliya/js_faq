@@ -1,11 +1,7 @@
 <?php
 namespace JS\JsFaq\Domain\Repository;
 
-use JS\JsFaq\Service\Configuration;
-use JS\JsFaq\Service\PageService;
-use JS\JsFaq\Service\SettingsService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 
 /***************************************************************
  *
@@ -37,6 +33,29 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+	/**
+	 * configuration
+	 *
+	 * @var \JS\JsFaq\Service\Configuration
+	 * @inject
+	 */
+	protected $configuration = NULL;
+
+	/**
+	 * pageService
+	 *
+	 * @var \JS\JsFaq\Service\PageService
+	 * @inject
+	 */
+	protected $pageService = NULL;
+
+	/**
+	 * settingsService
+	 *
+	 * @var \JS\JsFaq\Service\SettingsService
+	 * @inject
+	 */
+	protected $settingsService = NULL;
 
 	/**
 	 * @var array
@@ -53,7 +72,7 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	 */
 	public function getFAQData($faq){
 
-		$settings = SettingsService::getSettings();
+		$settings = $this->settingsService->getSettings();
 
 		$this->fullURL = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
 
@@ -79,7 +98,10 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$orderBy = ' c.name ASC , '.$orderBy ;
 		}
 		
-		$field = 'f.uid, f.question, f.asked_by, f.expert, f.answer, f.related, f.related_link, e.name, e.email, e.url, m.uid_foreign , group_concat( cast( c.name AS char ) ) AS categoryName, group_concat( cast( c.uid AS char ) ) AS categoryID';
+		$field = 'f.uid, f.question, f.asked_by, f.expert, f.answer, f.related, f.related_link, 
+					e.name, e.email, e.url, m.uid_foreign ,
+					group_concat( cast( c.name AS char ) ) AS categoryName, 
+					group_concat( cast( c.uid AS char ) ) AS categoryID';
 		
 		$table = 'tx_jsfaq_domain_model_faq as f 
 						LEFT JOIN tx_jsfaq_domain_model_expert AS e ON f.expert = e.uid 
@@ -95,7 +117,7 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		} else {
 			if (isset($settings['main']['startingPoint']) && $settings['main']['startingPoint'] != '') {
 
-				$storagePids = PageService::extendPidListByChildrens($settings['main']['startingPoint'],$settings['main']['recursive']);
+				$storagePids = $this->pageService->extendPidListByChildrens($settings['main']['startingPoint'],$settings['main']['recursive']);
 
 				$where .= ' AND f.pid in (' . $storagePids. ') ';
 			}
@@ -108,8 +130,10 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		
 		$where = ' f.deleted = 0 AND f.hidden = 0 
 						AND ( f.starttime =0 OR ( f.starttime <= ' . $currentTime . ' AND f.endtime >=' . $currentTime . ' )) ' . $where;
+
+		$where .= ' AND f.sys_language_uid IN (-1, ' . (int)$GLOBALS['TSFE']->sys_language_uid . ')';
 		
-		$conf = $this->getDBHandle()->exec_SELECTgetRows($field, $table, $where, $groupBy, $orderBy, $limit);
+		$conf = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows($field, $table, $where, $groupBy, $orderBy, $limit);
 		
 		$data = array();
 		
@@ -120,14 +144,14 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$table1		= 'tx_jsfaq_domain_model_content';
 			$where1		= ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'';
 
-			$answers	= Configuration::falImages($this->getDBHandle()->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
+			$answers	= $this->configuration->falImages($GLOBALS['TYPO3_DB']->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
 
 			$field2		= 'f.uid, f.question';
-			$orderBy2	= 'sorting_foreign';
+			$orderBy2	= 'm.sorting';
 			$table2		= 'tx_jsfaq_faq_faq_mm as m LEFT JOIN tx_jsfaq_domain_model_faq as f ON m.uid_foreign = f.uid';
 			$where2		= ' uid_local = ' . $value['uid'];
 			
-			$related_faq = $this->getDBHandle()->exec_SELECTgetRows($field2, $table2, $where2, '', $orderBy2);
+			$related_faq = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows($field2, $table2, $where2, '', $orderBy2);
 
 			$relatedFaq = array();
 
@@ -142,9 +166,7 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$data[$value['uid']]['related_link'] = $related_link;
 			$data[$value['uid']]['related_faq'] = $relatedFaq;
 		}
-
 		return $data;
-
 	}
 	
 	/**
@@ -175,17 +197,6 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		}else{
 			return $categoryArr;
 		}
-
 		return '';
-	}
-
-	/**
-	 * getDBHandle
-	 *
-	 * @return
-	 */
-	public function getDBHandle()
-	{
-		return $GLOBALS['TYPO3_DB'];
 	}
 }

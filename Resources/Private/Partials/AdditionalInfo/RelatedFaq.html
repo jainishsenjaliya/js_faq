@@ -1,0 +1,16 @@
+<f:if condition="{faq.related_faq}">
+	<div class="tx-jsfaq-related-faq-block">
+		<label>
+			<f:translate key='label.related_faq' />
+		</label>
+		<ul class="tx-jsfaq-related-faq">
+			<f:for each="{faq.related_faq}" as="relatedFAQ">
+				<li>
+					<f:link.action action="faq" controller="FAQ" arguments="{faq: relatedFAQ.uid}">
+						{relatedFAQ.question}
+					</f:link.action>
+				</li>
+			</f:for>
+		</ul>
+	</div>
+</f:if>

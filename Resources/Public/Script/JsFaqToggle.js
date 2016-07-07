@@ -110,5 +110,4 @@ jQuery(document).ready(function(jQuery){
 	if(!jQuery('.f3-widget-paginator li.current').length){
 		jQuery('.f3-widget-paginator').remove();
 	}
-
 });

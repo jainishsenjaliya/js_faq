@@ -214,7 +214,7 @@
 								<type>input</type>
 								<size>5</size>
 								<max>5</max>
-								<default>300c</default>
+								<default>500c</default>
 								<eval>trim</eval>
 							</config>
 						</TCEforms>
