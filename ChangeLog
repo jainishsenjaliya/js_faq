@@ -1,3 +1,10 @@
+2016-07-09  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+
+	* Include dependent js_paginate extension for pagination.
+	* Change viewhelper "{namespace pg=JS\JsFaq\ViewHelpers}" to "{namespace pg=JS\JsPaginate\ViewHelpers}"
+	* https://typo3.org/extensions/repository/view/js_paginate
+	* Released version 5.4.1
+
 2016-06-25  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
 
 	* Change ordering based upon backend selection of images (media) and related FAQ.
