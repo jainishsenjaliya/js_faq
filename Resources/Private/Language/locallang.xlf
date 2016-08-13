@@ -72,10 +72,10 @@
 				<source>image</source>
 			</trans-unit>
 			<trans-unit id="message.error.missing_configuration">
-				<source>Please configure your basic configuration.</source>
+				<source>Please configure your basic configuration in plugin option.</source>
 			</trans-unit>
 			<trans-unit id="message.error.include_template">
-				<source>Are you sure that you have included the "Main" static template?</source>
+				<source>Are you sure that you have included the "Main" static template for FAQ ?</source>
 			</trans-unit>
 			<trans-unit id="message.error.no_records">
 				<source>No Records</source>

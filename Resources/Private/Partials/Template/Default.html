@@ -12,7 +12,7 @@
 
 	<f:if condition="{settings.main.paginate}">
 		<f:then>
-			<pg:Paginate objects="{FAQ}" as="paginatedObjekt" configuration="{itemsPerPage: settings.main.recordPerPage, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 4, maximumVisiblePages: 3}">
+			<pg:Paginate objects="{FAQ}" as="paginatedObjekt" configuration="{itemsPerPage: settings.main.recordPerPage, insertAbove: 0, insertBelow: 1, maximumVisiblePages: 5, displayDots: 1}">
 				<f:for each="{paginatedObjekt}" as="faq">
 					<f:render partial="Template/FAQ" arguments="{faq:faq}" />
 				</f:for>

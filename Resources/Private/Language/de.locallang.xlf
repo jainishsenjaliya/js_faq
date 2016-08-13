@@ -75,7 +75,7 @@
 				<target>Bitte konfigurieren Sie Ihre Basiseinstellungen.</target>
 			</trans-unit>
 			<trans-unit id="message.error.include_template">
-				<target>Haben Sie das statische Template eingebunden?</target>
+				<target>Haben Sie das statische Template eingebunden für FAQ ?</target>
 			</trans-unit>
 			<trans-unit id="message.error.no_records">
 				<target>keine Datensätze</target>

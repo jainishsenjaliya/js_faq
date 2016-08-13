@@ -7,7 +7,7 @@
 .tx-jsfaq {
 	font-family:Arial;
 	font-size: 14px;
-	width: 540px;
+	width: 600px;
 	margin:0 10px;
 }
 .tx-jsfaq .toggale {
@@ -232,6 +232,15 @@
 	cursor: default;
 }
 
+.tx-jsfaq .message-top {
+	left: 0;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0px;
+	z-index: 100000000000000;
+}
+
 .tx-jsfaq .alert {
 	border-radius:4px;
 	border: 1px solid #cccccc;
@@ -247,6 +256,7 @@
 	font-size:14px;
 	line-height:18px;
 	margin-bottom: 10px;
+	padding-left:20px;
 	width:100%;
 }
 
@@ -260,6 +270,10 @@
 
 .tx-jsfaq .alert-danger{
 	width: 100%
+}
+
+.tx-jsfaq .message-top .alert-danger {
+	width: auto;
 }
 
 .tx-jsfaq .alert-danger span {
