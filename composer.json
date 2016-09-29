@@ -1,7 +1,7 @@
 {
 	"name": "jainishsenjaliya/js-faq",
 	"type": "typo3-cms-extension",
-	"description": "FAQ extension for TYPO3",
+	"description": "Frequently Asked Question extension for TYPO3",
 	"homepage": "https://github.com/jainishsenjaliya/js_faq",
 	"support": {
 		"issues": "https://github.com/jainishsenjaliya/js_faq/issues"
