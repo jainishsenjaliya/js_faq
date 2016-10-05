@@ -54,3 +54,4 @@ Contact Form
 	:titlesonly:
 
 	Links
+	ChangeLog/Index
