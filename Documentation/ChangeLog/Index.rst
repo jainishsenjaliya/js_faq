@@ -3,244 +3,28 @@
 
 .. _changelog:
 
+=============================================================
 Change Log
-=========
+=============================================================
 
-2016-10-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+.. only:: html
 
-	* Add Manual.
-	* Released version 5.4.4
+	:Classification:
+		**Changes**
 
-2016-09-29  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+	5.4.5
+		Extension Manual Update
 
-	* Minor changes.
-	* Released version 5.4.3
+	5.4.4
+		Add Manual
 
-2016-08-13  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
+	5.4.3
+		Minor changes
 
-	* Minor changes.
-	* Released version 5.4.2
+	5.4.2
+		Minor changes
 
-2016-07-09  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Include dependent js_paginate extension for pagination.
-	* Change viewhelper "{namespace pg=JS\JsFaq\ViewHelpers}" to "{namespace pg=JS\JsPaginate\ViewHelpers}"
-	* https://typo3.org/extensions/repository/view/js_paginate
-	* Released version 5.4.1
-
-2016-06-25  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Change ordering based upon backend selection of images (media) and related FAQ.
-	* Change error notification messages.
-	* Change typoscript path to typo3conf/ext/js_faq/Configuration/TypoScript/Overrides/
-	* Modify CSS.
-	* Other Minor changes.
-	* Released version 5.4.0
-
-2016-06-24  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added language files for German.
-	* Create separate file for additional information.
-	* Released version 5.3.0
-
-2016-06-17  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Minor chanages and small bug fixes.
-	* Released version 5.2.4
-
-2016-05-31  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added option for enable or disable Show All / Hide all button.
-	* Released version 5.2.3
-
-2016-05-20  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Pagination Enable / Disable functionality will manage via plugin option.
-	* Added option for display number of record per page.
-	* Released version 5.2.2
-
-2016-05-18  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Manage additional headerdata via typoscript.
-	* Released version 5.2.1
-
-2016-05-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added recursive functionality for starting point . 
-	* Will display data from parent folder as well as child folders.
-	* Minor changes.
-	* Released version 5.2.0
-
-2016-04-06  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Modify javascript for toggle. 
-	* More than one plugin will work smoothly in same page.
-	* Released version 5.1.1
-
-2016-03-27  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added plugin information.
-	* Released version 5.1.0
-
-2016-03-23  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Compatibility with TYPO3 8.0 
-	* Released version 5.0.0
-
-2016-04-06  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Compatibility with TYPO3 7.6 
-	* Released version 4.0.0
-
-2016-02-26  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Major Changes.
-	* Image dimension manage via plugin and typoscript.
-	* Bug fixes.
-	* Changes in css.
-	* After upgrade plugin you must need to update plugin configuration.
-	* Released version 3.0.0
-
-2016-02-08  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Major Changes.
-	* FAL image support.
-	* After upgrade plugin you must need to update all images in "Answer" area.
-	* Released version 2.0.0
-
-2016-01-01  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added functionality to show FAQ between specific start-date and end-date.
-	* Released version 1.6.4
-
-2015-12-19  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added elements to the Content Element Wizard. 
-	* Released version 1.6.3
-
-2015-07-21  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added "Display FAQ - Category group wise" option in plugin.
-	* Display FAQ - group of category wise in frontend module.
-	* Released version 1.6.2
-
-2015-07-16  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added categories Tab options in plugin.
-	* Added "Categories" option in plugin.
-	* Display FAQ list depends upon category selected in plugin option.
-	* Released version 1.6.1
-
-2015-07-03  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Create new table for Category and set relation with FAQ table.
-	* Added category option in FAQ and choose category from category selection box in Detail tab.
-	* Added "Display Category" option in plugin.
-	* Display category name in frontend module.
-	* Released version 1.6.0
-
-2015-06-02  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added ordering by "Asked by" and "Expert" option in plugin option.
-	* Order by : Asked by and Expert.
-	* Released version 1.5.4
-
-2015-05-28  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added display setting for detail page of FAQ
-	* Added option in plugin for "Display additional Information in detail page".
-	* Added "Display Expert", "Display Asked by", "Display Related Link", "Display Related FAQ" option is checked in plugin then only display in frontend module.
-	* Released version 1.5.3
-
-2015-05-25  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added "Display additional Information in detail page".
-	* Released version 1.5.2
-
-2015-05-18  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Add detail link on related FAQ option in front end module.
-	* Display details of FAQ when click on related FAQ link.
-	* Released version 1.5.1
-
-2015-05-11  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added related FAQ options in FAQ table.
-	* Choose, Add and Edit related FAQ in FAQ table.
-	* Added "Display Related FAQ" option in plugin options.
-	* "Display Related FAQ" option is checked in plugin then only display in frontend module.
-	* Released version 1.5.0
-
-2015-05-04  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added related link field in FAQ table.
-	* Added "Display Related Link" option in plugin.
-	* "Display Related Link" option is checked in plugin then only display in frontend module.
-	* Released version 1.4.0
-
-2015-04-22  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added Asked by field in FAQ table.
-	* Added "Display Asked by" option in plugin.
-	* "Display Asked by" option is checked in plugin then only display in frontend module.
-	* Released version 1.3.0
-
-
-2015-04-08  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added email and website URL options in Expert table.
-	* Display both option in frontend module.
-	* Added "Display additional Information in list page" option in plugin.
-	* "Display Expert" option is checked in plugin then only display in frontend module.
-	* Released version 1.2.2
-
-2015-03-13  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Security fix, please update.
-	* Released version 1.2.1
-
-2015-02-04  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Create new table for expert and set relation with FAQ table.
-	* Added Expert option in FAQ and choose Expert from expert selection box in Detail tab.
-	* Display Expert name in frontend module.
-	* Released version 1.2.0
-
-2015-01-20  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added order by and order type option in plugin option.
-	* Order by : sorting, Question, Created data, Modified data.
-	* Order type : Desecending and Asecending.
-	* Released version 1.1.2
-
-2015-01-12  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added Starting Point in plugin options.
-	* Released version 1.1.1
-
-2015-01-05  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added paging functionality.
-	* Released version 1.1.0
-
-2014-11-25  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added Fancy / Modern layout.
-	* Added option in plugin for include Fancy / Modern layout.
-	* Released version 1.0.4
-
-2014-11-18  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* Added mobile compatible layout.
-	* CHG responsive css.
-	* Manage mobile compatible layout option from plugin.
-	* Added another option for CSS/JS to be included in header or footer.
-	* Released version 1.0.1
-
-2014-11-04  Jainish Senjaliya, <jainishsenjaliya@gmail.com>
-
-	* This is simple FAQ - "Frequently Asked Questions" Front end plugin.
-	* ADD Dynamic content. Like we can choose image or description and add related data.
-	* ADD show all and hide all functionality.
-	* CHG default css.
-	* Released version 1.0.0
+	5.4.1
+		Include dependent js_paginate extension for pagination.
+		Change viewhelper "{namespace pg=JS\JsFaq\ViewHelpers}" to "{namespace pg=JS\JsPaginate\ViewHelpers}"
+		https://typo3.org/extensions/repository/view/js_paginate
