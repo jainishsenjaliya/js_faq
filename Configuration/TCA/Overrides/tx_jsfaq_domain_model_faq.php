@@ -15,12 +15,6 @@ $GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['expert']['config']['for
 $GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['related_link']['config']['cols'] = 40;
 $GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['related_link']['config']['rows'] = 5;
 
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['size'] = 1;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['autoSizeMax'] = 1;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['maxitems'] = 1;
-$GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['items'] = array (
-					array('',0),
-				);
 $GLOBALS['TCA']['tx_jsfaq_domain_model_faq']['columns']['category']['config']['foreign_table_where'] = 
 	' AND tx_jsfaq_domain_model_category.hidden = 0 ORDER BY tx_jsfaq_domain_model_category.name';
 
