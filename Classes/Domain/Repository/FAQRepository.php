@@ -142,7 +142,7 @@ class FAQRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$field1		= 'uid, options, description, image';
 			$orderBy1	= ' sorting';
 			$table1		= 'tx_jsfaq_domain_model_content';
-			$where1		= ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'';
+			$where1		= ' deleted = 0 AND hidden = 0 AND faq = \'' . $value['uid'] . '\'AND t3ver_state !=1 AND pid !=-1';
 
 			$answers	= $this->configuration->falImages($GLOBALS['TYPO3_DB']->exec_SELECTgetRows($field1, $table1, $where1, '', $orderBy1), $table1, 'image');
 
